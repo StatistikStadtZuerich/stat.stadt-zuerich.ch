@@ -6,18 +6,37 @@
 
 <WebSite> a schema:WebSite ;
     schema:headline "Statistisches Informationsportal" ;
-    schema:hasPart <http://stat.stadt-zuerich.ch/> ;
-    schema:hasPart <Bevölkerung> .
+    schema:hasPart <http://stat.stadt-zuerich.ch/> .
 
 <http://stat.stadt-zuerich.ch/> a schema:WebPage ;
     schema:headline "Statistisches Informationsportal" ;
-    schema:name: "Einstiegsseite" .
+    schema:name "Einstiegsseite" ;
+    schema:description "Die Statistik Stadt Zürich ist das Zahlengedächtnis der Stadtverwaltung. [...]" ;
+    schema:hasPart <Navigation> .
 
-<Bevölkerung> a schema:WebPage ;
-    schema:headline "Bevölkerung" ;
-    schema:hasPart <Bevölkerung#Navigation> ;
-    schema:hasPart <Bevölkerung#Thema1> ;
-    schema:hasPart <Bevölkerung#Thema2> .
+<Navigation> a schema:SiteNavigationElement ;
+    schema:hasPart <Bevoelkerung> ;
+    schema:hasPart <Wirtschaft> ;
+    schema:hasPart <Bauen&Wohnen> .
 
-<Bevölkerung#Navigation> a schema:SiteNavigationElement ;
-    schema:hasPart <Bevölkerung/Bestand> .
+<Bevoelkerung> a schema:WebPage ;
+    schema:headline "Bevoelkerung" ;
+    schema:hasPart <Bevoelkerung/Navigation> ;
+    schema:hasPart <Bevoelkerung/Thema1> ;
+    schema:hasPart <Bevoelkerung/Thema2> .
+
+<Bevoelkerung/Navigation> a schema:SiteNavigationElement ;
+    schema:hasPart <Bevoelkerung/Bestand> ;
+    schema:hasPart <Bevoelkerung/Bilanz> ;
+    schema:hasPart <Bevoelkerung/Szenarian> ;
+    schema:hasPart <Bevoelkerung/Haushalte> ;
+    schema:hasPart <Bevoelkerung/Heirat&Scheidung> ;
+    schema:hasPart <Bevoelkerung/Geburt&Sterbefaelle> .
+
+<Bevoelkerung/Thema1> a schema:WebPageElement ;
+    schema:name "Bevoelkerung, 1901 - 1934" ;
+    schema:hasPart stat:Bevoelkerung .
+
+<Bevoelkerung/Thema2> a schema:WebPageElement ;
+    schema:name "Beliebteste Vorname bei Neugeborenen" ;
+    schema:hasPart stat:Vornamen .
