@@ -1,0 +1,16 @@
+{
+  "name": "stat.stadt-zuerich.ch",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "trifid": "github:zazuko/trifid",
+    "trifid-handler-file": "github:zazuko/trifid-handler-file"
+  },
+  "devDependencies": {},
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "trifid --config config.json",
+    "start-local": "trifid --config config.local.json"
+  }
+}
