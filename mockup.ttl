@@ -23,7 +23,7 @@
     schema:headline "Bevoelkerung" ;
     schema:hasPart <Bevoelkerung/Navigation> ;
     schema:hasPart <Bevoelkerung/Thema1> ;
-    schema:hasPart <Bevoelkerung/Thema2> .
+    schema:hasPart <Bevoelkerung#Thema2> .
 
 <Bevoelkerung/Navigation> a schema:SiteNavigationElement ;
     schema:hasPart <Bevoelkerung/Bestand> ;
@@ -37,6 +37,6 @@
     schema:name "Bevoelkerung, 1901 - 1934" ;
     schema:hasPart stat:Bevoelkerung .
 
-<Bevoelkerung/Thema2> a schema:WebPageElement ;
+<Bevoelkerung#Thema2> a schema:WebPageElement ;
     schema:name "Beliebteste Vorname bei Neugeborenen" ;
     schema:hasPart stat:Vornamen .
