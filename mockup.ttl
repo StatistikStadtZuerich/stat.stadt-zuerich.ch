@@ -1,4 +1,5 @@
 @base <http://stat.stadt-zuerich.ch/> .
+@prefix stat: <http://ld.stadt-zuerich.ch/statistics/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -12,5 +13,11 @@
     schema:headline "Statistisches Informationsportal" ;
     schema:name: "Einstiegsseite" .
 
-<Bevölkerung> a schema:WebSite ;
-    schema:headline "Bevölkerung" .
+<Bevölkerung> a schema:WebPage ;
+    schema:headline "Bevölkerung" ;
+    schema:hasPart <Bevölkerung#Navigation> ;
+    schema:hasPart <Bevölkerung#Thema1> ;
+    schema:hasPart <Bevölkerung#Thema2> .
+
+<Bevölkerung#Navigation> a schema:SiteNavigationElement ;
+    schema:hasPart <Bevölkerung/Bestand> .
