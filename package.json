@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "trifid": "github:zazuko/trifid",
-    "trifid-handler-file": "github:zazuko/trifid-handler-file"
+    "trifid": "^1.10.0",
+    "trifid-handler-file": "1.0.0"
   },
   "devDependencies": {},
   "license": "UNLICENSED",
