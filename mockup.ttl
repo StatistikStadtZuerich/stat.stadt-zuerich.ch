@@ -15,28 +15,28 @@
     schema:hasPart <Navigation> .
 
 <Navigation> a schema:SiteNavigationElement ;
-    schema:hasPart <Bevoelkerung> ;
+    schema:hasPart <Bevölkerung> ;
     schema:hasPart <Wirtschaft> ;
     schema:hasPart <Bauen&Wohnen> .
 
-<Bevoelkerung> a schema:WebPage ;
-    schema:headline "Bevoelkerung" ;
-    schema:hasPart <Bevoelkerung/Navigation> ;
-    schema:hasPart <Bevoelkerung/Thema1> ;
-    schema:hasPart <Bevoelkerung#Thema2> .
+<Bevölkerung> a schema:WebPage ;
+    schema:headline "Bevölkerung" ;
+    schema:hasPart <Bevölkerung#Navigation> ;
+    schema:hasPart <Bevölkerung#Thema1> ;
+    schema:hasPart <Bevölkerung#Thema2> .
 
-<Bevoelkerung/Navigation> a schema:SiteNavigationElement ;
-    schema:hasPart <Bevoelkerung/Bestand> ;
-    schema:hasPart <Bevoelkerung/Bilanz> ;
-    schema:hasPart <Bevoelkerung/Szenarian> ;
-    schema:hasPart <Bevoelkerung/Haushalte> ;
-    schema:hasPart <Bevoelkerung/Heirat&Scheidung> ;
-    schema:hasPart <Bevoelkerung/Geburt&Sterbefaelle> .
+<Bevölkerung#Navigation> a schema:SiteNavigationElement ;
+    schema:hasPart <Bevölkerung/Bestand> ;
+    schema:hasPart <Bevölkerung/Bilanz> ;
+    schema:hasPart <Bevölkerung/Szenarian> ;
+    schema:hasPart <Bevölkerung/Haushalte> ;
+    schema:hasPart <Bevölkerung/Heirat&Scheidung> ;
+    schema:hasPart <Bevölkerung/Geburt&Sterbefaelle> .
 
-<Bevoelkerung/Thema1> a schema:WebPageElement ;
-    schema:name "Bevoelkerung, 1901 - 1934" ;
-    schema:hasPart stat:Bevoelkerung .
+<Bevölkerung#Thema1> a schema:WebPageElement ;
+    schema:name "Bevölkerung, 1901 - 1934" ;
+    schema:hasPart stat:Bevölkerung .
 
-<Bevoelkerung#Thema2> a schema:WebPageElement ;
+<Bevölkerung#Thema2> a schema:WebPageElement ;
     schema:name "Beliebteste Vorname bei Neugeborenen" ;
     schema:hasPart stat:Vornamen .
