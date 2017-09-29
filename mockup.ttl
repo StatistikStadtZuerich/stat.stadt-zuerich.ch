@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 
-<WebSite> a schema:WebSite ;
+<#WebSite> a schema:WebSite ;
     schema:headline "Statistisches Informationsportal" ;
     schema:hasPart <http://stat.stadt-zuerich.ch/> .
 
@@ -12,9 +12,9 @@
     schema:headline "Statistisches Informationsportal" ;
     schema:name "Einstiegsseite" ;
     schema:description "Die Statistik Stadt Zürich ist das Zahlengedächtnis der Stadtverwaltung. [...]" ;
-    schema:hasPart <Navigation> .
+    schema:hasPart <#Navigation> .
 
-<Navigation> a schema:SiteNavigationElement ;
+<#Navigation> a schema:SiteNavigationElement ;
     schema:hasPart <Bevölkerung> ;
     schema:hasPart <Wirtschaft> ;
     schema:hasPart <Bauen&Wohnen> .
