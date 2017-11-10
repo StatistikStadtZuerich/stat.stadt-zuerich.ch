@@ -11,7 +11,7 @@
 <http://stat.stadt-zuerich.ch/> a schema:WebPage ;
     schema:headline "Statistisches Informationsportal" ;
     schema:name "Einstiegsseite" ;
-    schema:description "Die Statistik Stadt Zürich ist das Zahlengedächtnis der Stadtverwaltung. [...]" ;
+    schema:description "Die Statistik Stadt Zürich ist das Zahlengedächtnis der Stadtverwaltung. [....]" ;
     schema:hasPart <#Navigation> .
 
 <#Navigation> a schema:SiteNavigationElement ;
