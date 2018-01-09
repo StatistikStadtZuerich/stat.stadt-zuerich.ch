@@ -5,20 +5,20 @@ const Promise = require('bluebird')
 
 function attachSupportedClass (view, api) {
   const supportedClass = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation,
+    '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation,
     '@type': ['Class', 'Collection'],
     search: {
-      '@id': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation + '#search'
+      '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search'
     },
     supportedOperation: [{
-      '@id': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation + '#get',
+      '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#get',
       '@type': [
         'Operation',
         'http://example.org/hv/HydraView'
       ],
       method: 'GET',
       'http://example.org/hv/variables': {
-        '@id': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation + '#search'
+        '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search'
       },
       'http://example.org/hv/code': {
         '@type': 'http://example.org/hv/SparqlQuery',
@@ -29,7 +29,7 @@ function attachSupportedClass (view, api) {
       'http://example.org/hv/returnFrame': {
         '@id': 'context.json'
       },
-      'expects': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation + '#input',
+      'expects': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#input',
       'returns': 'http://stat.stadt-zuerich.ch/api/schema/Result'
     }]
   }
@@ -39,7 +39,7 @@ function attachSupportedClass (view, api) {
 
 function attachInputClass (view, api, variables) {
   const inputClass = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation + '#input',
+    '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#input',
     '@type': 'Class',
     supportedProperty: Object.keys(variables).map((iri) => {
       return {
@@ -53,9 +53,9 @@ function attachInputClass (view, api, variables) {
 
 function attachIriTemplate (view, api, variables) {
   const iriTemplate = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation + '#search',
+    '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search',
     '@type': 'IriTemplate',
-    template: '/api/statistics/' + view.notation + '/{?' + Object.values(variables) + '}',
+    template: '/api/' + view.notation + '/{?' + Object.values(variables) + '}',
     variableRepresentation: 'BasicRepresentation',
     mapping: Object.keys(variables).map((iri) => {
       const variable = variables[iri]
@@ -73,8 +73,8 @@ function attachIriTemplate (view, api, variables) {
 
 function attachReference (view, api) {
   const reference = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/statistics/' + view.notation + '/',
-    '@type': 'http://stat.stadt-zuerich.ch/api/schema/statistics/' + view.notation
+    '@id': 'http://stat.stadt-zuerich.ch/api/' + view.notation + '/',
+    '@type': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation
   }
 
   api['@graph'].push(reference)
@@ -83,12 +83,12 @@ function attachReference (view, api) {
 function buildViewHydraApiDoc (view, api) {
   const variables = Object.keys(view.dimensions).reduce((variables, dimension) => {
     if (u.isZeit(dimension)) {
-      variables['http://stat.stadt-zuerich.ch/api/statistics/' + view.notation + '/property/ZEIT/FROM'] = 'from'
-      variables['http://stat.stadt-zuerich.ch/api/statistics/' + view.notation + '/property/ZEIT/TO'] = 'to'
+      variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/FROM'] = 'from'
+      variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/TO'] = 'to'
     } else {
       const variable = u.variableName(dimension)
 
-      variables['http://stat.stadt-zuerich.ch/api/statistics/' + view.notation + '/property/' + variable.toUpperCase()] = variable
+      variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/' + variable.toUpperCase()] = variable
     }
 
     return variables
