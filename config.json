@@ -47,6 +47,6 @@
     }
   },
   "staticViews": {
-    "/": "cwd:views/home.html"
+    "/": null
   }
 }
