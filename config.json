@@ -25,8 +25,8 @@
   "handler": {
     "options": {
       "authentication": {
-        "user": "public",
-        "password": "public"
+        "user": "anonymous",
+        "password": "anonymous"
       },
       "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
       "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
