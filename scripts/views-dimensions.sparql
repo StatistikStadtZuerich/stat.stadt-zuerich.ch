@@ -1,0 +1,19 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?notation ?view ?dimension ?lock ?dataset  WHERE {
+  GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
+    ?shape a sh:NodeShape ;
+      rdfs:seeAlso ?dataset ;
+      sh:targetNode ?view ;
+      sh:property ?property .
+
+    ?property sh:path ?dimension .
+
+    OPTIONAL {
+      ?property sh:hasValue ?lock .
+    }
+
+    ?view skos:notation ?notation .
+  }
+}
