@@ -14,12 +14,16 @@ CONSTRUCT {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
     ?obs a qb:Observation ;
-       qb:dataSet <%%DATASET%%> ;
+       # qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/EINHEIT/GESAMTCODE/KENNZAHL/NAF/NAM/RAUM/SEX/WERT/ZEIT> ;
        ?property ?value.
 
     # dimensions
     ?obs
-      %%PATTERNS%% .
+      <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+      <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
+      <http://ld.stadt-zuerich.ch/statistics/property/SEX> <http://ld.stadt-zuerich.ch/statistics/code/SEX0001>;
+      <http://ld.stadt-zuerich.ch/statistics/property/NAF> <http://ld.stadt-zuerich.ch/statistics/code/NAF0001>;
+      <http://ld.stadt-zuerich.ch/statistics/property/NAM> ?nam .
 
     ?obs ?property ?value .
 
@@ -28,10 +32,14 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
-    %%NOTATION_PATTERNS%%
+    ?raum skos:notation ?raumNotation .
+    ?sex skos:notation ?sexNotation .
+    ?naf skos:notation ?nafNotation .
+    ?nam skos:notation ?namNotation .
 
     # filters
-    %%FILTERS%%
+    ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof nam !== 'undefined' ? 'FILTER (?namNotation IN (' + (nam.join ? nam.map(v => v.toCanonical()).join() : nam.toCanonical()) + '))' : ''}
 
     # time range filter
     ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}

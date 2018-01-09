@@ -1,35 +1,34 @@
 {
   "baseConfig": "trifid:config-sparql.json",
-  "listener": {
-       "port": 8080
-  },
   "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
+  "sparqlEndpointAuthentication": {
+    "user": "ssz-read",
+    "password": "coo2aiw6itiT"
+  },
   "sparqlProxy": {
-    "options": {
-      "queryOperation": "postQueryUrlencoded",
-      "authentication": {
-        "user": "anonymous",
-        "password": "anonymous"
+    "default": {
+      "options": {
+        "queryOperation": "postQueryUrlencoded"
       }
     }
   },
-  "hydraViews": [{
-    "documentationUrl": "/api",
-    "documentation": "cwd:api/api.jsonld",
-    "options": {
-      "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
-      "debug": true,
-      "contextHeader": "/context/"
+  "hydraBox": {
+    "api": {
+      "documentationUrl": "/api",
+      "documentation": "cwd:api/api.jsonld",
+      "options": {
+        "sparqlEndpointUrl": "http://stat.stadt-zuerich.ch/query",
+        "debug": true,
+        "contextHeader": "/context/"
+      }
     }
-  }],
+  },
   "handler": {
-    "options": {
-      "authentication": {
-        "user": "anonymous",
-        "password": "anonymous"
-      },
-      "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
-      "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
+    "root": {
+      "options": {
+        "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
+        "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
+      }
     }
   },
   "patchHeaders": {
@@ -41,7 +40,13 @@
     }
   },
   "renderer": {
-    "module": "trifid-renderer-simple",
-    "vocab": "renderer:vocab.json"
+    "root": {
+      "template": "cwd:views/index.html",
+      "templateError": "cwd:views/error.html",
+      "vocab": "cwd:node_modules/trifid-renderer-simple/examples/vocab.json"
+    }
+  },
+  "staticViews": {
+    "/": "cwd:views/home.html"
   }
 }
