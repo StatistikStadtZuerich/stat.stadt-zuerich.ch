@@ -1,11 +1,47 @@
 {
-  "baseConfig": "trifid:config.json",
-  "staticViews": null,
-  "handler": {
-    "module": "trifid-handler-file",
+  "baseConfig": "trifid:config-sparql.json",
+  "listener": {
+       "port": 8080
+  },
+  "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
+  "sparqlProxy": {
     "options": {
-      "filename": "mockup.ttl",
-      "split": true
+      "queryOperation": "postQueryUrlencoded",
+      "authentication": {
+        "user": "anonymous",
+        "password": "anonymous"
+      }
     }
+  },
+  "hydraViews": [{
+    "documentationUrl": "/api",
+    "documentation": "cwd:api/api.jsonld",
+    "options": {
+      "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
+      "debug": true,
+      "contextHeader": "/context/"
+    }
+  }],
+  "handler": {
+    "options": {
+      "authentication": {
+        "user": "public",
+        "password": "public"
+      },
+      "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
+      "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
+    }
+  },
+  "patchHeaders": {
+    "static": {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Expose-Headers": "Link",
+      "Cache-Control": "public, max-age=120",
+      "Vary": "Accept"
+    }
+  },
+  "renderer": {
+    "module": "trifid-renderer-simple",
+    "vocab": "renderer:vocab.json"
   }
 }

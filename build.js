@@ -9,8 +9,8 @@ SparqlHttp.fetch = fetch
 
 const config = {
   endpointUrl: 'http://data.zazuko.com:5820/ssz/query',
-  user: '',
-  password: ''
+  user: 'anonymous',
+  password: 'anonymous'
 }
 
 function variableName (iri) {
@@ -75,6 +75,7 @@ function buildQuery (view, template) {
   }).join('\n    ')
 
   const query = template
+    .split('%%DATASET%%').join(view.dataset)
     .split('%%PATTERNS%%').join(patterns)
     .split('%%NOTATION_PATTERNS%%').join(notationPatterns)
     .split('%%FILTERS%%').join(filters)

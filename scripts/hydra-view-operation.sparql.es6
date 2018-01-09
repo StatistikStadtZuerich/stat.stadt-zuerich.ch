@@ -5,17 +5,17 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
-#CONSTRUCT  {
-#      ?obs a qb:Observation .
-#      ?obs ?property ?value .
-#      ?value rdfs:label ?label .
-#      ?value skos:notation ?notation .
-#}
-
-SELECT ?obs ?property ?value ?label ?notation WHERE {
+CONSTRUCT {
+      ?obs a qb:Observation .
+      ?obs ?property ?value .
+      ?value rdfs:label ?label .
+      ?value skos:notation ?notation .
+} WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
-    ?obs a qb:Observation .
+    ?obs a qb:Observation ;
+       qb:dataSet <%%DATASET%%> ;
+       ?property ?value.
 
     # dimensions
     ?obs
@@ -34,7 +34,7 @@ SELECT ?obs ?property ?value ?label ?notation WHERE {
     %%FILTERS%%
 
     # time range filter
-    #${typeof from !== 'undefined' ? 'FILTER (?zeitNotation >= xsd:datetime("' + from + '"))':''}
-    #${typeof to !== 'undefined' ? 'FILTER (?zeitNotation <= xsd:datetime("' + to + '"))':''}
+    ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}
+    ${typeof to !== 'undefined' ? 'FILTER (?zeit <= xsd:datetime("' + to + '"))':''}
   }
-} #ORDER BY ?zeitNotation
+} ORDER BY ?zeit
