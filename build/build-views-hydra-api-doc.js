@@ -81,7 +81,8 @@ function attachReference (view, api) {
 }
 
 function buildViewHydraApiDoc (view, api) {
-  const variables = Object.keys(view.dimensions).reduce((variables, dimension) => {
+  // select all dimensions which don't have a fixed value
+  const variables = Object.keys(view.dimensions).filter(d => !view.dimensions[d]).reduce((variables, dimension) => {
     if (u.isZeit(dimension)) {
       variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/FROM'] = 'from'
       variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/TO'] = 'to'
