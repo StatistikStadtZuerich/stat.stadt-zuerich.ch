@@ -32,11 +32,13 @@
     }
   },
   "patchHeaders": {
-    "static": {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Expose-Headers": "Link",
-      "Cache-Control": "public, max-age=120",
-      "Vary": "Accept"
+    "root": {
+      "static": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "Link",
+        "Cache-Control": "public, max-age=120",
+        "Vary": "Accept"
+      }
     }
   },
   "renderer": {
