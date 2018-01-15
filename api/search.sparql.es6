@@ -8,7 +8,7 @@ PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
 
-    <http://nirvana> a schema:ItemList ;
+    ?root a schema:ItemList ;
         schema:itemListElement [
             a schema:ListItem ;
             a ?entityType ;
@@ -19,8 +19,10 @@ CONSTRUCT {
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
-SELECT DISTINCT ?result ?entityType ?label WHERE 
+SELECT DISTINCT ?root ?result ?entityType ?label WHERE 
 {
+  BIND(BNODE('9a214cf093ae') AS ?root)
+
   {
   
   ?view a <http://purl.org/linked-data/cube#SliceKey> ;
@@ -29,7 +31,7 @@ SELECT DISTINCT ?result ?entityType ?label WHERE
   ?dimension a <http://purl.org/linked-data/cube#DimensionProperty> .
   ?dimension rdfs:label ?label .
   
-  ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + query + '*")' : ''}
+  ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + trim(query) + '*")' : ''}
   BIND(ssz-schema:DimensionEntity AS ?entityType)
   BIND(?dimension as ?result)
 
@@ -42,10 +44,11 @@ SELECT DISTINCT ?result ?entityType ?label WHERE
   ?view a <http://purl.org/linked-data/cube#SliceKey> ;
     rdfs:label ?label ;
   
-  ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + query + '*")' : ''}
+  ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + trim(query) + '*")' : ''}
   BIND(ssz-schema:TopicEntity AS ?entityType)
   BIND(?view AS ?result)
 
   }
+
 }
 }}
