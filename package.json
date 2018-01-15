@@ -1,6 +1,6 @@
 {
   "name": "stat.stadt-zuerich.ch",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "",
   "main": "index.js",
   "dependencies": {
