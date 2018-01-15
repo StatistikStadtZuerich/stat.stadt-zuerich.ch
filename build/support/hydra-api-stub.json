@@ -71,7 +71,7 @@
   }, {
     "@id": "http://stat.stadt-zuerich.ch/api/schema/Search#search",
     "@type": "IriTemplate",
-    "template": "/api/search/{?query}",
+    "template": "/api/search/{?query,other}",
     "variableRepresentation": "BasicRepresentation",
     "mapping": [{
       "@type": "IriTemplateMapping",

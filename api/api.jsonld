@@ -155,7 +155,7 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/Search#search",
       "@type": "IriTemplate",
-      "template": "/api/search/{?query}",
+      "template": "/api/search/{?query,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -207,7 +207,7 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV031#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV031/{?raum,from,to,nam}",
+      "template": "/api/BEV031/{?raum,from,to,nam,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -257,7 +257,7 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV032#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV032/{?raum,from,to,nam}",
+      "template": "/api/BEV032/{?raum,from,to,nam,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {

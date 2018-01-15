@@ -55,7 +55,7 @@ function attachIriTemplate (view, api, variables) {
   const iriTemplate = {
     '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search',
     '@type': 'IriTemplate',
-    template: '/api/' + view.notation + '/{?' + Object.values(variables) + '}',
+    template: '/api/' + view.notation + '/{?' + Object.values(variables) + ',other}',
     variableRepresentation: 'BasicRepresentation',
     mapping: Object.keys(variables).map((iri) => {
       const variable = variables[iri]
