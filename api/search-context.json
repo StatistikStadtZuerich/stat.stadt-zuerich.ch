@@ -3,10 +3,7 @@
     "@vocab": "http://schema.org/",
     "DimensionEntity": "http://ld.stadt-zuerich.ch/schema/DimensionEntity",
     "TopicEntity": "http://ld.stadt-zuerich.ch/schema/TopicEntity",
-    "label": {
-      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
-      "@language": "de-ch"
-    }
+    "label": "http://www.w3.org/2000/01/rdf-schema#label"
   },
   "@type": "ItemList"
 }
