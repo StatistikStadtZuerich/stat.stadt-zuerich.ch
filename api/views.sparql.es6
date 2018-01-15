@@ -13,6 +13,7 @@ CONSTRUCT {
             a ssz-schema:TopicEntity ;
             schema:item ?view 
         ] .
+    ?view rdfs:label ?label .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
@@ -22,6 +23,7 @@ SELECT DISTINCT ?root ?view WHERE {
   {
   
     ?view a <http://purl.org/linked-data/cube#SliceKey> ;
+      rdfs:label ?label ;
       ${typeof dimension !== 'undefined' ? 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ dimension.value + '> .' : ''}
   
   }
