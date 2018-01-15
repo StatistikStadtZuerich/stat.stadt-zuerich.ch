@@ -18,11 +18,11 @@ CONSTRUCT {
 
 SELECT DISTINCT ?root ?view WHERE {
 {
-  BIND(BNODE('9a214cf093ae') AS ?root)
+  BIND(BNODE('neverUseThisUri') AS ?root)
   {
   
     ?view a <http://purl.org/linked-data/cube#SliceKey> ;
-  	    ssz-schema:viewStructure/qb:component/qb:dimension ${typeof query !== 'undefined' ? '<' + query.toString().trim() + '>' : ''} .
+      ${typeof query !== 'undefined' ? 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ query.toString().trim() + '> .' : ''}
   
   }
 }}}}

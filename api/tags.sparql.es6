@@ -21,7 +21,7 @@ CONSTRUCT {
 
 SELECT DISTINCT ?root ?result ?entityType ?label WHERE 
 {
-  BIND(BNODE('9a214cf093ae') AS ?root)
+  BIND(BNODE('neverUseThisUri') AS ?root)
 
   {
   
