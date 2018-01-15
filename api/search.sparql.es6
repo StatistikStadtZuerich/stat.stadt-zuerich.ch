@@ -12,23 +12,26 @@ CONSTRUCT {
         schema:itemListElement [
             a schema:ListItem ;
             a ?entityType ;
-            schema:item ?view 
+            schema:item ?result 
             #schema:position> 1 ;
         ] .
-    ?view rdfs:label ?label .
+    ?result rdfs:label ?label .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
-  
+
+SELECT DISTINCT ?result ?entityType ?label WHERE 
+{
   {
   
   ?view a <http://purl.org/linked-data/cube#SliceKey> ;
-  	ssz-schema:viewStructure/qb:component/qb:dimension ?dimension .
+    ssz-schema:viewStructure/qb:component/qb:dimension ?dimension .
   
   ?dimension a <http://purl.org/linked-data/cube#DimensionProperty> .
   ?dimension rdfs:label ?label .
   
   ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + query + '*")' : ''}
   BIND(ssz-schema:DimensionEntity AS ?entityType)
+  BIND(?dimension as ?result)
 
   }
   
@@ -37,10 +40,12 @@ CONSTRUCT {
   {
   
   ?view a <http://purl.org/linked-data/cube#SliceKey> ;
-  	rdfs:label ?label ;
+    rdfs:label ?label ;
   
   ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + query + '*")' : ''}
   BIND(ssz-schema:TopicEntity AS ?entityType)
+  BIND(?view AS ?result)
 
   }
+}
 }}
