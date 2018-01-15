@@ -22,7 +22,7 @@ SELECT DISTINCT ?root ?view WHERE {
   {
   
     ?view a <http://purl.org/linked-data/cube#SliceKey> ;
-      ${typeof query !== 'undefined' ? 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ query.toString().trim() + '> .' : ''}
+      ${typeof dimension !== 'undefined' ? 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ dimension.value + '> .' : ''}
   
   }
 }}}}
