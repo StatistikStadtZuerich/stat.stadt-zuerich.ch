@@ -17,7 +17,7 @@ CONSTRUCT {
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
-SELECT DISTINCT ?root ?view WHERE {
+SELECT DISTINCT ?root ?view ?label WHERE {
 {
   BIND(BNODE('neverUseThisUri') AS ?root)
   {
