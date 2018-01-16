@@ -3,9 +3,9 @@
     "@vocab": "http://www.w3.org/ns/hydra/core#",
     "label": "http://www.w3.org/2000/01/rdf-schema#label",
     "Dimension": "http://stat.stadt-zuerich.ch/schema/DimensionEntity",
+    "Topic": "http://stat.stadt-zuerich.ch/schema/TopicEntity",
     "Location": "http://stat.stadt-zuerich.ch/schema/LocationEntity",
-    "Time": "http://stat.stadt-zuerich.ch/schema/TimeEntity",
-    "Topic": "http://stat.stadt-zuerich.ch/schema/TopicEntity"
+    "Time": "http://stat.stadt-zuerich.ch/schema/TimeEntity"
   },
   "@type": "Collection"
 }

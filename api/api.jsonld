@@ -215,7 +215,16 @@
       "@type": "Class",
       "supportedProperty": [
         {
-          "property": "member"
+          "property": "http://stat.stadt-zuerich.ch/schema/DimensionEntity"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/TopicEntity"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/LocationEntity"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/TimeEntity"
         }
       ]
     },
@@ -235,13 +244,28 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/Views#search",
       "@type": "IriTemplate",
-      "template": "/api/views/{?dimension,other}",
+      "template": "/api/views/{?dimension,topic,location,time,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
-          "variable": "tag",
-          "property": "member"
+          "variable": "dimension",
+          "property": "http://stat.stadt-zuerich.ch/schema/DimensionEntity"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "topic",
+          "property": "http://stat.stadt-zuerich.ch/schema/TopicEntity"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "location",
+          "property": "http://stat.stadt-zuerich.ch/schema/LocationEntity"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "time",
+          "property": "http://stat.stadt-zuerich.ch/schema/TimeEntity"
         }
       ]
     },

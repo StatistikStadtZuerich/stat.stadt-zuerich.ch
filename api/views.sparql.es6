@@ -16,12 +16,19 @@ CONSTRUCT {
 
 SELECT DISTINCT ?root ?view ?label WHERE {
 {
-  BIND(BNODE('neverUseThisUri') AS ?root)
-  {
 
+  BIND(BNODE('neverUseThisUri') AS ?root)
+
+  {
     ?view a <http://purl.org/linked-data/cube#SliceKey> ;
-      ${typeof tag !== 'undefined' ? ( tag.join ? tag.map(t => { return 'ssz-schema:viewStructure/qb:component/qb:dimension <' + t.value + '> ;'}).join('\n') : 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ tag.value + '> ;') : ''}
+      ${typeof dimension !== 'undefined' ?
+         ( dimension.join ? 
+            dimension.map(t => { return 'ssz-schema:viewStructure/qb:component/qb:dimension <' + t.value + '> ;'}).join('\n') : 
+            'ssz-schema:viewStructure/qb:component/qb:dimension <'+ dimension.value + '> ;'
+         ) : ''}
       rdfs:label ?label .
 
+    ${typeof topic !== 'undefined'? 'FILTER (?view IN (' + (topic.join ? topic.map(v => '<' + v.value + '>').join() : '<' + topic.value + '>') + '))' : ''}
   }
+
 }}}}

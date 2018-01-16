@@ -12,7 +12,7 @@ SELECT DISTINCT ?view ?notation ?label ?dimension ?lock ?dataset WHERE {
     rdfs:label ?label ;
     qb:componentProperty ?dimensionLock  ;
     ssz-schema:viewStructure/qb:component/qb:dimension ?dimension .
-  
+
   ?sliceUri a qb:Slice ;
     qb:sliceStructure ?view .
 
