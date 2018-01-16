@@ -25,7 +25,7 @@ function fetchViews (config) {
       views[viewIri] = views[viewIri] || {
         iri: viewIri,
         notation: row.notation.value,
-        dataset: row.dataset.value,
+        dataset: row.dataset && row.dataset.value,
         dimensions: {}
       }
 

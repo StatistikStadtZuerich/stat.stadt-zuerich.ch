@@ -14,19 +14,19 @@ function attachSupportedClass (view, api) {
       '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#get',
       '@type': [
         'Operation',
-        'http://example.org/hv/HydraView'
+        'http://hydra-box.org/schema/View'
       ],
       method: 'GET',
-      'http://example.org/hv/variables': {
+      'http://hydra-box.org/schema/variables': {
         '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search'
       },
-      'http://example.org/hv/code': {
-        '@type': 'http://example.org/hv/SparqlQuery',
-        'http://example.org/hv/source': {
+      'http://hydra-box.org/schema/code': {
+        '@type': 'http://hydra-box.org/schema/SparqlQuery',
+        'http://hydra-box.org/schema/source': {
           '@id': view.notation + '.sparql.es6'
         }
       },
-      'http://example.org/hv/returnFrame': {
+      'http://hydra-box.org/schema/returnFrame': {
         '@id': 'context.json'
       },
       'expects': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#input',
@@ -82,7 +82,7 @@ function attachReference (view, api) {
 
 function buildViewHydraApiDoc (view, api) {
   // select all dimensions which don't have a fixed value
-  const variables = Object.keys(view.dimensions).filter(d => !view.dimensions[d]).reduce((variables, dimension) => {
+  const variables = Object.keys(view.dimensions).sort().filter(d => !view.dimensions[d]).reduce((variables, dimension) => {
     if (u.isZeit(dimension)) {
       variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/FROM'] = 'from'
       variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/TO'] = 'to'
