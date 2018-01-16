@@ -28,7 +28,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
   ?dimension a <http://purl.org/linked-data/cube#DimensionProperty> .
   ?dimension rdfs:label ?label .
   
-  ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + query.value.trim() + '*")' : ''}
+  ${typeof query !== 'undefined' ? 'FILTER regex(lcase(?label), "^' + query.value.trim().toLowerCase() + '")' : ''}
   BIND(stip-schema:DimensionEntity AS ?entityType)
   BIND(?dimension as ?result)
 
@@ -41,7 +41,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
   ?view a <http://purl.org/linked-data/cube#SliceKey> ;
     rdfs:label ?label ;
   
-  ${typeof query !== 'undefined' ? 'FILTER regex(?label, "' + query.value.trim() + '*")' : ''}
+  ${typeof query !== 'undefined' ? 'FILTER regex(lcase(?label), "^' + query.value.trim().toLowerCase() + '")' : ''}
   BIND(stip-schema:TopicEntity AS ?entityType)
   BIND(?view AS ?result)
 
