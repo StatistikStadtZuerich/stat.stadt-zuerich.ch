@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "trifid": "2.0.0-0"
+    "trifid": "2.0.0-1"
   },
   "devDependencies": {
     "bluebird": "^3.5.1",
