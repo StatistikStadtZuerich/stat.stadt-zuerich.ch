@@ -19,10 +19,9 @@ CONSTRUCT {
 
     # dimensions
     ?obs
-      <http://ld.stadt-zuerich.ch/statistics/property/NAF> <http://ld.stadt-zuerich.ch/statistics/code/NAF0001>;
-      <http://ld.stadt-zuerich.ch/statistics/property/NAM> ?nam;
+      <http://ld.stadt-zuerich.ch/statistics/property/BEW> ?bew;
+      <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/XXX0000>;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
-      <http://ld.stadt-zuerich.ch/statistics/property/SEX> <http://ld.stadt-zuerich.ch/statistics/code/SEX0002>;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
     ?obs ?property ?value .
@@ -32,13 +31,12 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
-    ?naf skos:notation ?nafNotation .
-    ?nam skos:notation ?namNotation .
+    ?bew skos:notation ?bewNotation .
+    ?bta skos:notation ?btaNotation .
     ?raum skos:notation ?raumNotation .
-    ?sex skos:notation ?sexNotation .
 
     # filters
-    ${typeof nam !== 'undefined' ? 'FILTER (?namNotation IN (' + (nam.join ? nam.map(v => v.toCanonical()).join() : nam.toCanonical()) + '))' : ''}
+    ${typeof bew !== 'undefined' ? 'FILTER (?bewNotation IN (' + (bew.join ? bew.map(v => v.toCanonical()).join() : bew.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
     # time range filter

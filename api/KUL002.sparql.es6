@@ -19,11 +19,12 @@ CONSTRUCT {
 
     # dimensions
     ?obs
-      <http://ld.stadt-zuerich.ch/statistics/property/NAF> <http://ld.stadt-zuerich.ch/statistics/code/NAF0001>;
-      <http://ld.stadt-zuerich.ch/statistics/property/NAM> ?nam;
+      <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA1901>;
+      <http://ld.stadt-zuerich.ch/statistics/property/EAP> ?eap;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
-      <http://ld.stadt-zuerich.ch/statistics/property/SEX> <http://ld.stadt-zuerich.ch/statistics/code/SEX0002>;
-      <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
+      <http://ld.stadt-zuerich.ch/statistics/property/TIG> ?tig;
+      <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
+      <http://ld.stadt-zuerich.ch/statistics/property/ZSA> ?zsa .
 
     ?obs ?property ?value .
 
@@ -32,14 +33,17 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
-    ?naf skos:notation ?nafNotation .
-    ?nam skos:notation ?namNotation .
+    ?bta skos:notation ?btaNotation .
+    ?eap skos:notation ?eapNotation .
     ?raum skos:notation ?raumNotation .
-    ?sex skos:notation ?sexNotation .
+    ?tig skos:notation ?tigNotation .
+    ?zsa skos:notation ?zsaNotation .
 
     # filters
-    ${typeof nam !== 'undefined' ? 'FILTER (?namNotation IN (' + (nam.join ? nam.map(v => v.toCanonical()).join() : nam.toCanonical()) + '))' : ''}
+    ${typeof eap !== 'undefined' ? 'FILTER (?eapNotation IN (' + (eap.join ? eap.map(v => v.toCanonical()).join() : eap.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof tig !== 'undefined' ? 'FILTER (?tigNotation IN (' + (tig.join ? tig.map(v => v.toCanonical()).join() : tig.toCanonical()) + '))' : ''}
+    ${typeof zsa !== 'undefined' ? 'FILTER (?zsaNotation IN (' + (zsa.join ? zsa.map(v => v.toCanonical()).join() : zsa.toCanonical()) + '))' : ''}
 
     # time range filter
     ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}
