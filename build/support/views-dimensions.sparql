@@ -4,10 +4,11 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 PREFIX ssz-dimension: <http://ld.stadt-zuerich.ch/statistics/property/>
 
-SELECT DISTINCT ?view ?label ?dimension ?lock ?dataset WHERE {
+SELECT DISTINCT ?view ?notation ?label ?dimension ?lock ?dataset WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
   ?view a qb:SliceKey ;
+    skos:notation ?notation ;
     rdfs:label ?label ;
     qb:componentProperty ?dimensionLock  ;
     ssz-schema:viewStructure/qb:component/qb:dimension ?dimension .
