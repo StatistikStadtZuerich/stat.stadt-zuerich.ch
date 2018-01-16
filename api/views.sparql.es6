@@ -20,8 +20,8 @@ SELECT DISTINCT ?root ?view ?label WHERE {
   {
 
     ?view a <http://purl.org/linked-data/cube#SliceKey> ;
-      rdfs:label ?label ;
-      ${typeof tag !== 'undefined' ? 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ tag.value + '> .' : ''}
+      ${typeof tag !== 'undefined' ? ( tag.join ? tag.map(t => { return 'ssz-schema:viewStructure/qb:component/qb:dimension <' + t.value + '> ;'}).join('\n') : 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ tag.value + '> ;') : ''}
+      rdfs:label ?label .
 
   }
 }}}}
