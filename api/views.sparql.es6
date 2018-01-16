@@ -5,14 +5,11 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
+PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
-    ?root a schema:ItemList ;
-        schema:itemListElement [
-            a schema:ListItem ;
-            a ssz-schema:TopicEntity ;
-            schema:item ?view 
-        ] .
+    ?root a hydra:Collection .
+    ?root hydra:member ?view .
     ?view rdfs:label ?label .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
@@ -21,10 +18,10 @@ SELECT DISTINCT ?root ?view ?label WHERE {
 {
   BIND(BNODE('neverUseThisUri') AS ?root)
   {
-  
+
     ?view a <http://purl.org/linked-data/cube#SliceKey> ;
       rdfs:label ?label ;
-      ${typeof dimension !== 'undefined' ? 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ dimension.value + '> .' : ''}
-  
+      ${typeof tag !== 'undefined' ? 'ssz-schema:viewStructure/qb:component/qb:dimension <'+ tag.value + '> .' : ''}
+
   }
 }}}}

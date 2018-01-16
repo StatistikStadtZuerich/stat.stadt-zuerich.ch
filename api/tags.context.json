@@ -1,9 +1,11 @@
 {
   "@context": {
-    "@vocab": "http://schema.org/",
-    "DimensionEntity": "http://ld.stadt-zuerich.ch/schema/DimensionEntity",
-    "TopicEntity": "http://ld.stadt-zuerich.ch/schema/TopicEntity",
-    "label": "http://www.w3.org/2000/01/rdf-schema#label"
+    "@vocab": "http://www.w3.org/ns/hydra/core#",
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "Dimension": "http://stat.stadt-zuerich.ch/schema/DimensionEntity",
+    "Location": "http://stat.stadt-zuerich.ch/schema/LocationEntity",
+    "Time": "http://stat.stadt-zuerich.ch/schema/TimeEntity",
+    "Topic": "http://stat.stadt-zuerich.ch/schema/TopicEntity"
   },
-  "@type": "ItemList"
+  "@type": "Collection"
 }

@@ -143,11 +143,11 @@
       ]
     },
     {
-      "@id": "http://stat.stadt-zuerich.ch/api/schema/Dimension",
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/Tag",
       "@type": "Class",
       "supportedProperty": [
         {
-          "property": "http://purl.org/linked-data/cube#dimension"
+          "property": "http://www.w3.org/ns/hydra/core#member"
         }
       ]
     },
@@ -167,13 +167,13 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/Views#search",
       "@type": "IriTemplate",
-      "template": "/api/views/{?dimension,other}",
+      "template": "/api/views/{?tag,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
-          "variable": "dimension",
-          "property": "http://purl.org/linked-data/cube#dimension"
+          "variable": "tag",
+          "property": "http://www.w3.org/ns/hydra/core#member"
         }
       ]
     },

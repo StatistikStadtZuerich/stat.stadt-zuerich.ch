@@ -1,8 +1,7 @@
 {
   "@context": {
-    "@vocab": "http://schema.org/",
-    "TopicEntity": "http://ld.stadt-zuerich.ch/schema/TopicEntity",
+    "@vocab": "http://www.w3.org/ns/hydra/core#",
     "label": "http://www.w3.org/2000/01/rdf-schema#label"
   },
-  "@type": "ItemList"
+  "@type": "Collection"
 }
