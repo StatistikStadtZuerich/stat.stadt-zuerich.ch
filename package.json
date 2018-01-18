@@ -15,6 +15,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "trifid --config config.json",
-    "start-local": "trifid --config config.local.json"
+    "start-local": "trifid --config config.local.json",
+    "build": "node build.js"
   }
 }
