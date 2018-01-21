@@ -19,7 +19,6 @@ CONSTRUCT {
 
     # dimensions
     ?obs
-      <http://ld.stadt-zuerich.ch/statistics/property/NAF> <http://ld.stadt-zuerich.ch/statistics/code/NAF0001>;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
       <http://ld.stadt-zuerich.ch/statistics/property/SEX> <http://ld.stadt-zuerich.ch/statistics/code/SEX0002>;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
@@ -31,7 +30,6 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
-    ?naf skos:notation ?nafNotation .
     ?raum skos:notation ?raumNotation .
     ?sex skos:notation ?sexNotation .
 

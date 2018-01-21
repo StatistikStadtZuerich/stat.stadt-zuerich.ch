@@ -19,9 +19,9 @@ CONSTRUCT {
 
     # dimensions
     ?obs
-      <http://ld.stadt-zuerich.ch/statistics/property/NAF> <http://ld.stadt-zuerich.ch/statistics/code/NAF0001>;
+      <http://ld.stadt-zuerich.ch/statistics/property/GBR> <http://ld.stadt-zuerich.ch/statistics/code/GBR0001>;
+      <http://ld.stadt-zuerich.ch/statistics/property/PSA> <http://ld.stadt-zuerich.ch/statistics/code/PSA4101>;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
-      <http://ld.stadt-zuerich.ch/statistics/property/SEX> <http://ld.stadt-zuerich.ch/statistics/code/SEX0002>;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
     ?obs ?property ?value .
@@ -31,9 +31,9 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
-    ?naf skos:notation ?nafNotation .
+    ?gbr skos:notation ?gbrNotation .
+    ?psa skos:notation ?psaNotation .
     ?raum skos:notation ?raumNotation .
-    ?sex skos:notation ?sexNotation .
 
     # filters
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
