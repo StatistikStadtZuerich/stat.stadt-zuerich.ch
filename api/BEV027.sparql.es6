@@ -19,7 +19,9 @@ CONSTRUCT {
 
     # dimensions
     ?obs
+      <http://ld.stadt-zuerich.ch/statistics/property/ELK> ?elk;
       <http://ld.stadt-zuerich.ch/statistics/property/GBR> <http://ld.stadt-zuerich.ch/statistics/code/GBR0001>;
+      <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
       <http://ld.stadt-zuerich.ch/statistics/property/PSA> <http://ld.stadt-zuerich.ch/statistics/code/PSA4101>;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
@@ -31,11 +33,15 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
+    ?elk skos:notation ?elkNotation .
     ?gbr skos:notation ?gbrNotation .
+    ?hel skos:notation ?helNotation .
     ?psa skos:notation ?psaNotation .
     ?raum skos:notation ?raumNotation .
 
     # filters
+    ${typeof elk !== 'undefined' ? 'FILTER (?elkNotation IN (' + (elk.join ? elk.map(v => v.toCanonical()).join() : elk.toCanonical()) + '))' : ''}
+    ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
     # time range filter

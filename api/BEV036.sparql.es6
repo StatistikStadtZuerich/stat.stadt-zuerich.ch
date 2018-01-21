@@ -20,7 +20,9 @@ CONSTRUCT {
     # dimensions
     ?obs
       <http://ld.stadt-zuerich.ch/statistics/property/GGH> <http://ld.stadt-zuerich.ch/statistics/code/GGH2600>;
+      <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+      <http://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
     ?obs ?property ?value .
@@ -31,10 +33,14 @@ CONSTRUCT {
 
     # notations for filters
     ?ggh skos:notation ?gghNotation .
+    ?hel skos:notation ?helNotation .
     ?raum skos:notation ?raumNotation .
+    ?sex skos:notation ?sexNotation .
 
     # filters
+    ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof sex !== 'undefined' ? 'FILTER (?sexNotation IN (' + (sex.join ? sex.map(v => v.toCanonical()).join() : sex.toCanonical()) + '))' : ''}
 
     # time range filter
     ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}

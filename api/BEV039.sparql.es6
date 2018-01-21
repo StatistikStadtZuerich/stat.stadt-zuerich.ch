@@ -19,8 +19,10 @@ CONSTRUCT {
 
     # dimensions
     ?obs
+      <http://ld.stadt-zuerich.ch/statistics/property/ALT> ?alt;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
       <http://ld.stadt-zuerich.ch/statistics/property/SEX> <http://ld.stadt-zuerich.ch/statistics/code/SEX0001>;
+      <http://ld.stadt-zuerich.ch/statistics/property/TOU> ?tou;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
     ?obs ?property ?value .
@@ -30,11 +32,15 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
+    ?alt skos:notation ?altNotation .
     ?raum skos:notation ?raumNotation .
     ?sex skos:notation ?sexNotation .
+    ?tou skos:notation ?touNotation .
 
     # filters
+    ${typeof alt !== 'undefined' ? 'FILTER (?altNotation IN (' + (alt.join ? alt.map(v => v.toCanonical()).join() : alt.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof tou !== 'undefined' ? 'FILTER (?touNotation IN (' + (tou.join ? tou.map(v => v.toCanonical()).join() : tou.toCanonical()) + '))' : ''}
 
     # time range filter
     ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}

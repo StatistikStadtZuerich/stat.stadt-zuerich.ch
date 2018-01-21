@@ -19,6 +19,7 @@ CONSTRUCT {
 
     # dimensions
     ?obs
+      <http://ld.stadt-zuerich.ch/statistics/property/EBA> ?eba;
       <http://ld.stadt-zuerich.ch/statistics/property/HEA> <http://ld.stadt-zuerich.ch/statistics/code/HEA2000>;
       <http://ld.stadt-zuerich.ch/statistics/property/HEL> <http://ld.stadt-zuerich.ch/statistics/code/HEL1000>;
       <http://ld.stadt-zuerich.ch/statistics/property/HEO> <http://ld.stadt-zuerich.ch/statistics/code/HEO0261>;
@@ -32,12 +33,14 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
+    ?eba skos:notation ?ebaNotation .
     ?hea skos:notation ?heaNotation .
     ?hel skos:notation ?helNotation .
     ?heo skos:notation ?heoNotation .
     ?raum skos:notation ?raumNotation .
 
     # filters
+    ${typeof eba !== 'undefined' ? 'FILTER (?ebaNotation IN (' + (eba.join ? eba.map(v => v.toCanonical()).join() : eba.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
     # time range filter

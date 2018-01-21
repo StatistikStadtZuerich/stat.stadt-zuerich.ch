@@ -21,6 +21,7 @@ CONSTRUCT {
     ?obs
       <http://ld.stadt-zuerich.ch/statistics/property/ALT> <http://ld.stadt-zuerich.ch/statistics/code/ALT9015>;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+      <http://ld.stadt-zuerich.ch/statistics/property/SPR> ?spr;
       <http://ld.stadt-zuerich.ch/statistics/property/WSI> <http://ld.stadt-zuerich.ch/statistics/code/WSI0001>;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
@@ -33,10 +34,12 @@ CONSTRUCT {
     # notations for filters
     ?alt skos:notation ?altNotation .
     ?raum skos:notation ?raumNotation .
+    ?spr skos:notation ?sprNotation .
     ?wsi skos:notation ?wsiNotation .
 
     # filters
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof spr !== 'undefined' ? 'FILTER (?sprNotation IN (' + (spr.join ? spr.map(v => v.toCanonical()).join() : spr.toCanonical()) + '))' : ''}
 
     # time range filter
     ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}

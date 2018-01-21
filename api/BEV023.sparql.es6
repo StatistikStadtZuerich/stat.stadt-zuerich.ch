@@ -19,6 +19,8 @@ CONSTRUCT {
 
     # dimensions
     ?obs
+      <http://ld.stadt-zuerich.ch/statistics/property/ALF> ?alf;
+      <http://ld.stadt-zuerich.ch/statistics/property/ALM> ?alm;
       <http://ld.stadt-zuerich.ch/statistics/property/GGH> <http://ld.stadt-zuerich.ch/statistics/code/GGH2100>;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
@@ -30,10 +32,14 @@ CONSTRUCT {
     OPTIONAL { ?value skos:notation ?notation . }
 
     # notations for filters
+    ?alf skos:notation ?alfNotation .
+    ?alm skos:notation ?almNotation .
     ?ggh skos:notation ?gghNotation .
     ?raum skos:notation ?raumNotation .
 
     # filters
+    ${typeof alf !== 'undefined' ? 'FILTER (?alfNotation IN (' + (alf.join ? alf.map(v => v.toCanonical()).join() : alf.toCanonical()) + '))' : ''}
+    ${typeof alm !== 'undefined' ? 'FILTER (?almNotation IN (' + (alm.join ? alm.map(v => v.toCanonical()).join() : alm.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
     # time range filter

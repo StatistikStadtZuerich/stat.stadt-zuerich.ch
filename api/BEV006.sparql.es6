@@ -20,6 +20,8 @@ CONSTRUCT {
     # dimensions
     ?obs
       <http://ld.stadt-zuerich.ch/statistics/property/ALT> <http://ld.stadt-zuerich.ch/statistics/code/ALT9015>;
+      <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
+      <http://ld.stadt-zuerich.ch/statistics/property/KON> ?kon;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
       <http://ld.stadt-zuerich.ch/statistics/property/WSI> <http://ld.stadt-zuerich.ch/statistics/code/WSI0001>;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
@@ -32,10 +34,14 @@ CONSTRUCT {
 
     # notations for filters
     ?alt skos:notation ?altNotation .
+    ?hel skos:notation ?helNotation .
+    ?kon skos:notation ?konNotation .
     ?raum skos:notation ?raumNotation .
     ?wsi skos:notation ?wsiNotation .
 
     # filters
+    ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
+    ${typeof kon !== 'undefined' ? 'FILTER (?konNotation IN (' + (kon.join ? kon.map(v => v.toCanonical()).join() : kon.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
     # time range filter

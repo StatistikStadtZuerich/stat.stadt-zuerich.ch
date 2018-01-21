@@ -20,7 +20,9 @@ CONSTRUCT {
     # dimensions
     ?obs
       <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA1901>;
+      <http://ld.stadt-zuerich.ch/statistics/property/EAP> ?eap;
       <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+      <http://ld.stadt-zuerich.ch/statistics/property/TIG> ?tig;
       <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
       <http://ld.stadt-zuerich.ch/statistics/property/ZSA> <http://ld.stadt-zuerich.ch/statistics/code/ZSA0001> .
 
@@ -32,11 +34,15 @@ CONSTRUCT {
 
     # notations for filters
     ?bta skos:notation ?btaNotation .
+    ?eap skos:notation ?eapNotation .
     ?raum skos:notation ?raumNotation .
+    ?tig skos:notation ?tigNotation .
     ?zsa skos:notation ?zsaNotation .
 
     # filters
+    ${typeof eap !== 'undefined' ? 'FILTER (?eapNotation IN (' + (eap.join ? eap.map(v => v.toCanonical()).join() : eap.toCanonical()) + '))' : ''}
     ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
+    ${typeof tig !== 'undefined' ? 'FILTER (?tigNotation IN (' + (tig.join ? tig.map(v => v.toCanonical()).join() : tig.toCanonical()) + '))' : ''}
 
     # time range filter
     ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}

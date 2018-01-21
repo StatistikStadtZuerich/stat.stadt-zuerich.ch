@@ -1132,7 +1132,13 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV004/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV004/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV004/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV004/property/ZEIT/FROM"
@@ -1145,13 +1151,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV004#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV004/{?raum,from,to,other}",
+      "template": "/api/BEV004/{?hel,raum,sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV004/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV004/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV004/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1174,7 +1190,13 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV005/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV005/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV005/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV005/property/ZEIT/FROM"
@@ -1187,13 +1209,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV005#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV005/{?raum,from,to,other}",
+      "template": "/api/BEV005/{?hel,raum,sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV005/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV005/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV005/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1216,6 +1248,12 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV006/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV006/property/KON"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV006/property/RAUM"
         },
         {
@@ -1229,9 +1267,19 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV006#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV006/{?raum,from,to,other}",
+      "template": "/api/BEV006/{?hel,kon,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV006/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "kon",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV006/property/KON"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1258,7 +1306,13 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV008/property/HEO"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV008/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV008/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV008/property/ZEIT/FROM"
@@ -1271,13 +1325,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV008#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV008/{?raum,from,to,other}",
+      "template": "/api/BEV008/{?heo,raum,sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "heo",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV008/property/HEO"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV008/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV008/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1300,26 +1364,45 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/ZEIT/FROM"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/ZIV"
         }
       ]
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV010#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV010/{?raum,from,to,other}",
+      "template": "/api/BEV010/{?hel,raum,sex,from,to,ziv,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1330,6 +1413,11 @@
           "@type": "IriTemplateMapping",
           "variable": "to",
           "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ziv",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV010/property/ZIV"
         }
       ]
     },
@@ -1345,6 +1433,9 @@
           "property": "http://stat.stadt-zuerich.ch/api/BEV013/property/RAUM"
         },
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV013/property/SPR"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV013/property/ZEIT/FROM"
         },
         {
@@ -1355,13 +1446,18 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV013#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV013/{?raum,from,to,other}",
+      "template": "/api/BEV013/{?raum,spr,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV013/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "spr",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV013/property/SPR"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1384,7 +1480,16 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/SPK"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/ZEIT/FROM"
@@ -1397,13 +1502,28 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV014#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV014/{?raum,from,to,other}",
+      "template": "/api/BEV014/{?hel,raum,sex,spk,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "spk",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV014/property/SPK"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1426,26 +1546,45 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/ZEIT/FROM"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/ZIV"
         }
       ]
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV022#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV022/{?raum,from,to,other}",
+      "template": "/api/BEV022/{?hel,raum,sex,from,to,ziv,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1456,6 +1595,11 @@
           "@type": "IriTemplateMapping",
           "variable": "to",
           "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ziv",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV022/property/ZIV"
         }
       ]
     },
@@ -1467,6 +1611,12 @@
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV023#input",
       "@type": "Class",
       "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV023/property/ALF"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV023/property/ALM"
+        },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV023/property/RAUM"
         },
@@ -1481,9 +1631,19 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV023#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV023/{?raum,from,to,other}",
+      "template": "/api/BEV023/{?alf,alm,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alf",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV023/property/ALF"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alm",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV023/property/ALM"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1510,7 +1670,16 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/EHD"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/GGH"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/ZEIT/FROM"
@@ -1523,13 +1692,28 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV024#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV024/{?raum,from,to,other}",
+      "template": "/api/BEV024/{?ehd,ggh,raum,sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "ehd",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/EHD"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ggh",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/GGH"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV024/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1552,6 +1736,12 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV025/property/ALF"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV025/property/ALM"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV025/property/RAUM"
         },
         {
@@ -1565,9 +1755,19 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV025#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV025/{?raum,from,to,other}",
+      "template": "/api/BEV025/{?alf,alm,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alf",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV025/property/ALF"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alm",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV025/property/ALM"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1594,6 +1794,12 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV027/property/ELK"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV027/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV027/property/RAUM"
         },
         {
@@ -1607,9 +1813,19 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV027#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV027/{?raum,from,to,other}",
+      "template": "/api/BEV027/{?elk,hel,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "elk",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV027/property/ELK"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV027/property/HEL"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1636,6 +1852,12 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV029/property/GBR"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV029/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV029/property/RAUM"
         },
         {
@@ -1649,9 +1871,19 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV029#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV029/{?raum,from,to,other}",
+      "template": "/api/BEV029/{?gbr,hel,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "gbr",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV029/property/GBR"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV029/property/HEL"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1678,6 +1910,12 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV030/property/EHD"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV030/property/GBR"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV030/property/RAUM"
         },
         {
@@ -1691,9 +1929,19 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV030#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV030/{?raum,from,to,other}",
+      "template": "/api/BEV030/{?ehd,gbr,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ehd",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV030/property/EHD"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "gbr",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV030/property/GBR"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1720,6 +1968,9 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV031/property/NAM"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV031/property/RAUM"
         },
         {
@@ -1733,9 +1984,14 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV031#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV031/{?raum,from,to,other}",
+      "template": "/api/BEV031/{?nam,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "nam",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV031/property/NAM"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1762,6 +2018,9 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV032/property/NAM"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV032/property/RAUM"
         },
         {
@@ -1775,9 +2034,14 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV032#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV032/{?raum,from,to,other}",
+      "template": "/api/BEV032/{?nam,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "nam",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV032/property/NAM"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1804,6 +2068,12 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV034/property/ADM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV034/property/ADV"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV034/property/RAUM"
         },
         {
@@ -1817,9 +2087,19 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV034#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV034/{?raum,from,to,other}",
+      "template": "/api/BEV034/{?adm,adv,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "adm",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV034/property/ADM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "adv",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV034/property/ADV"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -1846,7 +2126,13 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV036/property/HEL"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV036/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV036/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV036/property/ZEIT/FROM"
@@ -1859,13 +2145,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV036#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV036/{?raum,from,to,other}",
+      "template": "/api/BEV036/{?hel,raum,sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV036/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV036/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV036/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1888,7 +2184,13 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV038/property/ALT"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV038/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV038/property/TOU"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV038/property/ZEIT/FROM"
@@ -1901,13 +2203,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV038#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV038/{?raum,from,to,other}",
+      "template": "/api/BEV038/{?alt,raum,tou,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV038/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV038/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "tou",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV038/property/TOU"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1930,7 +2242,13 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV039/property/ALT"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV039/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV039/property/TOU"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV039/property/ZEIT/FROM"
@@ -1943,13 +2261,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV039#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV039/{?raum,from,to,other}",
+      "template": "/api/BEV039/{?alt,raum,tou,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV039/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV039/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "tou",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV039/property/TOU"
         },
         {
           "@type": "IriTemplateMapping",
@@ -1972,6 +2300,9 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV052/property/EBA"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV052/property/RAUM"
         },
         {
@@ -1985,9 +2316,14 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV052#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV052/{?raum,from,to,other}",
+      "template": "/api/BEV052/{?eba,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "eba",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV052/property/EBA"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -2056,7 +2392,16 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/ALT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/HEA"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/SEX"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/ZEIT/FROM"
@@ -2069,13 +2414,28 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV054#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV054/{?raum,from,to,other}",
+      "template": "/api/BEV054/{?alt,hea,raum,sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hea",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/HEA"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV054/property/SEX"
         },
         {
           "@type": "IriTemplateMapping",
@@ -2098,6 +2458,9 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV055/property/HEA"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV055/property/RAUM"
         },
         {
@@ -2111,9 +2474,14 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV055#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV055/{?raum,from,to,other}",
+      "template": "/api/BEV055/{?hea,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hea",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV055/property/HEA"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -2140,6 +2508,9 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV056/property/EBA"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/BEV056/property/RAUM"
         },
         {
@@ -2153,9 +2524,14 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV056#search",
       "@type": "IriTemplate",
-      "template": "/api/BEV056/{?raum,from,to,other}",
+      "template": "/api/BEV056/{?eba,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "eba",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV056/property/EBA"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -2182,7 +2558,13 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL002/property/EAP"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/KUL002/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL002/property/TIG"
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/KUL002/property/ZEIT/FROM"
@@ -2195,13 +2577,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL002#search",
       "@type": "IriTemplate",
-      "template": "/api/KUL002/{?raum,from,to,other}",
+      "template": "/api/KUL002/{?eap,raum,tig,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
+          "variable": "eap",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL002/property/EAP"
+        },
+        {
+          "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/KUL002/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "tig",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL002/property/TIG"
         },
         {
           "@type": "IriTemplateMapping",
@@ -2224,6 +2616,9 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL007/property/BTA"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/KUL007/property/RAUM"
         },
         {
@@ -2231,15 +2626,23 @@
         },
         {
           "property": "http://stat.stadt-zuerich.ch/api/KUL007/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL007/property/ZSA"
         }
       ]
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL007#search",
       "@type": "IriTemplate",
-      "template": "/api/KUL007/{?raum,from,to,other}",
+      "template": "/api/KUL007/{?bta,raum,from,to,zsa,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL007/property/BTA"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -2254,6 +2657,11 @@
           "@type": "IriTemplateMapping",
           "variable": "to",
           "property": "http://stat.stadt-zuerich.ch/api/KUL007/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "zsa",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL007/property/ZSA"
         }
       ]
     },
@@ -2265,6 +2673,9 @@
       "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL008#input",
       "@type": "Class",
       "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL008/property/PRA"
+        },
         {
           "property": "http://stat.stadt-zuerich.ch/api/KUL008/property/RAUM"
         },
@@ -2279,9 +2690,14 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL008#search",
       "@type": "IriTemplate",
-      "template": "/api/KUL008/{?raum,from,to,other}",
+      "template": "/api/KUL008/{?pra,raum,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "pra",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL008/property/PRA"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
@@ -2311,6 +2727,9 @@
           "property": "http://stat.stadt-zuerich.ch/api/KUL014/property/RAUM"
         },
         {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL014/property/VSA"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/api/KUL014/property/ZEIT/FROM"
         },
         {
@@ -2321,13 +2740,18 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL014#search",
       "@type": "IriTemplate",
-      "template": "/api/KUL014/{?raum,from,to,other}",
+      "template": "/api/KUL014/{?raum,vsa,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
           "variable": "raum",
           "property": "http://stat.stadt-zuerich.ch/api/KUL014/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "vsa",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL014/property/VSA"
         },
         {
           "@type": "IriTemplateMapping",
