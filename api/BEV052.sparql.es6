@@ -14,7 +14,7 @@ CONSTRUCT {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
     ?obs a qb:Observation ;
-       # qb:dataSet <,> ;
+       # qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEV052> ;
        ?property ?value.
 
     # dimensions

@@ -64,6 +64,74 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV001",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV001#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV001#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV001#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV001.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV001#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV002",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV002#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV002#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV002#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV002.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV002#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV004",
           "@type": [
             "Class",
@@ -166,6 +234,40 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV007",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV007#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV007#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV007#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV007.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV007#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV008",
           "@type": [
             "Class",
@@ -200,6 +302,40 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV009",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV009#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV009#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV009#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV009.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV009#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV010",
           "@type": [
             "Class",
@@ -229,6 +365,74 @@
                 "@id": "context.json"
               },
               "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV010#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV011",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV011#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV011#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV011#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV011.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV011#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV012",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV012#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV012#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.git@github.com:statistikstadtzuerich/ssz-data.gitorg/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV012#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV012.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV012#input",
               "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
             }
           ]
@@ -297,6 +501,244 @@
                 "@id": "context.json"
               },
               "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV014#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV015",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV015#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV015#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV015#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV015.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV015#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV016",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV016#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV016#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV016#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV016.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV016#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV017",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV017#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV017#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV017#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV017.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV017#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV018",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV018#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV018#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV018#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV018.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV018#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV019",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV019#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV019#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV019#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV019.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV019#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV020",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV020#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV020#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV020#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV020.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV020#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV021",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV021#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV021#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV021#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV021.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV021#input",
               "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
             }
           ]
@@ -472,6 +914,40 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV028",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV028#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV028#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV028#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV028.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV028#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV029",
           "@type": [
             "Class",
@@ -608,6 +1084,40 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV033",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV033#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV033#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV033#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV033.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV033#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV034",
           "@type": [
             "Class",
@@ -642,6 +1152,40 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV035",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV035#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV035#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV035#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV035.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV035#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV036",
           "@type": [
             "Class",
@@ -671,6 +1215,40 @@
                 "@id": "context.json"
               },
               "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV036#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV037",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV037#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV037#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV037#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV037.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV037#input",
               "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
             }
           ]
@@ -739,6 +1317,380 @@
                 "@id": "context.json"
               },
               "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV039#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV040",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV040#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV040#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV040#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV040.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV040#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV041",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV041#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV041#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV041#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV041.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV041#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV042",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV042#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV042#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV042#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV042.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV042#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV043",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV043#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV043#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV043#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV043.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV043#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV044",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV044#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV044#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV044#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV044.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV044#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV045",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV045#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV045#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV045#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV045.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV045#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV046",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV046#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV046#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV046#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV046.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV046#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV047",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV047#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV047#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV047#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV047.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV047#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV048",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV048#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV048#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV048#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV048.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV048#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV049",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV049#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV049#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV049#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV049.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV049#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV051",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV051#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV051#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV051#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "BEV051.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/BEV051#input",
               "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
             }
           ]
@@ -914,6 +1866,40 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL001",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL001#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL001#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL001#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL001.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL001#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL002",
           "@type": [
             "Class",
@@ -943,6 +1929,142 @@
                 "@id": "context.json"
               },
               "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL002#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL003",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL003#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL003#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL003#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL003.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL003#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL004",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL004#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL004#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL004#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL004.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL004#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL005",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL005#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL005#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL005#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL005.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL005#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL006",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL006#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL006#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL006#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL006.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL006#input",
               "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
             }
           ]
@@ -1048,6 +2170,108 @@
               "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
             }
           ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL017",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL017#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL017#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL017#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL017.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL017#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL020",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL020#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL020#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL020#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL020.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL020#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
+        },
+        {
+          "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL025",
+          "@type": [
+            "Class",
+            "Collection"
+          ],
+          "search": {
+            "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL025#search"
+          },
+          "supportedOperation": [
+            {
+              "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL025#get",
+              "@type": [
+                "Operation",
+                "http://hydra-box.org/schema/View"
+              ],
+              "method": "GET",
+              "http://hydra-box.org/schema/variables": {
+                "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL025#search"
+              },
+              "http://hydra-box.org/schema/code": {
+                "@type": "http://hydra-box.org/schema/SparqlQuery",
+                "http://hydra-box.org/schema/source": {
+                  "@id": "KUL025.sparql.es6"
+                }
+              },
+              "http://hydra-box.org/schema/returnFrame": {
+                "@id": "context.json"
+              },
+              "expects": "http://stat.stadt-zuerich.ch/api/schema/KUL025#input",
+              "returns": "http://stat.stadt-zuerich.ch/api/schema/Result"
+            }
+          ]
         }
       ]
     },
@@ -1126,6 +2350,114 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/views/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/Views"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV001#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV001#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV001/{?hel,raum,sex,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV001/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV001/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV001"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV002#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/ALT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV002#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV002/{?alt,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV002/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV002/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV002"
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV004#input",
@@ -1302,6 +2634,64 @@
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV006"
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV007#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/AUA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV007#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV007/{?aua,hel,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "aua",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/AUA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV007/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV007/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV007"
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV008#input",
       "@type": "Class",
       "supportedProperty": [
@@ -1358,6 +2748,64 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/BEV008/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV008"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV009#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV009#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV009/{?hel,raum,sex,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV009/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV009/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV009"
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV010#input",
@@ -1424,6 +2872,138 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/BEV010/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV010"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV011#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/ALT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV011#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV011/{?alt,hel,raum,sex,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV011/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV011/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV011"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV012#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/AUA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV012#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV012/{?aua,hel,raum,sex,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "aua",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/AUA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV012/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV012/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV012"
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV013#input",
@@ -1540,6 +3120,380 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/BEV014/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV014"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV015#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/HHG"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/WSI"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV015#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV015/{?hhg,raum,wsi,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hhg",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/HHG"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "wsi",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/WSI"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV015/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV015/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV015"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV016#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/ZIM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV016#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV016/{?raum,from,to,zim,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "zim",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV016/property/ZIM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV016/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV016"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV017#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/ZIM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV017#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV017/{?raum,from,to,zim,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "zim",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV017/property/ZIM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV017/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV017"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV018#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/ZIM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV018#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV018/{?raum,from,to,zim,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "zim",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV018/property/ZIM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV018/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV018"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV019#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/WSE"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV019#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV019/{?raum,wse,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "wse",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/WSE"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV019/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV019/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV019"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV020#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/HEF"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/HEM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV020#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV020/{?hef,hem,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hef",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/HEF"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hem",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/HEM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV020/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV020/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV020"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV021#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZVF"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZVM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV021#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV021/{?raum,from,to,zvf,zvm,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "zvf",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZVF"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "zvm",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV021/property/ZVM"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV021/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV021"
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV022#input",
@@ -1848,6 +3802,64 @@
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV027"
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV028#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ADM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ELK"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV028#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV028/{?adm,elk,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "adm",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ADM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "elk",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ELK"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV028/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV028/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV028"
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV029#input",
       "@type": "Class",
       "supportedProperty": [
@@ -2064,6 +4076,56 @@
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV032"
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV033#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV033#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV033/{?hel,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV033/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV033/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV033"
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV034#input",
       "@type": "Class",
       "supportedProperty": [
@@ -2122,6 +4184,64 @@
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV034"
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV035#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/ALT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV035#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV035/{?alt,raum,sex,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV035/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV035/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV035"
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV036#input",
       "@type": "Class",
       "supportedProperty": [
@@ -2178,6 +4298,64 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/BEV036/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV036"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV037#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/ALT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/TOU"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV037#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV037/{?alt,raum,tou,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "tou",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/TOU"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV037/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV037/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV037"
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV038#input",
@@ -2294,6 +4472,588 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/BEV039/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV039"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV040#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/TOU"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV040#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV040/{?raum,tou,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "tou",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/TOU"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV040/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV040/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV040"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV041#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV041#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV041/{?hel,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV041/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV041/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV041"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV042#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/HEO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV042#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV042/{?hel,heo,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "heo",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/HEO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV042/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV042/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV042"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV043#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/ALT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV043#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV043/{?alt,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV043/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV043/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV043"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV044#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/ZEIT/TO"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/ZIV"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV044#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV044/{?raum,sex,from,to,ziv,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/ZEIT/TO"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ziv",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV044/property/ZIV"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV044/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV044"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV045#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/KON"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV045#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV045/{?kon,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "kon",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/KON"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV045/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV045/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV045"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV046#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV046#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV046/{?hel,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV046/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV046/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV046"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV047#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/HER"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/ORT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV047#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV047/{?her,ort,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "her",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/HER"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ort",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/ORT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV047/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV047/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV047"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV048#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/ORT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV048#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV048/{?hel,ort,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ort",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/ORT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV048/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV048/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV048"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV049#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/HEL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV049#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV049/{?hel,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hel",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/HEL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV049/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV049/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV049"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV051#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/ORT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV051#search",
+      "@type": "IriTemplate",
+      "template": "/api/BEV051/{?ort,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "ort",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/ORT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/BEV051/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/BEV051/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV051"
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/BEV052#input",
@@ -2554,6 +5314,72 @@
       "@type": "http://stat.stadt-zuerich.ch/api/schema/BEV056"
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL001#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/BTA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/PRA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/VSA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL001#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL001/{?bta,pra,raum,vsa,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/BTA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "pra",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/PRA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "vsa",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/VSA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL001/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL001/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL001"
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL002#input",
       "@type": "Class",
       "supportedProperty": [
@@ -2610,6 +5436,214 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/KUL002/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL002"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL003#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/BTA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL003#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL003/{?bta,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/BTA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL003/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL003/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL003"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL004#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/BTA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/PRA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL004#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL004/{?bta,pra,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/BTA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "pra",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/PRA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL004/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL004/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL004"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL005#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/BTA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL005#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL005/{?bta,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/BTA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL005/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL005/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL005"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL006#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/BTA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL006#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL006/{?bta,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/BTA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL006/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL006/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL006"
     },
     {
       "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL007#input",
@@ -2768,6 +5802,156 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/api/KUL014/",
       "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL014"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL017#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/FIL"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL017#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL017/{?fil,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "fil",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/FIL"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL017/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL017/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL017"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL020#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/BTA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL020#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL020/{?bta,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/BTA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL020/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL020/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL020"
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL025#input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/BTA"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/schema/KUL025#search",
+      "@type": "IriTemplate",
+      "template": "/api/KUL025/{?bta,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/BTA"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/api/KUL025/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/api/KUL025/",
+      "@type": "http://stat.stadt-zuerich.ch/api/schema/KUL025"
     }
   ]
 }
