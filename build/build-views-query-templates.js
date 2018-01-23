@@ -2,8 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const u = require('./utils')
 
-function buildViewQueryTemplate (view, template) {
-  const filename = path.join('api', view.notation + '.sparql.es6')
+function buildViewQueryTemplate (view, template, filename) {
   const dimensionIris = Object.keys(view.dimensions).sort()
 
   const patterns = dimensionIris.map((dimensionIri) => {
@@ -11,19 +10,19 @@ function buildViewQueryTemplate (view, template) {
     const value = view.dimensions[dimensionIri]
 
     return '<' + dimensionIri + '> ' + (value ? '<' + value + '>' : '?' + variable)
-  }).join(';\n      ')
+  }).join(';\n        ')
 
   const notationPatterns = dimensionIris.filter(u.isNotZeit).map((dimensionIri) => {
     const variable = u.variableName(dimensionIri)
 
     return '?' + variable + ' skos:notation ' + '?' + variable + 'Notation .'
-  }).join('\n    ')
+  }).join('\n      ')
 
   const filters = dimensionIris.filter(d => !view.dimensions[d]).filter(u.isNotZeit).map((dimensionIri) => {
     const variable = u.variableName(dimensionIri)
 
     return '${typeof ' + variable + ' !== \'undefined\' ? \'FILTER (?' + variable + 'Notation IN (\' + (' + variable + '.join ? ' + variable + '.map(v => v.toCanonical()).join() : ' + variable + '.toCanonical()) + \'))\' : \'\'}'
-  }).join('\n    ')
+  }).join('\n      ')
 
   const query = template
     .split('%%DATASET%%').join(view.dataset)
@@ -37,11 +36,15 @@ function buildViewQueryTemplate (view, template) {
 }
 
 function buildViewQueryTemplates (views) {
-  const template = fs.readFileSync(path.join(__dirname, 'support/hydra-view-operation.sparql.es6')).toString()
+  const templateViewSlice = fs.readFileSync(path.join(__dirname, 'support/hydra-view-slice.sparql.es6')).toString()
 
-  return Object.keys(views).sort().map((viewIri) => {
-    return buildViewQueryTemplate(views[viewIri], template)
+  Object.keys(views).sort().forEach((viewIri) => {
+    const view = views[viewIri]
+
+    buildViewQueryTemplate(view, templateViewSlice, path.join('api', view.notation + '-slice.sparql.es6'))
   })
+
+  return Promise.resolve()
 }
 
 module.exports = buildViewQueryTemplates

@@ -5,32 +5,37 @@ const Promise = require('bluebird')
 
 function attachSupportedClass (view, api) {
   const supportedClass = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation,
-    '@type': ['Class', 'Collection'],
-    search: {
-      '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search'
-    },
-    supportedOperation: [{
-      '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#get',
-      '@type': [
-        'Operation',
-        'http://hydra-box.org/schema/View'
-      ],
-      method: 'GET',
-      'http://hydra-box.org/schema/variables': {
-        '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search'
-      },
-      'http://hydra-box.org/schema/code': {
-        '@type': 'http://hydra-box.org/schema/SparqlQuery',
-        'http://hydra-box.org/schema/source': {
-          '@id': view.notation + '.sparql.es6'
-        }
-      },
-      'http://hydra-box.org/schema/returnFrame': {
-        '@id': 'context.json'
-      },
-      'expects': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#input',
-      'returns': 'http://stat.stadt-zuerich.ch/api/schema/Result'
+    '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation,
+    '@type': 'Class',
+    supportedProperty: [{
+      property: {
+        '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#slice',
+        search: {
+          '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#search'
+        },
+        supportedOperation: [{
+          '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#slice-get',
+          '@type': [
+            'Operation',
+            'http://hydra-box.org/schema/View'
+          ],
+          method: 'GET',
+          'http://hydra-box.org/schema/variables': {
+            '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#search'
+          },
+          'http://hydra-box.org/schema/code': {
+            '@type': 'http://hydra-box.org/schema/SparqlQuery',
+            'http://hydra-box.org/schema/source': {
+              '@id': view.notation + '-slice.sparql.es6'
+            }
+          },
+          'http://hydra-box.org/schema/returnFrame': {
+            '@id': 'context.json'
+          },
+          'expects': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#slice-input',
+          'returns': 'http://purl.org/linked-data/cube#Slice'
+        }]
+      }
     }]
   }
 
@@ -39,7 +44,7 @@ function attachSupportedClass (view, api) {
 
 function attachInputClass (view, api, variables) {
   const inputClass = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#input',
+    '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#slice-input',
     '@type': 'Class',
     supportedProperty: Object.keys(variables).map((iri) => {
       return {
@@ -53,9 +58,9 @@ function attachInputClass (view, api, variables) {
 
 function attachIriTemplate (view, api, variables) {
   const iriTemplate = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation + '#search',
+    '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#search',
     '@type': 'IriTemplate',
-    template: '/api/' + view.notation + '/{?' + Object.values(variables) + ',other}',
+    template: '/api/dataset/' + view.notation + '/slice{?' + Object.values(variables) + ',other}',
     variableRepresentation: 'BasicRepresentation',
     mapping: Object.keys(variables).map((iri) => {
       const variable = variables[iri]
@@ -73,8 +78,15 @@ function attachIriTemplate (view, api, variables) {
 
 function attachReference (view, api) {
   const reference = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/' + view.notation + '/',
-    '@type': 'http://stat.stadt-zuerich.ch/api/schema/' + view.notation
+    '@id': 'http://stat.stadt-zuerich.ch/api/dataset/' + view.notation,
+    '@type': [
+      'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation,
+      'http://purl.org/linked-data/cube#DataSet'
+    ]
+  }
+
+  reference['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#slice'] = {
+    '@id': 'http://stat.stadt-zuerich.ch/api/dataset/' + view.notation + '/slice'
   }
 
   api['@graph'].push(reference)
@@ -84,12 +96,12 @@ function buildViewHydraApiDoc (view, api) {
   // select all dimensions which don't have a fixed value
   const variables = Object.keys(view.dimensions).sort().filter(d => !view.dimensions[d]).reduce((variables, dimension) => {
     if (u.isZeit(dimension)) {
-      variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/FROM'] = 'from'
-      variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/ZEIT/TO'] = 'to'
+      variables['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '/property/ZEIT/FROM'] = 'from'
+      variables['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '/property/ZEIT/TO'] = 'to'
     } else {
       const variable = u.variableName(dimension)
 
-      variables['http://stat.stadt-zuerich.ch/api/' + view.notation + '/property/' + variable.toUpperCase()] = variable
+      variables['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '/property/' + variable.toUpperCase()] = variable
     }
 
     return variables
