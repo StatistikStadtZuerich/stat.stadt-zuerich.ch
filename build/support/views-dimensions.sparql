@@ -5,18 +5,21 @@ PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 PREFIX ssz-dimension: <http://ld.stadt-zuerich.ch/statistics/property/>
 
 SELECT DISTINCT ?view ?notation ?label ?dimension ?lock ?dataset WHERE {
-  GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
   ?view a qb:SliceKey ;
     skos:notation ?notation ;
     rdfs:label ?label ;
     qb:componentProperty ?dimensionLock  ;
+    ssz-schema:viewStructure ?dsdUri ;
     ssz-schema:viewStructure/qb:component/qb:dimension ?dimension .
 
+  ?dataset a qb:DataSet ;
+    qb:structure ?dsdUri .
+  
   ?sliceUri a qb:Slice ;
     qb:sliceStructure ?view .
 
   OPTIONAL {
     ?sliceUri ?dimension ?lock .
   }
-}}
+}
