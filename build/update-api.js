@@ -1,7 +1,7 @@
-const buildViewsHydraApiDoc = require('./build/build-views-hydra-api-doc')
-const buildViewsQueryTemplates = require('./build/build-views-query-templates')
+const buildViewsHydraApiDoc = require('./build-views-hydra-api-doc')
+const buildViewsQueryTemplates = require('./build-views-query-templates')
 const fs = require('fs')
-const fetchViews = require('./build/fetch-views')
+const fetchViews = require('./fetch-views')
 const shell = require('shelljs')
 const Promise = require('bluebird')
 
