@@ -1,0 +1,33 @@
+{
+  "name": "stip-frontend",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc --watch & node server.js",
+    "build": "tsc && next build lib",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "prettier --list-different \"src/**/*.ts*\"",
+    "prettier": "prettier --write \"src/**/*.ts*\""
+  },
+  "dependencies": {
+    "downshift": "^1.25.0",
+    "emotion": "^9.0.0-1",
+    "emotion-server": "^9.0.0-1",
+    "fp-ts": "^0.6.8",
+    "io-ts": "^0.9.5",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^4.2.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-emotion": "^9.0.0-1"
+  },
+  "devDependencies": {
+    "@types/next": "^2.4.7",
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
+    "babel-plugin-emotion": "^9.0.0-1",
+    "express": "^4.16.2",
+    "prettier": "^1.10.2",
+    "typescript": "^2.6.2"
+  }
+}
