@@ -22,7 +22,7 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         %%PATTERNS%% .
 
       ?observation ?property ?value .
