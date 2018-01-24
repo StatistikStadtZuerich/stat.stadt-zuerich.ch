@@ -22,17 +22,15 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         %%PATTERNS%% .
 
-      ?observation ?property ?value .
+      # notations for filters
+      %%NOTATION_PATTERNS%%
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }
       OPTIONAL { ?value skos:notation ?notation . }
-
-      # notations for filters
-      %%NOTATION_PATTERNS%%
 
       # filters
       %%FILTERS%%

@@ -22,7 +22,7 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/ALT> <http://ld.stadt-zuerich.ch/statistics/code/ALT9015>;
         <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
@@ -31,12 +31,6 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/WSI> <http://ld.stadt-zuerich.ch/statistics/code/WSI0001>;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
-      ?observation ?property ?value .
-
-      # Get Labels and Notations
-      OPTIONAL { ?value rdfs:label ?label . }
-      OPTIONAL { ?value skos:notation ?notation . }
-
       # notations for filters
       ?alt skos:notation ?altNotation .
       ?hel skos:notation ?helNotation .
@@ -44,6 +38,10 @@ CONSTRUCT {
       ?sex skos:notation ?sexNotation .
       ?spk skos:notation ?spkNotation .
       ?wsi skos:notation ?wsiNotation .
+
+      # Get Labels and Notations
+      OPTIONAL { ?value rdfs:label ?label . }
+      OPTIONAL { ?value skos:notation ?notation . }
 
       # filters
       ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}

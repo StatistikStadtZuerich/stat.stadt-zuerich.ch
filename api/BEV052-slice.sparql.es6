@@ -22,7 +22,7 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/EBA> ?eba;
         <http://ld.stadt-zuerich.ch/statistics/property/HEA> <http://ld.stadt-zuerich.ch/statistics/code/HEA2000>;
         <http://ld.stadt-zuerich.ch/statistics/property/HEL> <http://ld.stadt-zuerich.ch/statistics/code/HEL1000>;
@@ -30,18 +30,16 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
-      ?observation ?property ?value .
-
-      # Get Labels and Notations
-      OPTIONAL { ?value rdfs:label ?label . }
-      OPTIONAL { ?value skos:notation ?notation . }
-
       # notations for filters
       ?eba skos:notation ?ebaNotation .
       ?hea skos:notation ?heaNotation .
       ?hel skos:notation ?helNotation .
       ?heo skos:notation ?heoNotation .
       ?raum skos:notation ?raumNotation .
+
+      # Get Labels and Notations
+      OPTIONAL { ?value rdfs:label ?label . }
+      OPTIONAL { ?value skos:notation ?notation . }
 
       # filters
       ${typeof eba !== 'undefined' ? 'FILTER (?ebaNotation IN (' + (eba.join ? eba.map(v => v.toCanonical()).join() : eba.toCanonical()) + '))' : ''}
