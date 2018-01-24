@@ -20,7 +20,7 @@ class Renderer {
     this.handle(req, res);
   }
 
-  error () {
+  error (req, res) {
     this.render(req, res);
   }
 }
