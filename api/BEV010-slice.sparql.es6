@@ -34,7 +34,6 @@ CONSTRUCT {
       ?hel skos:notation ?helNotation .
       ?raum skos:notation ?raumNotation .
       ?sex skos:notation ?sexNotation .
-      ?wsi skos:notation ?wsiNotation .
       ?ziv skos:notation ?zivNotation .
 
       # Get Labels and Notations

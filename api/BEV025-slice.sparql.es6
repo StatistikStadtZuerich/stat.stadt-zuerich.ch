@@ -32,7 +32,6 @@ CONSTRUCT {
       # notations for filters
       ?alf skos:notation ?alfNotation .
       ?alm skos:notation ?almNotation .
-      ?ggh skos:notation ?gghNotation .
       ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations

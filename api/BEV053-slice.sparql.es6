@@ -29,8 +29,6 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?hea skos:notation ?heaNotation .
-      ?hel skos:notation ?helNotation .
       ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations

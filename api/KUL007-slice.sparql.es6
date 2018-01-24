@@ -31,7 +31,6 @@ CONSTRUCT {
 
       # notations for filters
       ?bta skos:notation ?btaNotation .
-      ?eap skos:notation ?eapNotation .
       ?raum skos:notation ?raumNotation .
       ?zsa skos:notation ?zsaNotation .
 

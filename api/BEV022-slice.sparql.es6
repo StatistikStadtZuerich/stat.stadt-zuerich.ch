@@ -32,11 +32,9 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZIV> ?ziv .
 
       # notations for filters
-      ?ggh skos:notation ?gghNotation .
       ?hel skos:notation ?helNotation .
       ?raum skos:notation ?raumNotation .
       ?sex skos:notation ?sexNotation .
-      ?wse skos:notation ?wseNotation .
       ?ziv skos:notation ?zivNotation .
 
       # Get Labels and Notations

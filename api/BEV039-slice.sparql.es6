@@ -32,7 +32,6 @@ CONSTRUCT {
       # notations for filters
       ?alt skos:notation ?altNotation .
       ?raum skos:notation ?raumNotation .
-      ?sex skos:notation ?sexNotation .
       ?tou skos:notation ?touNotation .
 
       # Get Labels and Notations

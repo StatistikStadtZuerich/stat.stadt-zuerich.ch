@@ -29,7 +29,6 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?bta skos:notation ?btaNotation .
       ?raum skos:notation ?raumNotation .
       ?vsa skos:notation ?vsaNotation .
 

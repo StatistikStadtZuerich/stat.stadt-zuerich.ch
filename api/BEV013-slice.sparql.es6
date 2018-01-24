@@ -30,10 +30,8 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?alt skos:notation ?altNotation .
       ?raum skos:notation ?raumNotation .
       ?spr skos:notation ?sprNotation .
-      ?wsi skos:notation ?wsiNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }

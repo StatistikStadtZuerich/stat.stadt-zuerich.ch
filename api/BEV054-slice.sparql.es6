@@ -33,7 +33,6 @@ CONSTRUCT {
       # notations for filters
       ?alt skos:notation ?altNotation .
       ?hea skos:notation ?heaNotation .
-      ?hel skos:notation ?helNotation .
       ?raum skos:notation ?raumNotation .
       ?sex skos:notation ?sexNotation .
 

@@ -30,7 +30,6 @@ CONSTRUCT {
 
       # notations for filters
       ?hea skos:notation ?heaNotation .
-      ?heo skos:notation ?heoNotation .
       ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations

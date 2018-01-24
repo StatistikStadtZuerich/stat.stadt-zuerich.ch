@@ -31,11 +31,9 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZSA> <http://ld.stadt-zuerich.ch/statistics/code/ZSA0001> .
 
       # notations for filters
-      ?bta skos:notation ?btaNotation .
       ?eap skos:notation ?eapNotation .
       ?raum skos:notation ?raumNotation .
       ?tig skos:notation ?tigNotation .
-      ?zsa skos:notation ?zsaNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }

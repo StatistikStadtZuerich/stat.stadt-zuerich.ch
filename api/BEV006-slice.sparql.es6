@@ -31,11 +31,9 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?alt skos:notation ?altNotation .
       ?hel skos:notation ?helNotation .
       ?kon skos:notation ?konNotation .
       ?raum skos:notation ?raumNotation .
-      ?wsi skos:notation ?wsiNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }

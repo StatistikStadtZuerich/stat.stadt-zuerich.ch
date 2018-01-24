@@ -31,7 +31,6 @@ CONSTRUCT {
 
       # notations for filters
       ?hel skos:notation ?helNotation .
-      ?kon skos:notation ?konNotation .
       ?raum skos:notation ?raumNotation .
       ?sex skos:notation ?sexNotation .
 

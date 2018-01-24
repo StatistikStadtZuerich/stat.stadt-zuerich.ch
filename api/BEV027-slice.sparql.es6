@@ -32,9 +32,7 @@ CONSTRUCT {
 
       # notations for filters
       ?elk skos:notation ?elkNotation .
-      ?gbr skos:notation ?gbrNotation .
       ?hel skos:notation ?helNotation .
-      ?psa skos:notation ?psaNotation .
       ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations

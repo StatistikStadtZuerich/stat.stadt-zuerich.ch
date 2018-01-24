@@ -30,7 +30,6 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?elk skos:notation ?elkNotation .
       ?gbr skos:notation ?gbrNotation .
       ?hel skos:notation ?helNotation .
       ?raum skos:notation ?raumNotation .

@@ -31,7 +31,6 @@ CONSTRUCT {
 
       # notations for filters
       ?ehd skos:notation ?ehdNotation .
-      ?elk skos:notation ?elkNotation .
       ?gbr skos:notation ?gbrNotation .
       ?raum skos:notation ?raumNotation .
 

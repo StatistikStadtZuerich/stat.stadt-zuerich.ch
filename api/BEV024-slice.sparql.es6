@@ -35,7 +35,6 @@ CONSTRUCT {
       ?ggh skos:notation ?gghNotation .
       ?raum skos:notation ?raumNotation .
       ?sex skos:notation ?sexNotation .
-      ?wse skos:notation ?wseNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }

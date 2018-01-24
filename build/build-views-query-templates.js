@@ -12,7 +12,7 @@ function buildViewQueryTemplate (view, template, filename) {
     return '<' + dimensionIri + '> ' + (value ? '<' + value + '>' : '?' + variable)
   }).join(';\n        ')
 
-  const notationPatterns = dimensionIris.filter(u.isNotZeit).map((dimensionIri) => {
+  const notationPatterns = dimensionIris.filter(d => !view.dimensions[d]).filter(u.isNotZeit).map((dimensionIri) => {
     const variable = u.variableName(dimensionIri)
 
     return '?' + variable + ' skos:notation ' + '?' + variable + 'Notation .'
