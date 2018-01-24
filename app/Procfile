@@ -1,0 +1,3 @@
+tsc: tsc --watch
+next: next dev lib
+catalog: catalog start docs
