@@ -42,7 +42,7 @@
     }
   },
   "renderer": {
-    "api": {
+    /*"api": {
       "priority": 50,
       "path": "/api",
       "module": "trifid-renderer-simple",
@@ -59,6 +59,11 @@
     "root": {
       "priority": 100,
       "module": "cwd:app/Renderer"
+    }*/
+    "root": {
+      "template": "cwd:views/index.html",
+      "templateError": "cwd:views/error.html",
+      "vocab": "cwd:node_modules/trifid-renderer-simple/examples/vocab.json"
     }
   },
   "staticViews": {

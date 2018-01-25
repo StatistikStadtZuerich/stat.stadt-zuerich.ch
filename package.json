@@ -14,7 +14,6 @@
   },
   "license": "UNLICENSED",
   "scripts": {
-    "install": "cd app && npm install && npm run build",
     "start": "trifid --config config.json",
     "start-local": "trifid --config config.local.json",
     "update-api": "node ./build/update-api"
