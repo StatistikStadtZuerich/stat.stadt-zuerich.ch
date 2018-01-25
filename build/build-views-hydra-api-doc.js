@@ -30,7 +30,7 @@ function attachSupportedClass (view, api) {
             }
           },
           'http://hydra-box.org/schema/returnFrame': {
-            '@id': 'context.json'
+            '@id': 'slice.context.jsonld'
           },
           'expects': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#slice-input',
           'returns': 'http://purl.org/linked-data/cube#Slice'
@@ -60,7 +60,7 @@ function attachIriTemplate (view, api, variables) {
   const iriTemplate = {
     '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#search',
     '@type': 'IriTemplate',
-    template: '/api/dataset/' + view.notation + '/slice{?' + Object.values(variables) + ',other}',
+    template: '/api/dataset/' + view.notation + '/slice{?' + Object.keys(variables).map(k => variables[k]) + ',other}',
     variableRepresentation: 'BasicRepresentation',
     mapping: Object.keys(variables).map((iri) => {
       const variable = variables[iri]

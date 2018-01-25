@@ -22,7 +22,7 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/ALT> ?alt;
         <http://ld.stadt-zuerich.ch/statistics/property/HEA> ?hea;
         <http://ld.stadt-zuerich.ch/statistics/property/HEL> <http://ld.stadt-zuerich.ch/statistics/code/HEL1000>;
@@ -30,18 +30,15 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
-      ?observation ?property ?value .
+      # notations for filters
+      ?alt skos:notation ?altNotation .
+      ?hea skos:notation ?heaNotation .
+      ?raum skos:notation ?raumNotation .
+      ?sex skos:notation ?sexNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }
       OPTIONAL { ?value skos:notation ?notation . }
-
-      # notations for filters
-      ?alt skos:notation ?altNotation .
-      ?hea skos:notation ?heaNotation .
-      ?hel skos:notation ?helNotation .
-      ?raum skos:notation ?raumNotation .
-      ?sex skos:notation ?sexNotation .
 
       # filters
       ${typeof alt !== 'undefined' ? 'FILTER (?altNotation IN (' + (alt.join ? alt.map(v => v.toCanonical()).join() : alt.toCanonical()) + '))' : ''}

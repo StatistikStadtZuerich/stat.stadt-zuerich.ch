@@ -22,24 +22,22 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/BTA> ?bta;
         <http://ld.stadt-zuerich.ch/statistics/property/PRA> ?pra;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/VSA> ?vsa;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
-      ?observation ?property ?value .
-
-      # Get Labels and Notations
-      OPTIONAL { ?value rdfs:label ?label . }
-      OPTIONAL { ?value skos:notation ?notation . }
-
       # notations for filters
       ?bta skos:notation ?btaNotation .
       ?pra skos:notation ?praNotation .
       ?raum skos:notation ?raumNotation .
       ?vsa skos:notation ?vsaNotation .
+
+      # Get Labels and Notations
+      OPTIONAL { ?value rdfs:label ?label . }
+      OPTIONAL { ?value skos:notation ?notation . }
 
       # filters
       ${typeof bta !== 'undefined' ? 'FILTER (?btaNotation IN (' + (bta.join ? bta.map(v => v.toCanonical()).join() : bta.toCanonical()) + '))' : ''}

@@ -22,20 +22,18 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/WSE> ?wse;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
-      ?observation ?property ?value .
+      # notations for filters
+      ?raum skos:notation ?raumNotation .
+      ?wse skos:notation ?wseNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }
       OPTIONAL { ?value skos:notation ?notation . }
-
-      # notations for filters
-      ?raum skos:notation ?raumNotation .
-      ?wse skos:notation ?wseNotation .
 
       # filters
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}

@@ -22,24 +22,21 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/ALF> ?alf;
         <http://ld.stadt-zuerich.ch/statistics/property/ALM> ?alm;
         <http://ld.stadt-zuerich.ch/statistics/property/GGH> <http://ld.stadt-zuerich.ch/statistics/code/GGH2201>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
-      ?observation ?property ?value .
+      # notations for filters
+      ?alf skos:notation ?alfNotation .
+      ?alm skos:notation ?almNotation .
+      ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }
       OPTIONAL { ?value skos:notation ?notation . }
-
-      # notations for filters
-      ?alf skos:notation ?alfNotation .
-      ?alm skos:notation ?almNotation .
-      ?ggh skos:notation ?gghNotation .
-      ?raum skos:notation ?raumNotation .
 
       # filters
       ${typeof alf !== 'undefined' ? 'FILTER (?alfNotation IN (' + (alf.join ? alf.map(v => v.toCanonical()).join() : alf.toCanonical()) + '))' : ''}

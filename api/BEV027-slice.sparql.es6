@@ -22,7 +22,7 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/ELK> ?elk;
         <http://ld.stadt-zuerich.ch/statistics/property/GBR> <http://ld.stadt-zuerich.ch/statistics/code/GBR0001>;
         <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
@@ -30,18 +30,14 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
-      ?observation ?property ?value .
+      # notations for filters
+      ?elk skos:notation ?elkNotation .
+      ?hel skos:notation ?helNotation .
+      ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }
       OPTIONAL { ?value skos:notation ?notation . }
-
-      # notations for filters
-      ?elk skos:notation ?elkNotation .
-      ?gbr skos:notation ?gbrNotation .
-      ?hel skos:notation ?helNotation .
-      ?psa skos:notation ?psaNotation .
-      ?raum skos:notation ?raumNotation .
 
       # filters
       ${typeof elk !== 'undefined' ? 'FILTER (?elkNotation IN (' + (elk.join ? elk.map(v => v.toCanonical()).join() : elk.toCanonical()) + '))' : ''}

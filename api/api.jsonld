@@ -91,7 +91,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV001#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -129,7 +129,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV002#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -167,7 +167,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV004#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -205,7 +205,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV005#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -243,7 +243,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV006#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -281,7 +281,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV007#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -319,7 +319,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV008#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -357,7 +357,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV009#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -395,7 +395,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV010#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -433,7 +433,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV011#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -471,7 +471,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV012#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -509,7 +509,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV013#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -547,7 +547,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV014#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -585,7 +585,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV015#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -623,7 +623,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV016#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -661,7 +661,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV017#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -699,7 +699,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV018#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -737,7 +737,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV019#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -775,7 +775,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV020#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -813,7 +813,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV021#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -851,7 +851,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV022#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -889,7 +889,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV023#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -927,7 +927,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV024#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -965,7 +965,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV025#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1003,7 +1003,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV027#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1041,7 +1041,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV028#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1079,7 +1079,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV029#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1117,7 +1117,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV030#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1155,7 +1155,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV031#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1193,7 +1193,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV032#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1231,7 +1231,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV033#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1269,7 +1269,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV034#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1307,7 +1307,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV035#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1345,7 +1345,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV036#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1383,7 +1383,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV037#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1421,7 +1421,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV038#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1459,7 +1459,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV039#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1497,7 +1497,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV040#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1535,7 +1535,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV041#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1573,7 +1573,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV042#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1611,7 +1611,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV043#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1649,7 +1649,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV044#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1687,7 +1687,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV045#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1725,7 +1725,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV046#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1763,7 +1763,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV047#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1801,7 +1801,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV048#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1839,7 +1839,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV049#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1877,7 +1877,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV051#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1915,7 +1915,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV052#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1953,7 +1953,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV053#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -1991,7 +1991,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV054#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2029,7 +2029,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV055#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2067,7 +2067,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/BEV056#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2105,7 +2105,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL001#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2143,7 +2143,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL002#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2181,7 +2181,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL003#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2219,7 +2219,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL004#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2257,7 +2257,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL005#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2295,7 +2295,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL006#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2333,7 +2333,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL007#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2371,7 +2371,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL008#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2409,7 +2409,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL014#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2447,7 +2447,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL017#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2485,7 +2485,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL020#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"
@@ -2523,7 +2523,7 @@
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "context.json"
+                      "@id": "slice.context.jsonld"
                     },
                     "expects": "http://stat.stadt-zuerich.ch/api/schema/dataset/KUL025#slice-input",
                     "returns": "http://purl.org/linked-data/cube#Slice"

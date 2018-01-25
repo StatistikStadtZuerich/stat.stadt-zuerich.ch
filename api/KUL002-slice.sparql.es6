@@ -22,7 +22,7 @@ CONSTRUCT {
         ?property ?value.
 
       # dimensions
-      ?obs
+      ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA1901>;
         <http://ld.stadt-zuerich.ch/statistics/property/EAP> ?eap;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
@@ -30,18 +30,14 @@ CONSTRUCT {
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
         <http://ld.stadt-zuerich.ch/statistics/property/ZSA> <http://ld.stadt-zuerich.ch/statistics/code/ZSA0001> .
 
-      ?observation ?property ?value .
+      # notations for filters
+      ?eap skos:notation ?eapNotation .
+      ?raum skos:notation ?raumNotation .
+      ?tig skos:notation ?tigNotation .
 
       # Get Labels and Notations
       OPTIONAL { ?value rdfs:label ?label . }
       OPTIONAL { ?value skos:notation ?notation . }
-
-      # notations for filters
-      ?bta skos:notation ?btaNotation .
-      ?eap skos:notation ?eapNotation .
-      ?raum skos:notation ?raumNotation .
-      ?tig skos:notation ?tigNotation .
-      ?zsa skos:notation ?zsaNotation .
 
       # filters
       ${typeof eap !== 'undefined' ? 'FILTER (?eapNotation IN (' + (eap.join ? eap.map(v => v.toCanonical()).join() : eap.toCanonical()) + '))' : ''}

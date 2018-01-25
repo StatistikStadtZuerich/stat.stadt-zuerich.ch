@@ -42,10 +42,23 @@
     }
   },
   "renderer": {
-    "root": {
+    "api": {
+      "priority": 50,
+      "path": "/api",
+      "module": "trifid-renderer-simple",
       "template": "cwd:views/index.html",
       "templateError": "cwd:views/error.html",
-      "vocab": "cwd:node_modules/trifid-renderer-simple/examples/vocab.json"
+      "vocab": "cwd:node_modules/trifid-renderer-simple/examples/vocab.json",
+      "alternativeMediaTypes": [
+        "application/ld+json",
+        "application/n-triples",
+        "application/rdf+xml",
+        "text/turtle"
+      ]
+    },
+    "root": {
+      "priority": 100,
+      "module": "cwd:app/Renderer"
     }
   },
   "staticViews": {
