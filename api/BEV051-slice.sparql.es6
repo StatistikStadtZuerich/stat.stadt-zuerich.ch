@@ -23,12 +23,11 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/ORT> ?ort;
+        <http://ld.stadt-zuerich.ch/statistics/property/ORT> <http://ld.stadt-zuerich.ch/statistics/code/ORT8402>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?ort skos:notation ?ortNotation .
       ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations
@@ -36,7 +35,6 @@ CONSTRUCT {
       OPTIONAL { ?value skos:notation ?notation . }
 
       # filters
-      ${typeof ort !== 'undefined' ? 'FILTER (?ortNotation IN (' + (ort.join ? ort.map(v => v.toCanonical()).join() : ort.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter
