@@ -1,4 +1,5 @@
 const buildViewsHydraApiDoc = require('./build-views-hydra-api-doc')
+const buildViewsJsonldContext = require('./build-views-jsonld-context')
 const buildViewsQueryTemplates = require('./build-views-query-templates')
 const fs = require('fs')
 const fetchViews = require('./fetch-views')
@@ -15,9 +16,10 @@ fetchViews(config).then((views) => {
   shell.mkdir('-p', 'api')
 
   return Promise.all([
+    buildViewsJsonldContext(),
     buildViewsQueryTemplates(views),
     buildViewsHydraApiDoc(views)
-  ]).spread((queryTemplates, api) => {
+  ]).spread((context, queryTemplates, api) => {
     fs.writeFileSync('api/api.jsonld', JSON.stringify(api, null, '  '))
   })
 }).catch((err) => {

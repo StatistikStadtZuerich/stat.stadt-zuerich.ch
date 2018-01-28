@@ -2,9 +2,9 @@
   "@context": {
     "ssz-code": "http://ld.stadt-zuerich.ch/statistics/code/",
     "ssz-dataset": "http://ld.stadt-zuerich.ch/statistics/dataset/",
+    "ssz-measure": "http://ld.stadt-zuerich.ch/statistics/measure/",
     "ssz-property": "http://ld.stadt-zuerich.ch/statistics/property/",
     "ssz-observation": "http://ld.stadt-zuerich.ch/statistics/observation/",
-
     "dataSet": {
       "@id": "http://purl.org/linked-data/cube#dataSet",
       "@type": "@id"
@@ -20,23 +20,1235 @@
     "label": "http://www.w3.org/2000/01/rdf-schema#label",
     "notation": "http://www.w3.org/2004/02/skos/core#notation",
     "observation": {
-     "@id": "http://purl.org/linked-data/cube#observation",
-     "@container": "@set"
+      "@id": "http://purl.org/linked-data/cube#observation",
+      "@container": "@set"
     },
     "raum": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/RAUM",
       "@type": "@id"
-    },
-    "wert": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/WERT",
-      "@type": "http://www.w3.org/2001/XMLSchema#double"
     },
     "zeit": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/ZEIT",
       "@type": "http://www.w3.org/2001/XMLSchema#gYear"
     },
     "Observation": "http://purl.org/linked-data/cube#Observation",
-    "Slice": "http://purl.org/linked-data/cube#Slice"
- },
- "@type": "Slice"
+    "Slice": "http://purl.org/linked-data/cube#Slice",
+    "ssz-measure:AAS": {
+      "@id": "ssz-measure:AAS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ABE": {
+      "@id": "ssz-measure:ABE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ABF": {
+      "@id": "ssz-measure:ABF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ABL": {
+      "@id": "ssz-measure:ABL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ABP": {
+      "@id": "ssz-measure:ABP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ABS": {
+      "@id": "ssz-measure:ABS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ABW": {
+      "@id": "ssz-measure:ABW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ADA": {
+      "@id": "ssz-measure:ADA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AET": {
+      "@id": "ssz-measure:AET",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AEW": {
+      "@id": "ssz-measure:AEW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ALQ": {
+      "@id": "ssz-measure:ALQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:APZ": {
+      "@id": "ssz-measure:APZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ASL": {
+      "@id": "ssz-measure:ASL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AST": {
+      "@id": "ssz-measure:AST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ASW": {
+      "@id": "ssz-measure:ASW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ATZ": {
+      "@id": "ssz-measure:ATZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUA": {
+      "@id": "ssz-measure:AUA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUF": {
+      "@id": "ssz-measure:AUF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUL": {
+      "@id": "ssz-measure:AUL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUZ": {
+      "@id": "ssz-measure:AUZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AVA": {
+      "@id": "ssz-measure:AVA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AVE": {
+      "@id": "ssz-measure:AVE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AVZ": {
+      "@id": "ssz-measure:AVZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BEP": {
+      "@id": "ssz-measure:BEP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BES": {
+      "@id": "ssz-measure:BES",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BET": {
+      "@id": "ssz-measure:BET",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BEW": {
+      "@id": "ssz-measure:BEW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BGF": {
+      "@id": "ssz-measure:BGF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BIP": {
+      "@id": "ssz-measure:BIP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BLU": {
+      "@id": "ssz-measure:BLU",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BRU": {
+      "@id": "ssz-measure:BRU",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:CHV": {
+      "@id": "ssz-measure:CHV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:COE": {
+      "@id": "ssz-measure:COE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:DGV": {
+      "@id": "ssz-measure:DGV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:DKV": {
+      "@id": "ssz-measure:DKV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:DOK": {
+      "@id": "ssz-measure:DOK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:DWH": {
+      "@id": "ssz-measure:DWH",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EGP": {
+      "@id": "ssz-measure:EGP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ENG": {
+      "@id": "ssz-measure:ENG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ENM": {
+      "@id": "ssz-measure:ENM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ENP": {
+      "@id": "ssz-measure:ENP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EWL": {
+      "@id": "ssz-measure:EWL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EWP": {
+      "@id": "ssz-measure:EWP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EWQ": {
+      "@id": "ssz-measure:EWQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EWT": {
+      "@id": "ssz-measure:EWT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EZG": {
+      "@id": "ssz-measure:EZG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FAU": {
+      "@id": "ssz-measure:FAU",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FRA": {
+      "@id": "ssz-measure:FRA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FST": {
+      "@id": "ssz-measure:FST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FWH": {
+      "@id": "ssz-measure:FWH",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GBD": {
+      "@id": "ssz-measure:GBD",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GBF": {
+      "@id": "ssz-measure:GBF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GBR": {
+      "@id": "ssz-measure:GBR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GEF": {
+      "@id": "ssz-measure:GEF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GSF": {
+      "@id": "ssz-measure:GSF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GST": {
+      "@id": "ssz-measure:GST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GVK": {
+      "@id": "ssz-measure:GVK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GVV": {
+      "@id": "ssz-measure:GVV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GWF": {
+      "@id": "ssz-measure:GWF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:HBR": {
+      "@id": "ssz-measure:HBR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:HGT": {
+      "@id": "ssz-measure:HGT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:HHA": {
+      "@id": "ssz-measure:HHA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:HLA": {
+      "@id": "ssz-measure:HLA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:HOL": {
+      "@id": "ssz-measure:HOL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:HOP": {
+      "@id": "ssz-measure:HOP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:HYD": {
+      "@id": "ssz-measure:HYD",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KAN": {
+      "@id": "ssz-measure:KAN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KGP": {
+      "@id": "ssz-measure:KGP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KLS": {
+      "@id": "ssz-measure:KLS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KON": {
+      "@id": "ssz-measure:KON",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KUB": {
+      "@id": "ssz-measure:KUB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KUN": {
+      "@id": "ssz-measure:KUN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KUR": {
+      "@id": "ssz-measure:KUR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KVV": {
+      "@id": "ssz-measure:KVV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LEI": {
+      "@id": "ssz-measure:LEI",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LEM": {
+      "@id": "ssz-measure:LEM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LES": {
+      "@id": "ssz-measure:LES",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LET": {
+      "@id": "ssz-measure:LET",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LIE": {
+      "@id": "ssz-measure:LIE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LKW": {
+      "@id": "ssz-measure:LKW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LNB": {
+      "@id": "ssz-measure:LNB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LNF": {
+      "@id": "ssz-measure:LNF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LST": {
+      "@id": "ssz-measure:LST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MAM": {
+      "@id": "ssz-measure:MAM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MAN": {
+      "@id": "ssz-measure:MAN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MAT": {
+      "@id": "ssz-measure:MAT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MBL": {
+      "@id": "ssz-measure:MBL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MED": {
+      "@id": "ssz-measure:MED",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MVK": {
+      "@id": "ssz-measure:MVK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MVV": {
+      "@id": "ssz-measure:MVV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NAF": {
+      "@id": "ssz-measure:NAF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NAL": {
+      "@id": "ssz-measure:NAL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NAM": {
+      "@id": "ssz-measure:NAM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NEP": {
+      "@id": "ssz-measure:NEP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NRP": {
+      "@id": "ssz-measure:NRP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NRW": {
+      "@id": "ssz-measure:NRW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:OBF": {
+      "@id": "ssz-measure:OBF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:OKL": {
+      "@id": "ssz-measure:OKL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:OST": {
+      "@id": "ssz-measure:OST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PFA": {
+      "@id": "ssz-measure:PFA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PFI": {
+      "@id": "ssz-measure:PFI",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PHW": {
+      "@id": "ssz-measure:PHW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PLA": {
+      "@id": "ssz-measure:PLA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PLB": {
+      "@id": "ssz-measure:PLB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PLE": {
+      "@id": "ssz-measure:PLE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:POL": {
+      "@id": "ssz-measure:POL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PPH": {
+      "@id": "ssz-measure:PPH",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PUB": {
+      "@id": "ssz-measure:PUB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:QMP": {
+      "@id": "ssz-measure:QMP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:REC": {
+      "@id": "ssz-measure:REC",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:REQ": {
+      "@id": "ssz-measure:REQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:RVS": {
+      "@id": "ssz-measure:RVS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SAE": {
+      "@id": "ssz-measure:SAE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SAF": {
+      "@id": "ssz-measure:SAF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SCH": {
+      "@id": "ssz-measure:SCH",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SCK": {
+      "@id": "ssz-measure:SCK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SCS": {
+      "@id": "ssz-measure:SCS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SDE": {
+      "@id": "ssz-measure:SDE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SHA": {
+      "@id": "ssz-measure:SHA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SOA": {
+      "@id": "ssz-measure:SOA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SON": {
+      "@id": "ssz-measure:SON",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SPK": {
+      "@id": "ssz-measure:SPK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STF": {
+      "@id": "ssz-measure:STF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STN": {
+      "@id": "ssz-measure:STN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STO": {
+      "@id": "ssz-measure:STO",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STS": {
+      "@id": "ssz-measure:STS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:THG": {
+      "@id": "ssz-measure:THG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:TIA": {
+      "@id": "ssz-measure:TIA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:TII": {
+      "@id": "ssz-measure:TII",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:TNU": {
+      "@id": "ssz-measure:TNU",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:TXA": {
+      "@id": "ssz-measure:TXA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UGR": {
+      "@id": "ssz-measure:UGR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UHA": {
+      "@id": "ssz-measure:UHA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VER": {
+      "@id": "ssz-measure:VER",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VOA": {
+      "@id": "ssz-measure:VOA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VOK": {
+      "@id": "ssz-measure:VOK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VOL": {
+      "@id": "ssz-measure:VOL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VZA": {
+      "@id": "ssz-measure:VZA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WAZ": {
+      "@id": "ssz-measure:WAZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WFP": {
+      "@id": "ssz-measure:WFP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WHA": {
+      "@id": "ssz-measure:WHA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WHF": {
+      "@id": "ssz-measure:WHF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WHG": {
+      "@id": "ssz-measure:WHG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WRB": {
+      "@id": "ssz-measure:WRB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WRT": {
+      "@id": "ssz-measure:WRT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WSS": {
+      "@id": "ssz-measure:WSS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WST": {
+      "@id": "ssz-measure:WST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WUS": {
+      "@id": "ssz-measure:WUS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZIM": {
+      "@id": "ssz-measure:ZIM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZUS": {
+      "@id": "ssz-measure:ZUS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZUT": {
+      "@id": "ssz-measure:ZUT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZUV": {
+      "@id": "ssz-measure:ZUV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MOT": {
+      "@id": "ssz-measure:MOT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PAR": {
+      "@id": "ssz-measure:PAR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UNF": {
+      "@id": "ssz-measure:UNF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PUN": {
+      "@id": "ssz-measure:PUN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LIL": {
+      "@id": "ssz-measure:LIL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LIF": {
+      "@id": "ssz-measure:LIF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FAG": {
+      "@id": "ssz-measure:FAG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VST": {
+      "@id": "ssz-measure:VST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FLE": {
+      "@id": "ssz-measure:FLE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ENL": {
+      "@id": "ssz-measure:ENL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FLB": {
+      "@id": "ssz-measure:FLB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FRT": {
+      "@id": "ssz-measure:FRT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FLK": {
+      "@id": "ssz-measure:FLK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EIS": {
+      "@id": "ssz-measure:EIS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LON": {
+      "@id": "ssz-measure:LON",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ANK": {
+      "@id": "ssz-measure:ANK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ANA": {
+      "@id": "ssz-measure:ANA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BTT": {
+      "@id": "ssz-measure:BTT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BTB": {
+      "@id": "ssz-measure:BTB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZIB": {
+      "@id": "ssz-measure:ZIB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUD": {
+      "@id": "ssz-measure:AUD",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UNT": {
+      "@id": "ssz-measure:UNT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZIN": {
+      "@id": "ssz-measure:ZIN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WPP": {
+      "@id": "ssz-measure:WPP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:IND": {
+      "@id": "ssz-measure:IND",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:DVK": {
+      "@id": "ssz-measure:DVK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EST": {
+      "@id": "ssz-measure:EST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ANR": {
+      "@id": "ssz-measure:ANR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SHF": {
+      "@id": "ssz-measure:SHF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SHB": {
+      "@id": "ssz-measure:SHB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SHQ": {
+      "@id": "ssz-measure:SHQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BRT": {
+      "@id": "ssz-measure:BRT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BRS": {
+      "@id": "ssz-measure:BRS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BAT": {
+      "@id": "ssz-measure:BAT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BAP": {
+      "@id": "ssz-measure:BAP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BSC": {
+      "@id": "ssz-measure:BSC",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KND": {
+      "@id": "ssz-measure:KND",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:REN": {
+      "@id": "ssz-measure:REN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZLF": {
+      "@id": "ssz-measure:ZLF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BBP": {
+      "@id": "ssz-measure:BBP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZSG": {
+      "@id": "ssz-measure:ZSG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BRP": {
+      "@id": "ssz-measure:BRP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MAA": {
+      "@id": "ssz-measure:MAA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:CHA": {
+      "@id": "ssz-measure:CHA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ANT": {
+      "@id": "ssz-measure:ANT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:INF": {
+      "@id": "ssz-measure:INF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AVO": {
+      "@id": "ssz-measure:AVO",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ANW": {
+      "@id": "ssz-measure:ANW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ANV": {
+      "@id": "ssz-measure:ANV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LWZ": {
+      "@id": "ssz-measure:LWZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LFZ": {
+      "@id": "ssz-measure:LFZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LFL": {
+      "@id": "ssz-measure:LFL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GDS": {
+      "@id": "ssz-measure:GDS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SPF": {
+      "@id": "ssz-measure:SPF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STE": {
+      "@id": "ssz-measure:STE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STV": {
+      "@id": "ssz-measure:STV",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SER": {
+      "@id": "ssz-measure:SER",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SJE": {
+      "@id": "ssz-measure:SJE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SJK": {
+      "@id": "ssz-measure:SJK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ESS": {
+      "@id": "ssz-measure:ESS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUS": {
+      "@id": "ssz-measure:AUS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STI": {
+      "@id": "ssz-measure:STI",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ABG": {
+      "@id": "ssz-measure:ABG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STB": {
+      "@id": "ssz-measure:STB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STA": {
+      "@id": "ssz-measure:STA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SIT": {
+      "@id": "ssz-measure:SIT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:APA": {
+      "@id": "ssz-measure:APA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AWA": {
+      "@id": "ssz-measure:AWA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AWZ": {
+      "@id": "ssz-measure:AWZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PST": {
+      "@id": "ssz-measure:PST",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PPS": {
+      "@id": "ssz-measure:PPS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EHE": {
+      "@id": "ssz-measure:EHE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SCE": {
+      "@id": "ssz-measure:SCE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GEB": {
+      "@id": "ssz-measure:GEB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GBU": {
+      "@id": "ssz-measure:GBU",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:FER": {
+      "@id": "ssz-measure:FER",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PAS": {
+      "@id": "ssz-measure:PAS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BEH": {
+      "@id": "ssz-measure:BEH",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AEH": {
+      "@id": "ssz-measure:AEH",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:EHS": {
+      "@id": "ssz-measure:EHS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GES": {
+      "@id": "ssz-measure:GES",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SNB": {
+      "@id": "ssz-measure:SNB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BEN": {
+      "@id": "ssz-measure:BEN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AWB": {
+      "@id": "ssz-measure:AWB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AWW": {
+      "@id": "ssz-measure:AWW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WEZ": {
+      "@id": "ssz-measure:WEZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZUZ": {
+      "@id": "ssz-measure:ZUZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UMZ": {
+      "@id": "ssz-measure:UMZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SWB": {
+      "@id": "ssz-measure:SWB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SUB": {
+      "@id": "ssz-measure:SUB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WEF": {
+      "@id": "ssz-measure:WEF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZUF": {
+      "@id": "ssz-measure:ZUF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UMF": {
+      "@id": "ssz-measure:UMF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SWF": {
+      "@id": "ssz-measure:SWF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SUF": {
+      "@id": "ssz-measure:SUF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UZU": {
+      "@id": "ssz-measure:UZU",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UWE": {
+      "@id": "ssz-measure:UWE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UFZ": {
+      "@id": "ssz-measure:UFZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:UFW": {
+      "@id": "ssz-measure:UFW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BRW": {
+      "@id": "ssz-measure:BRW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SAB": {
+      "@id": "ssz-measure:SAB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MBE": {
+      "@id": "ssz-measure:MBE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:DWR": {
+      "@id": "ssz-measure:DWR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LTP": {
+      "@id": "ssz-measure:LTP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:REM": {
+      "@id": "ssz-measure:REM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:TRP": {
+      "@id": "ssz-measure:TRP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SCM": {
+      "@id": "ssz-measure:SCM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WGS": {
+      "@id": "ssz-measure:WGS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SSD": {
+      "@id": "ssz-measure:SSD",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BLZ": {
+      "@id": "ssz-measure:BLZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:TAG": {
+      "@id": "ssz-measure:TAG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WTP": {
+      "@id": "ssz-measure:WTP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STD": {
+      "@id": "ssz-measure:STD",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WES": {
+      "@id": "ssz-measure:WES",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STK": {
+      "@id": "ssz-measure:STK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NVS": {
+      "@id": "ssz-measure:NVS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STG": {
+      "@id": "ssz-measure:STG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:NFP": {
+      "@id": "ssz-measure:NFP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WPF": {
+      "@id": "ssz-measure:WPF",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AGT": {
+      "@id": "ssz-measure:AGT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUM": {
+      "@id": "ssz-measure:AUM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:APL": {
+      "@id": "ssz-measure:APL",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LAE": {
+      "@id": "ssz-measure:LAE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VFE": {
+      "@id": "ssz-measure:VFE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VFS": {
+      "@id": "ssz-measure:VFS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AZB": {
+      "@id": "ssz-measure:AZB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:AUP": {
+      "@id": "ssz-measure:AUP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GEP": {
+      "@id": "ssz-measure:GEP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:LOU": {
+      "@id": "ssz-measure:LOU",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SFG": {
+      "@id": "ssz-measure:SFG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SKR": {
+      "@id": "ssz-measure:SKR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZIW": {
+      "@id": "ssz-measure:ZIW",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:ZIK": {
+      "@id": "ssz-measure:ZIK",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KMP": {
+      "@id": "ssz-measure:KMP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BVT": {
+      "@id": "ssz-measure:BVT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GIP": {
+      "@id": "ssz-measure:GIP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VAJ": {
+      "@id": "ssz-measure:VAJ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VAM": {
+      "@id": "ssz-measure:VAM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VAS": {
+      "@id": "ssz-measure:VAS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VAQ": {
+      "@id": "ssz-measure:VAQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:VAX": {
+      "@id": "ssz-measure:VAX",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:KMB": {
+      "@id": "ssz-measure:KMB",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:GYQ": {
+      "@id": "ssz-measure:GYQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:PEQ": {
+      "@id": "ssz-measure:PEQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:BEI": {
+      "@id": "ssz-measure:BEI",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STT": {
+      "@id": "ssz-measure:STT",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SSA": {
+      "@id": "ssz-measure:SSA",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:STP": {
+      "@id": "ssz-measure:STP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:MPI": {
+      "@id": "ssz-measure:MPI",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:SPR": {
+      "@id": "ssz-measure:SPR",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WAE": {
+      "@id": "ssz-measure:WAE",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "ssz-measure:WAP": {
+      "@id": "ssz-measure:WAP",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  },
+  "@type": "Slice"
 }
