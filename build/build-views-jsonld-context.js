@@ -1,14 +1,19 @@
 const fs = require('fs')
 const path = require('path')
+const u = require('./utils')
 
-function buildViewsJsonldContext () {
+function buildViewsJsonldContext (properties) {
   const context = JSON.parse(fs.readFileSync(path.join(__dirname, 'support/slice.context.jsonld')).toString())
-  const kennzahlen = fs.readFileSync(path.join(__dirname, 'support/kennzahlen.csv')).toString().split('\n').slice(1).filter(l => l)
 
-  kennzahlen.forEach((kennzahl) => {
-    context['@context']['ssz-measure:' + kennzahl] = {
-      '@id': 'ssz-measure:' + kennzahl,
-      '@type': 'http://www.w3.org/2001/XMLSchema#double'
+  properties.forEach((property) => {
+    const key = (property.iri.startsWith('http://ld.stadt-zuerich.ch/statistics/measure/') ? 'm' : 'd') + property.notation
+
+    context['@context'][key] = {
+      '@id': property.iri
+    }
+
+    if (u.isNotZeit(property.iri)) {
+      context['@context'][key]['@type'] = property.datatype || '@id'
     }
   })
 

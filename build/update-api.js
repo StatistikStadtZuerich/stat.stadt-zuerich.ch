@@ -2,6 +2,7 @@ const buildViewsHydraApiDoc = require('./build-views-hydra-api-doc')
 const buildViewsJsonldContext = require('./build-views-jsonld-context')
 const buildViewsQueryTemplates = require('./build-views-query-templates')
 const fs = require('fs')
+const fetchProperties = require('./fetch-properties')
 const fetchViews = require('./fetch-views')
 const shell = require('shelljs')
 const Promise = require('bluebird')
@@ -12,16 +13,20 @@ const config = {
   password: 'coo2aiw6itiT'
 }
 
-fetchViews(config).then((views) => {
-  shell.mkdir('-p', 'api')
+Promise.all([
+  fetchViews(config).then((views) => {
+    shell.mkdir('-p', 'api')
 
-  return Promise.all([
-    buildViewsJsonldContext(),
-    buildViewsQueryTemplates(views),
-    buildViewsHydraApiDoc(views)
-  ]).spread((context, queryTemplates, api) => {
-    fs.writeFileSync('api/api.jsonld', JSON.stringify(api, null, '  '))
+    return Promise.all([
+      buildViewsQueryTemplates(views),
+      buildViewsHydraApiDoc(views)
+    ]).spread((queryTemplates, api) => {
+      fs.writeFileSync('api/api.jsonld', JSON.stringify(api, null, '  '))
+    })
+  }),
+  fetchProperties(config).then((properties) => {
+    return buildViewsJsonldContext(properties)
   })
-}).catch((err) => {
+]).catch((err) => {
   console.error(err.stack || err.message)
 })
