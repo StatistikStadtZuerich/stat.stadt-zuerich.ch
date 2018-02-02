@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  ?slice a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/api/dataset/BEV008/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -48,6 +48,4 @@ CONSTRUCT {
       ${typeof to !== 'undefined' ? 'FILTER (?zeit <= xsd:datetime("' + to + '"))':''}
     }
   }
-
-  BIND(BNODE('slice') AS ?slice)
 }

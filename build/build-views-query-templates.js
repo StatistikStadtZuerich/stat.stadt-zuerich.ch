@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const u = require('./utils')
 
-function buildViewQueryTemplate (view, template, filename) {
+function buildViewSliceQueryTemplate (view, template, filename) {
   const dimensionIris = Object.keys(view.dimensions).sort()
 
   const patterns = dimensionIris.map((dimensionIri) => {
@@ -25,6 +25,7 @@ function buildViewQueryTemplate (view, template, filename) {
   }).join('\n      ')
 
   const query = template
+    .split('%%NOTATION%%').join(view.notation)
     .split('%%DATASET%%').join(view.dataset)
     .split('%%PATTERNS%%').join(patterns)
     .split('%%NOTATION_PATTERNS%%').join(notationPatterns)
@@ -35,13 +36,24 @@ function buildViewQueryTemplate (view, template, filename) {
   return query
 }
 
+function buildViewShapeQueryTemplate (view, template, filename) {
+  const query = template
+    .split('%%NOTATION%%').join(view.notation)
+
+  fs.writeFileSync(filename, query)
+
+  return query
+}
+
 function buildViewQueryTemplates (views) {
   const templateViewSlice = fs.readFileSync(path.join(__dirname, 'support/hydra-view-slice.sparql.es6')).toString()
+  const templateViewShape = fs.readFileSync(path.join(__dirname, 'support/hydra-view-shape.sparql.es6')).toString()
 
   Object.keys(views).sort().forEach((viewIri) => {
     const view = views[viewIri]
 
-    buildViewQueryTemplate(view, templateViewSlice, path.join('api', view.notation + '-slice.sparql.es6'))
+    buildViewSliceQueryTemplate(view, templateViewSlice, path.join('api', view.notation + '-slice.sparql.es6'))
+    buildViewShapeQueryTemplate(view, templateViewShape, path.join('api', view.notation + '-shape.sparql.es6'))
   })
 
   return Promise.resolve()
