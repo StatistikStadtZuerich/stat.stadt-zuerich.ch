@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  ?slice a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/api/dataset/KUL007/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -23,14 +23,13 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/BTA> ?bta;
+        <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA1911>;
         <http://ld.stadt-zuerich.ch/statistics/property/EAP> <http://ld.stadt-zuerich.ch/statistics/code/EAP2301>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
         <http://ld.stadt-zuerich.ch/statistics/property/ZSA> ?zsa .
 
       # notations for filters
-      ?bta skos:notation ?btaNotation .
       ?raum skos:notation ?raumNotation .
       ?zsa skos:notation ?zsaNotation .
 
@@ -39,7 +38,6 @@ CONSTRUCT {
       OPTIONAL { ?value skos:notation ?notation . }
 
       # filters
-      ${typeof bta !== 'undefined' ? 'FILTER (?btaNotation IN (' + (bta.join ? bta.map(v => v.toCanonical()).join() : bta.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
       ${typeof zsa !== 'undefined' ? 'FILTER (?zsaNotation IN (' + (zsa.join ? zsa.map(v => v.toCanonical()).join() : zsa.toCanonical()) + '))' : ''}
 
@@ -48,6 +46,4 @@ CONSTRUCT {
       ${typeof to !== 'undefined' ? 'FILTER (?zeit <= xsd:datetime("' + to + '"))':''}
     }
   }
-
-  BIND(BNODE('slice') AS ?slice)
 }

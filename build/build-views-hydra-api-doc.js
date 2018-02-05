@@ -36,6 +36,31 @@ function attachSupportedClass (view, api) {
           'returns': 'http://purl.org/linked-data/cube#Slice'
         }]
       }
+    }, {
+      property: {
+        '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#shape',
+        supportedOperation: [
+          {
+            '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#shape-get',
+            '@type': [
+              'Operation',
+              'http://hydra-box.org/schema/View'
+            ],
+            method: 'GET',
+            'http://hydra-box.org/schema/code': {
+              '@type': 'http://hydra-box.org/schema/SparqlQuery',
+              'http://hydra-box.org/schema/source': {
+                '@id':  view.notation + '-shape.sparql.es6'
+              }
+            },
+            'http://hydra-box.org/schema/returnFrame': {
+              '@id': 'shape.context.jsonld'
+            },
+            expects: null,
+            returns: 'http://www.w3.org/ns/shacl#NodeShape'
+          }
+        ]
+      }
     }]
   }
 
@@ -87,6 +112,10 @@ function attachReference (view, api) {
 
   reference['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#slice'] = {
     '@id': 'http://stat.stadt-zuerich.ch/api/dataset/' + view.notation + '/slice'
+  }
+
+  reference['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#shape'] = {
+    '@id': 'http://stat.stadt-zuerich.ch/api/dataset/' + view.notation + '/shape'
   }
 
   api['@graph'].push(reference)

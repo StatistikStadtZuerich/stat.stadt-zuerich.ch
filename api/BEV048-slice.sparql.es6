@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  ?slice a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/api/dataset/BEV048/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -24,13 +24,12 @@ CONSTRUCT {
       # dimensions
       ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
-        <http://ld.stadt-zuerich.ch/statistics/property/ORT> ?ort;
+        <http://ld.stadt-zuerich.ch/statistics/property/ORT> <http://ld.stadt-zuerich.ch/statistics/code/ORT8302>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
       ?hel skos:notation ?helNotation .
-      ?ort skos:notation ?ortNotation .
       ?raum skos:notation ?raumNotation .
 
       # Get Labels and Notations
@@ -39,7 +38,6 @@ CONSTRUCT {
 
       # filters
       ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
-      ${typeof ort !== 'undefined' ? 'FILTER (?ortNotation IN (' + (ort.join ? ort.map(v => v.toCanonical()).join() : ort.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter
@@ -47,6 +45,4 @@ CONSTRUCT {
       ${typeof to !== 'undefined' ? 'FILTER (?zeit <= xsd:datetime("' + to + '"))':''}
     }
   }
-
-  BIND(BNODE('slice') AS ?slice)
 }
