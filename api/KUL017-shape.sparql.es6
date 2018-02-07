@@ -23,11 +23,15 @@ CONSTRUCT {
 
   ?b_nil rdf:first ?dimension ;
     rdf:rest rdf:nil .
+
+  # min/max
+  ?b_property sh:minInclusive ?min ;
+    sh:maxInclusive ?max .
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
-    {
-      <http://stat.stadt-zuerich.ch/view/KUL017/shape> sh:property ?b_property .
+    <http://stat.stadt-zuerich.ch/view/KUL017/shape> sh:property ?b_property .
 
+    {
       ?b_property sh:in ?propertyValue .
 
       OPTIONAL {
@@ -36,8 +40,6 @@ CONSTRUCT {
 
       FILTER(isIRI(?propertyValue))
     } UNION {
-      <http://stat.stadt-zuerich.ch/view/KUL017/shape> sh:property ?b_property .
-
       ?b_property sh:path ?b_list .
 
       ?b_list rdf:first qb:observation ;
@@ -48,6 +50,9 @@ CONSTRUCT {
 
       ?dimension rdfs:label ?dimensionLabel ;
         skos:notation ?dimensionNotation .
+    } UNION {
+      ?b_property sh:minInclusive ?min ;
+        sh:maxInclusive ?max .
     }
   }
 }
