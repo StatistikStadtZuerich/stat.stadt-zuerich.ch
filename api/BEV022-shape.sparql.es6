@@ -10,10 +10,10 @@ CONSTRUCT {
   ?b_property sh:in ?propertyValue ;
     rdfs:seeAlso ?dimension .
 
-  ?propertyValue rdfs:label ?label .
-
-  ?dimension rdfs:label ?dimensionLabel ;
+  ?b_property rdfs:label ?dimensionLabel ;
     skos:notation ?dimensionNotation .
+
+  ?propertyValue rdfs:label ?label .
 
   # all the list fun
   ?b_property sh:path ?b_list .
