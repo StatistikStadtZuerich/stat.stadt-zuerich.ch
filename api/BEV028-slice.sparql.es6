@@ -10,9 +10,6 @@ CONSTRUCT {
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
-  ?value
-    rdfs:label ?label ;
-    skos:notation ?notation .
 } WHERE {
   {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
@@ -32,10 +29,6 @@ CONSTRUCT {
       ?adm skos:notation ?admNotation .
       ?elk skos:notation ?elkNotation .
       ?raum skos:notation ?raumNotation .
-
-      # Get Labels and Notations
-      OPTIONAL { ?value rdfs:label ?label . }
-      OPTIONAL { ?value skos:notation ?notation . }
 
       # filters
       ${typeof adm !== 'undefined' ? 'FILTER (?admNotation IN (' + (adm.join ? adm.map(v => v.toCanonical()).join() : adm.toCanonical()) + '))' : ''}

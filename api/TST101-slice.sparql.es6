@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/api/dataset/BEV008/slice> a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/api/dataset/TST101/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,26 +15,25 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEV008> ;
+        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/TST101> ;
         ?property ?value.
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/HEL> <http://ld.stadt-zuerich.ch/statistics/code/HEL1000>;
-        <http://ld.stadt-zuerich.ch/statistics/property/HEO> ?heo;
+        <http://ld.stadt-zuerich.ch/statistics/property/GBA> ?gba;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
-        <http://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
+        <http://ld.stadt-zuerich.ch/statistics/property/STW> ?stw;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?heo skos:notation ?heoNotation .
+      ?gba skos:notation ?gbaNotation .
       ?raum skos:notation ?raumNotation .
-      ?sex skos:notation ?sexNotation .
+      ?stw skos:notation ?stwNotation .
 
       # filters
-      ${typeof heo !== 'undefined' ? 'FILTER (?heoNotation IN (' + (heo.join ? heo.map(v => v.toCanonical()).join() : heo.toCanonical()) + '))' : ''}
+      ${typeof gba !== 'undefined' ? 'FILTER (?gbaNotation IN (' + (gba.join ? gba.map(v => v.toCanonical()).join() : gba.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
-      ${typeof sex !== 'undefined' ? 'FILTER (?sexNotation IN (' + (sex.join ? sex.map(v => v.toCanonical()).join() : sex.toCanonical()) + '))' : ''}
+      ${typeof stw !== 'undefined' ? 'FILTER (?stwNotation IN (' + (stw.join ? stw.map(v => v.toCanonical()).join() : stw.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}

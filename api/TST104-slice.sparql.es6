@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/api/dataset/BEV008/slice> a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/api/dataset/TST104/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,26 +15,23 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEV008> ;
+        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/TST104> ;
         ?property ?value.
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/HEL> <http://ld.stadt-zuerich.ch/statistics/code/HEL1000>;
-        <http://ld.stadt-zuerich.ch/statistics/property/HEO> ?heo;
+        <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA9200>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
-        <http://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
+        <http://ld.stadt-zuerich.ch/statistics/property/TIG> ?tig;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?heo skos:notation ?heoNotation .
       ?raum skos:notation ?raumNotation .
-      ?sex skos:notation ?sexNotation .
+      ?tig skos:notation ?tigNotation .
 
       # filters
-      ${typeof heo !== 'undefined' ? 'FILTER (?heoNotation IN (' + (heo.join ? heo.map(v => v.toCanonical()).join() : heo.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
-      ${typeof sex !== 'undefined' ? 'FILTER (?sexNotation IN (' + (sex.join ? sex.map(v => v.toCanonical()).join() : sex.toCanonical()) + '))' : ''}
+      ${typeof tig !== 'undefined' ? 'FILTER (?tigNotation IN (' + (tig.join ? tig.map(v => v.toCanonical()).join() : tig.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}
