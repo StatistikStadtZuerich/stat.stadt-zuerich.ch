@@ -10,15 +10,12 @@ CONSTRUCT {
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
-  ?value
-    rdfs:label ?label ;
-    skos:notation ?notation .
 } WHERE {
   {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        # qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEV010> ;
+        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEV010> ;
         ?property ?value.
 
       # dimensions
@@ -36,10 +33,6 @@ CONSTRUCT {
       ?sex skos:notation ?sexNotation .
       ?ziv skos:notation ?zivNotation .
 
-      # Get Labels and Notations
-      OPTIONAL { ?value rdfs:label ?label . }
-      OPTIONAL { ?value skos:notation ?notation . }
-
       # filters
       ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
@@ -47,8 +40,8 @@ CONSTRUCT {
       ${typeof ziv !== 'undefined' ? 'FILTER (?zivNotation IN (' + (ziv.join ? ziv.map(v => v.toCanonical()).join() : ziv.toCanonical()) + '))' : ''}
 
       # time range filter
-      ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:datetime("' + from + '"))':''}
-      ${typeof to !== 'undefined' ? 'FILTER (?zeit <= xsd:datetime("' + to + '"))':''}
+      ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}
+      ${typeof to !== 'undefined' ? 'FILTER (?zeit <= xsd:date("' + (to.value.length === 4 ? to.value + '-12-31' : to.value) + '"))':''}
     }
   }
 }
