@@ -29,7 +29,7 @@ CONSTRUCT {
     sh:maxInclusive ?max .
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
-    <http://stat.stadt-zuerich.ch/view/%%NOTATION%%/shape> sh:property ?b_property .
+    <http://ld.stadt-zuerich.ch/statistics/dataset/%%NOTATION%%/shape> sh:property ?b_property .
 
     {
       ?b_property sh:in ?propertyValue .

@@ -1503,10 +1503,6 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/HEM",
       "@type": "@id"
     },
-    "dHEO": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/HEO",
-      "@type": "@id"
-    },
     "dHER": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/HER",
       "@type": "@id"
@@ -1615,10 +1611,6 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/NAF",
       "@type": "@id"
     },
-    "dNAM": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/NAM",
-      "@type": "@id"
-    },
     "dNJW": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/NJW",
       "@type": "@id"
@@ -1629,10 +1621,6 @@
     },
     "dOBJ": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/OBJ",
-      "@type": "@id"
-    },
-    "dORT": {
-      "@id": "http://ld.stadt-zuerich.ch/statistics/property/ORT",
       "@type": "@id"
     },
     "dPAA": {
