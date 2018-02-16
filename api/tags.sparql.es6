@@ -22,8 +22,8 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
 
   {
   
-  ?view a <http://purl.org/linked-data/cube#SliceKey> ;
-    ssz-schema:viewStructure/qb:component/qb:dimension ?dimension .
+  ?view a qb:DataSet ;
+    qb:structure/qb:component/(qb:dimension|qb:measure) ?dimension .
   
   ?dimension a <http://purl.org/linked-data/cube#DimensionProperty> .
   ?dimension rdfs:label ?label .
@@ -38,7 +38,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
   
   {
   
-  ?view a <http://purl.org/linked-data/cube#SliceKey> ;
+  ?view a qb:DataSet ;
     rdfs:label ?label ;
   
   ${typeof query !== 'undefined' ? 'FILTER regex(lcase(?label), "^' + query.value.trim().toLowerCase() + '")' : ''}
