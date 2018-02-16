@@ -20,11 +20,11 @@ SELECT DISTINCT ?root ?view ?label WHERE {
   BIND(BNODE('neverUseThisUri') AS ?root)
 
   {
-    ?view a <http://purl.org/linked-data/cube#SliceKey> ;
+    ?view a qb:DataSet ;
       ${typeof dimension !== 'undefined' ?
          ( dimension.join ? 
-            dimension.map(t => { return 'ssz-schema:viewStructure/qb:component/qb:dimension <' + t.value + '> ;'}).join('\n') : 
-            'ssz-schema:viewStructure/qb:component/qb:dimension <'+ dimension.value + '> ;'
+            dimension.map(t => { return 'qb:structure/qb:component/qb:dimension <' + t.value + '> ;'}).join('\n') : 
+            'qb:structure/qb:component/qb:dimension <'+ dimension.value + '> ;'
          ) : ''}
       rdfs:label ?label .
 
