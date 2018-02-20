@@ -10,22 +10,15 @@ PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
     ?root a hydra:Collection .
-    ?root hydra:member ?shapeApi .
+    ?root hydra:member ?dataset .
 
-    ?shapeApi sh:targetNode ?sliceApi ;
-       stip-schema:dataSet ?dataset .
+    ?dataset rdfs:label ?datasetLabel .
 
-#    ?shapeApi ?shapeP ?shapeO .
-#    ?shapeO ?shapeP2 ?shapeO2 .
-#    ?shapeO2 ?shapeP3 ?shapeO3 .
+    ?dataset stip-schema:shape ?shapeApi .
 
-#    ?dataset rdfs:label ?label .
-#    ?dataset qb:slice ?slice .
-
-
-#    ?slice ?sliceP ?sliceO .
-#    ?sliceO skos:notation ?sliceNotation .
-#    ?sliceKey ?sliceKeyP ?sliceKeyO .
+    ?dataset qb:slice ?sliceApi .
+    ?sliceApi rdfs:label ?sliceLabel .
+    ?sliceApi a ssz-schema:DefaultSlice .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
@@ -38,17 +31,14 @@ SELECT DISTINCT * WHERE {
     ?dataset a qb:DataSet .
 
     ?dataset qb:slice ?slice .
+    ?dataset rdfs:label ?datasetLabel .
+
     ?slice a ssz-schema:DefaultSlice .
     ?slice rdfs:label ?sliceLabel .
     ?slice sh:shapesGraph ?shape .
-    ?shape owl:sameAs ?shapeApi .
+
     ?shape sh:targetNode ?sliceApi .
-
-#    ?slice ?sliceP ?sliceO .
-#    ?sliceO skos:notation ?sliceNotation .
-
-#    ?slice qb:sliceStructure ?sliceKey .
-#    ?sliceKey ?sliceKeyP ?sliceKeyO .
+    ?shape owl:sameAs ?shapeApi .
 
     # filter on dimension
     ?dataset ${typeof dimension !== 'undefined' ?
