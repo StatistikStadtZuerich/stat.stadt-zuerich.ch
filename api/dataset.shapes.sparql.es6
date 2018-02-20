@@ -19,12 +19,12 @@ CONSTRUCT {
 #    ?shapeO ?shapeP2 ?shapeO2 .
 #    ?shapeO2 ?shapeP3 ?shapeO3 .
 
-    ?dataset rdfs:label ?label .
-    ?dataset qb:slice ?slice .
+#    ?dataset rdfs:label ?label .
+#    ?dataset qb:slice ?slice .
 
 
-    ?slice ?sliceP ?sliceO .
-    ?sliceO skos:notation ?sliceNotation .
+#    ?slice ?sliceP ?sliceO .
+#    ?sliceO skos:notation ?sliceNotation .
 #    ?sliceKey ?sliceKeyP ?sliceKeyO .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
@@ -38,19 +38,17 @@ SELECT DISTINCT * WHERE {
     ?dataset a qb:DataSet .
 
     ?dataset qb:slice ?slice .
-    ?slice ?sliceP ?sliceO .
-    ?sliceO skos:notation ?sliceNotation .
-    ?slice qb:sliceStructure ?sliceKey .
-    ?sliceKey ?sliceKeyP ?sliceKeyO .
-    OPTIONAL {
-      ?slice sh:shapesGraph ?shape .
-      ?shape owl:sameAs ?shapeApi .
-      ?shape sh:targetNode ?sliceApi .
-      ?shape ?shapeP ?shapeO .
-      ?shapeO ?shapeP2 ?shapeO2 .
-      ?shapeO2 ?shapeP3 ?shapeO3 .
-    }
+    ?slice a ssz-schema:DefaultSlice .
+    ?slice rdfs:label ?sliceLabel .
+    ?slice sh:shapesGraph ?shape .
+    ?shape owl:sameAs ?shapeApi .
+    ?shape sh:targetNode ?sliceApi .
 
+#    ?slice ?sliceP ?sliceO .
+#    ?sliceO skos:notation ?sliceNotation .
+
+#    ?slice qb:sliceStructure ?sliceKey .
+#    ?sliceKey ?sliceKeyP ?sliceKeyO .
 
     # filter on dimension
     ?dataset ${typeof dimension !== 'undefined' ?
