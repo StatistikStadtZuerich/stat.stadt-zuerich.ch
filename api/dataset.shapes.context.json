@@ -1,11 +1,36 @@
 {
   "@context": {
+
     "@vocab": "http://www.w3.org/ns/hydra/core#",
+    "ssz-code": "http://ld.stadt-zuerich.ch/statistics/code/",
+    "ssz-dataset": "http://ld.stadt-zuerich.ch/statistics/dataset/",
+    "ssz-observation": "http://ld.stadt-zuerich.ch/statistics/observation/",
+    "dataset": "http://stat.stadt-zuerich.ch/schema/dataSet",
+    "first": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+    "in": {
+      "@id": "http://www.w3.org/ns/shacl#in",
+      "@container": "@set"
+    },
     "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "maxInclusive": "http://www.w3.org/ns/shacl#maxInclusive",
+    "minInclusive": "http://www.w3.org/ns/shacl#minInclusive",
+    "notation": "http://www.w3.org/2004/02/skos/core#notation",
+    "path": "http://www.w3.org/ns/shacl#path",
+    "property": "http://www.w3.org/ns/shacl#property",
+    "rest": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+    "seeAlso": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type": "@id"
+    },
     "member": {
       "@id": "http://www.w3.org/ns/hydra/core#member",
       "@container": "@set"
-    }
+    },
+    "api": {
+      "@id": "http://www.w3.org/ns/shacl#targetNode",
+      "@type": "@id"
+    },
+    "slice": "http://purl.org/linked-data/cube#slice"
   },
   "@type": "Collection"
 }

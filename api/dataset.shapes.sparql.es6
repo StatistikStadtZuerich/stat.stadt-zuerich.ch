@@ -10,16 +10,22 @@ PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
     ?root a hydra:Collection .
-    ?root hydra:member ?shape .
-    ?shape ?shapeP ?shapeO .
-    ?shapeO ?shapeP2 ?shapeO2 .
-    ?shapeO2 ?shapeP3 ?shapeO3 .
-    ?shape sh:targetNode ?sliceApi ;
-       ssz-schema:dataSet ?dataset .
+    ?root hydra:member ?shapeApi .
+
+    ?shapeApi sh:targetNode ?sliceApi ;
+       stip-schema:dataSet ?dataset .
+
+#    ?shapeApi ?shapeP ?shapeO .
+#    ?shapeO ?shapeP2 ?shapeO2 .
+#    ?shapeO2 ?shapeP3 ?shapeO3 .
+
     ?dataset rdfs:label ?label .
     ?dataset qb:slice ?slice .
+
+
     ?slice ?sliceP ?sliceO .
-    ?sliceKey ?sliceKeyP ?sliceKeyO.
+    ?sliceO skos:notation ?sliceNotation .
+#    ?sliceKey ?sliceKeyP ?sliceKeyO .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
@@ -29,27 +35,32 @@ SELECT DISTINCT * WHERE {
   BIND(BNODE('shapeResult') AS ?root)
 
   {
-    ?dataset a qb:DataSet ;
-      ${typeof dimension !== 'undefined' ?
+    ?dataset a qb:DataSet .
+
+    ?dataset qb:slice ?slice .
+    ?slice ?sliceP ?sliceO .
+    ?sliceO skos:notation ?sliceNotation .
+    ?slice qb:sliceStructure ?sliceKey .
+    ?sliceKey ?sliceKeyP ?sliceKeyO .
+    OPTIONAL {
+      ?slice sh:shapesGraph ?shape .
+      ?shape owl:sameAs ?shapeApi .
+      ?shape sh:targetNode ?sliceApi .
+      ?shape ?shapeP ?shapeO .
+      ?shapeO ?shapeP2 ?shapeO2 .
+      ?shapeO2 ?shapeP3 ?shapeO3 .
+    }
+
+
+    # filter on dimension
+    ?dataset ${typeof dimension !== 'undefined' ?
          ( dimension.join ? 
             dimension.map(t => { return 'qb:structure/qb:component/qb:dimension <' + t.value + '> ;'}).join('\n') : 
             'qb:structure/qb:component/qb:dimension <'+ dimension.value + '> ;'
          ) : ''}
       rdfs:label ?label .
 
-    ?dataset qb:slice ?slice .
-    ?slice ?sliceP ?sliceO .
-    ?slice qb:sliceStructure ?sliceKey .
-    ?sliceKey ?sliceKeyP ?sliceKeyO .
-    OPTIONAL {
-      ?sliceKey sh:shapesGraph ?shape .
-      ?shape sh:targetNode ?sliceApi .
-      ?shape owl:sameAs ?shapeApi .
-      ?shape ?shapeP ?shapeO .
-      ?shapeO ?shapeP2 ?shapeO2 .
-      ?shapeO2 ?shapeP3 ?shapeO3 .
-    }
-
+    #filter on topic (aka dataset currently)
     ${typeof topic !== 'undefined'? 'FILTER (?dataset IN (' + (topic.join ? topic.map(v => '<' + v.value + '>').join() : '<' + topic.value + '>') + '))' : ''}
   }
 
