@@ -7,13 +7,16 @@ PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
   <http://stat.stadt-zuerich.ch/api/dataset/BEW-RAUM-ZEIT-HEL-HEO-SEX> a qb:DataSet ;
-#    rdfs:label ?datasetLabel ;
-    qb:slice ?sliceApi .
+    rdfs:label ?datasetLabel ;
+    <http://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
+    qb:slice ?slice ;
+    qb:slice ?defaultSlice .
 
-#  ?sliceApi rdfs:label ?sliceLabel .
-  ?sliceApi a ssz-schema:DefaultSlice .
+  ?defaultSlice ?defaultSliceP ?defaultSliceO .
 
-  <http://stat.stadt-zuerich.ch/api/dataset/BEW-RAUM-ZEIT-HEL-HEO-SEX/shape> a sh:NodeShape ;
+  ?slice ?sliceP ?sliceO .
+
+  ?shape a sh:NodeShape ;
     sh:property ?b_property .
 
   ?b_property sh:in ?propertyValue ;
@@ -39,12 +42,18 @@ CONSTRUCT {
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
     <http://ld.stadt-zuerich.ch/statistics/dataset/BEW-RAUM-ZEIT-HEL-HEO-SEX> a qb:DataSet ;
-      qb:slice ?slice .
-#      rdfs:label ?datasetLabel .
+      qb:slice ?defaultSlice ;
+      qb:slice ?slice ;
+      rdfs:label ?datasetLabel .
 
-    ?slice a ssz-schema:DefaultSlice .
-#      rdfs:label ?sliceLabel .
-    ?slice sh:shapesGraph ?shape .
+    ?defaultSlice sh:shapesGraph ?shape ;
+      ?defaultSliceP ?defaultSliceO .
+
+    ?shape sh:targetNode ?sliceApi .
+
+    ?slice ?sliceP ?sliceO .
+
+
 
     ?shape sh:property ?b_property .
 

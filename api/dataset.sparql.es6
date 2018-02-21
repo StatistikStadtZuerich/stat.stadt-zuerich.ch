@@ -10,15 +10,16 @@ PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
     ?root a hydra:Collection .
-    ?root hydra:member ?dataset .
+    ?root hydra:member ?datasetApi .
 
-    ?dataset rdfs:label ?datasetLabel .
+    ?datasetApi rdfs:label ?datasetLabel .
 
-    ?dataset stip-schema:shape ?shapeApi .
+    ?datasetApi stip-schema:data ?sliceApi .
 
-    ?dataset qb:slice ?sliceApi .
-    ?sliceApi rdfs:label ?sliceLabel .
-    ?sliceApi a ssz-schema:DefaultSlice .
+#    ?datasetApi qb:slice ?slice .
+#    ?slice rdfs:label ?sliceLabel .
+#    ?slice ?sP ?sO .
+#    ?slice a ssz-schema:DefaultSlice .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
@@ -29,16 +30,18 @@ SELECT DISTINCT * WHERE {
 
   {
     ?dataset a qb:DataSet .
+    ?dataset owl:sameAs ?datasetApi .
 
-    ?dataset qb:slice ?slice .
+#    ?dataset qb:slice ?slice .
     ?dataset rdfs:label ?datasetLabel .
 
-    ?slice a ssz-schema:DefaultSlice .
-    ?slice rdfs:label ?sliceLabel .
-    ?slice sh:shapesGraph ?shape .
+#    ?slice a ssz-schema:DefaultSlice .
+#    ?slice rdfs:label ?sliceLabel .
+#    ?slice ?sP ?sO .
+#    ?slice sh:shapesGraph ?shape .
 
-    ?shape sh:targetNode ?sliceApi .
-    ?shape owl:sameAs ?shapeApi .
+#    ?shape sh:targetNode ?sliceApi .
+#    ?shape owl:sameAs ?shapeApi .
 
     # filter on dimension
     ?dataset ${typeof dimension !== 'undefined' ?

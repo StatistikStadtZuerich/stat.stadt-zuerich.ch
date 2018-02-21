@@ -21,7 +21,10 @@
       "@type": "@id"
     },
     "DataSet": "http://purl.org/linked-data/cube#DataSet",
-    "NodeShape": "http://www.w3.org/ns/shacl#NodeShape"
+    "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
+    "slice": "http://purl.org/linked-data/cube#slice",
+    "sliceStructure": "http://purl.org/linked-data/cube#sliceStructure",
+    "shapesGraph": "http://www.w3.org/ns/shacl#shapesGraph"
   },
   "@type": "DataSet"
 }
