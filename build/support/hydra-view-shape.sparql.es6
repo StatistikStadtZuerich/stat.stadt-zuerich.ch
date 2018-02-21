@@ -2,8 +2,17 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
+PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
+  <http://stat.stadt-zuerich.ch/api/dataset/%%NOTATION%%> a qb:DataSet ;
+    rdfs:label ?datasetLabel ;
+    qb:slice ?sliceApi .
+
+  ?slice rdfs:label ?sliceLabel .
+  ?slice a ssz-schema:DefaultSlice .
+
   <http://stat.stadt-zuerich.ch/api/dataset/%%NOTATION%%/shape> a sh:NodeShape ;
     sh:property ?b_property .
 
@@ -29,7 +38,15 @@ CONSTRUCT {
     sh:maxInclusive ?max .
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
-    <http://ld.stadt-zuerich.ch/statistics/dataset/%%NOTATION%%/shape> sh:property ?b_property .
+    <http://ld.stadt-zuerich.ch/statistics/dataset/%%NOTATION%%> a qb:DataSet ;
+      qb:slice ?slice ;
+      rdfs:label ?datasetLabel .
+
+    ?slice a ssz-schema:DefaultSlice ;
+      rdfs:label ?sliceLabel ;
+      sh:shapesGraph ?shape .
+
+    ?shape sh:property ?b_property .
 
     {
       ?b_property sh:in ?propertyValue .

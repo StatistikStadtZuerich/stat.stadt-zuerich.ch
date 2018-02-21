@@ -38,10 +38,10 @@ function attachSupportedClass (view, api) {
       }
     }, {
       property: {
-        '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#shape',
+        '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#dataset',
         supportedOperation: [
           {
-            '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#shape-get',
+            '@id': 'http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#dataset-get',
             '@type': [
               'Operation',
               'http://hydra-box.org/schema/View'
@@ -114,8 +114,8 @@ function attachReference (view, api) {
     '@id': 'http://stat.stadt-zuerich.ch/api/dataset/' + view.notation + '/slice'
   }
 
-  reference['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#shape'] = {
-    '@id': 'http://stat.stadt-zuerich.ch/api/dataset/' + view.notation + '/shape'
+  reference['http://stat.stadt-zuerich.ch/api/schema/dataset/' + view.notation + '#dataset'] = {
+    '@id': 'http://stat.stadt-zuerich.ch/api/dataset/' + view.notation
   }
 
   api['@graph'].push(reference)

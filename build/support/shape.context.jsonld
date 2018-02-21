@@ -20,7 +20,8 @@
       "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
       "@type": "@id"
     },
+    "DataSet": "http://purl.org/linked-data/cube#DataSet",
     "NodeShape": "http://www.w3.org/ns/shacl#NodeShape"
   },
-  "@type": "NodeShape"
+  "@type": "DataSet"
 }

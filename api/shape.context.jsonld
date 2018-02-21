@@ -19,6 +19,7 @@
       "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
       "@type": "@id"
     },
+    "DataSet": "http://purl.org/linked-data/cube#DataSet",
     "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
     "mAAS": "http://ld.stadt-zuerich.ch/statistics/measure/AAS",
     "mABE": "http://ld.stadt-zuerich.ch/statistics/measure/ABE",
@@ -510,5 +511,5 @@
     "dZVF": "http://ld.stadt-zuerich.ch/statistics/property/ZVF",
     "dZVM": "http://ld.stadt-zuerich.ch/statistics/property/ZVM"
   },
-  "@type": "NodeShape"
+  "@type": "DataSet"
 }
