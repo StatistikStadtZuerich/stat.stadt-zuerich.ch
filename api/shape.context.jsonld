@@ -21,7 +21,10 @@
     },
     "DataSet": "http://purl.org/linked-data/cube#DataSet",
     "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
-    "slice": "http://purl.org/linked-data/cube#slice",
+    "slice": {
+      "@id": "http://purl.org/linked-data/cube#slice",
+      "@container": "@set"
+    },
     "sliceStructure": "http://purl.org/linked-data/cube#sliceStructure",
     "shapesGraph": "http://www.w3.org/ns/shacl#shapesGraph",
     "mAAS": "http://ld.stadt-zuerich.ch/statistics/measure/AAS",
