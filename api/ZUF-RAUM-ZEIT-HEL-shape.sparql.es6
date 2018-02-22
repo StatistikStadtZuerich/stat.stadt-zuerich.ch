@@ -53,8 +53,6 @@ CONSTRUCT {
 
     ?slice ?sliceP ?sliceO .
 
-
-
     ?shape sh:property ?b_property .
 
     {
