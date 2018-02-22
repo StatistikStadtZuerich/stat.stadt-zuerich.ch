@@ -21,6 +21,8 @@
       "@type": "@id"
     },
     "DataSet": "http://purl.org/linked-data/cube#DataSet",
+    "Slice": "http://purl.org/linked-data/cube#Slice",
+    "DefaultSlice": "http://ld.stadt-zuerich.ch/schema/DefaultSlice",
     "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
     "slice": {
       "@id": "http://purl.org/linked-data/cube#slice",
