@@ -14,8 +14,8 @@ SELECT DISTINCT ?view ?notation ?label ?dimension ?lock ?dataset WHERE {
     qb:structure/qb:sliceKey ?view ;
     qb:structure/qb:component/qb:dimension ?dimension .
 
-  ?view a qb:SliceKey ;
-    qb:componentProperty ?dimensionLock  .
+  ?view a qb:SliceKey .
+  OPTIONAL { ?view qb:componentProperty ?dimensionLock  . }
      
   ?sliceUri a qb:Slice ;
     qb:sliceStructure ?view .
