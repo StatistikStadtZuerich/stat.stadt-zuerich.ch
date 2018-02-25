@@ -520,5 +520,12 @@
     "dZVF": "http://ld.stadt-zuerich.ch/statistics/property/ZVF",
     "dZVM": "http://ld.stadt-zuerich.ch/statistics/property/ZVM"
   },
-  "@type": "DataSet"
+  "@type": "DataSet",
+  "data": {},
+  "slice": {
+    "shapeGraph": {
+      
+    }
+  },
+  "label": {}
 }
