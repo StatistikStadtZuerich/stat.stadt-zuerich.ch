@@ -523,8 +523,14 @@
   "@type": "DataSet",
   "data": {},
   "slice": {
-    "shapeGraph": {
-      
+    "@type": "Slice",
+    "@requireAll": true,
+    "shapesGraph": {
+      "property": {
+        "in": {
+          "@embed": "@always"
+        }
+      }
     }
   },
   "label": {}
