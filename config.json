@@ -36,7 +36,7 @@
       "static": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Expose-Headers": "Link",
-        "Cache-Control": "public, max-age=120",
+        "Cache-Control": "public, max-age=86400",
         "Vary": "Accept"
       }
     }
