@@ -10,6 +10,6 @@ RUN npm install && npm cache clean --force
 ENV NODE_ENV production
 
 RUN npm install pm2 -g
-CMD pm2-runtime start npm -- start
+CMD pm2-runtime start npm -i -- start
 
 EXPOSE 8080
