@@ -14,7 +14,10 @@
     "minInclusive": "http://www.w3.org/ns/shacl#minInclusive",
     "notation": "http://www.w3.org/2004/02/skos/core#notation",
     "path": "http://www.w3.org/ns/shacl#path",
-    "property": "http://www.w3.org/ns/shacl#property",
+    "property": {
+      "@id": "http://www.w3.org/ns/shacl#property",
+      "@container": "@set"
+    },
     "rest": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
     "seeAlso": {
       "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
@@ -32,5 +35,18 @@
     "sliceStructure": "http://purl.org/linked-data/cube#sliceStructure",
     "shapesGraph": "http://www.w3.org/ns/shacl#shapesGraph"
   },
-  "@type": "DataSet"
+  "@type": "DataSet",
+  "data": {},
+  "slice": {
+    "@type": "Slice",
+    "@requireAll": true,
+    "shapesGraph": {
+      "property": {
+        "in": {
+          "@embed": "@always"
+        }
+      }
+    }
+  },
+  "label": {}
 }
