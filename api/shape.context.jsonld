@@ -529,11 +529,7 @@
     "@type": "Slice",
     "@requireAll": true,
     "shapesGraph": {
-      "property": {
-        "in": {
-          "@embed": "@always"
-        }
-      }
+      "property": {}
     }
   },
   "label": {}
