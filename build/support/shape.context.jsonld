@@ -42,7 +42,17 @@
     "@requireAll": true,
     "shapesGraph": {
       "property": {
+        "@requireAll": false,
         "in": {
+          "@embed": "@always"
+        },
+        "maxInclusive": {
+          "@embed": "@always"
+        },
+        "minInclusive": {
+          "@embed": "@always"
+        },
+        "notation": {
           "@embed": "@always"
         }
       }
