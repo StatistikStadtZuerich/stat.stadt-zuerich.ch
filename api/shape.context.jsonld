@@ -529,7 +529,21 @@
     "@type": "Slice",
     "@requireAll": true,
     "shapesGraph": {
-      "property": {}
+      "property": {
+        "@requireAll": false,
+        "in": {
+          "@embed": "@always"
+        },
+        "maxInclusive": {
+          "@embed": "@always"
+        },
+        "minInclusive": {
+          "@embed": "@always"
+        },
+        "notation": {
+          "@embed": "@always"
+        }
+      }
     }
   },
   "label": {}
