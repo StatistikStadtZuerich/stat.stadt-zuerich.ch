@@ -20,16 +20,14 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
         <http://ld.stadt-zuerich.ch/statistics/property/WSE> ?wse;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?raum skos:notation ?raumNotation .
       ?wse skos:notation ?wseNotation .
 
       # filters
-      ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
       ${typeof wse !== 'undefined' ? 'FILTER (?wseNotation IN (' + (wse.join ? wse.map(v => v.toCanonical()).join() : wse.toCanonical()) + '))' : ''}
 
       # time range filter
