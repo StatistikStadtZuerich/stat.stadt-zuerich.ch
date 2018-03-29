@@ -26,11 +26,11 @@
       "@container": "@set"
     },
     "shape": {
-      "@id": "http://stat.stadt-zuerich.ch/schema/shape",
+      "@id": "http://stat.integ.stadt-zuerich.ch/schema/shape",
       "@type": "@id"
     },
     "data": {
-      "@id": "http://stat.stadt-zuerich.ch/schema/data",
+      "@id": "http://stat.integ.stadt-zuerich.ch/schema/data",
       "@type": "@id"
     },
     "slice": "http://purl.org/linked-data/cube#slice"
