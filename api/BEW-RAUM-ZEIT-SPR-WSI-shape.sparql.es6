@@ -6,9 +6,9 @@ PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/api/dataset/BEW-RAUM-ZEIT-SPR-WSI> a qb:DataSet ;
+  <http://stat.integ.stadt-zuerich.ch/api/dataset/BEW-RAUM-ZEIT-SPR-WSI> a qb:DataSet ;
     rdfs:label ?datasetLabel ;
-    <http://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
+    <http://stat.integ.stadt-zuerich.ch/schema/data> ?sliceApi ;
     qb:slice ?slice ;
     qb:slice ?defaultSlice .
 
