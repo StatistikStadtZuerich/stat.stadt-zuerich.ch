@@ -1435,6 +1435,10 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/GBR",
       "@type": "@id"
     },
+    "dGEL": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/GEL",
+      "@type": "@id"
+    },
     "dGEP": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/GEP",
       "@type": "@id"
@@ -1525,6 +1529,10 @@
     },
     "dHTK": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/HTK",
+      "@type": "@id"
+    },
+    "dHTY": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/HTY",
       "@type": "@id"
     },
     "dHUB": {
@@ -1777,6 +1785,10 @@
     },
     "dSTA": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/STA",
+      "@type": "@id"
+    },
+    "dSTE": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/STE",
       "@type": "@id"
     },
     "dSTI": {

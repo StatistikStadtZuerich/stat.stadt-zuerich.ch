@@ -6,7 +6,7 @@ PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/api/dataset/AVA-RAUM-ZEIT-GGH-SEX-WSE> a qb:DataSet ;
+  <http://stat.stadt-zuerich.ch/dataset/AVA-RAUM-ZEIT-GGH-SEX-WSE> a qb:DataSet ;
     rdfs:label ?datasetLabel ;
     <http://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
     qb:slice ?slice ;

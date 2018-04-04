@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/api/dataset/ZUZ-RAUM-ZEIT-SEX/slice> a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/dataset/ZUZ-RAUM-ZEIT-SEX/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
