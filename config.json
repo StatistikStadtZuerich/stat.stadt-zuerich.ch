@@ -18,11 +18,7 @@
       "documentationUrl": "/api",
       "documentation": "cwd:api/api.jsonld",
       "options": {
-        "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
-        "sparqlEndpointAuthentication": {
-          "user": "ssz-read",
-          "password": "coo2aiw6itiT"
-        },
+        "sparqlEndpointUrl": "http://stat.integ.stadt-zuerich.ch/query",
         "debug": true,
         "contextHeader": "/context/"
       }
@@ -41,7 +37,7 @@
       "static": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Expose-Headers": "Link",
-        "Cache-Control": "public, max-age=86400",
+        "Cache-Control": "public, max-age=120",
         "Vary": "Accept"
       }
     }
