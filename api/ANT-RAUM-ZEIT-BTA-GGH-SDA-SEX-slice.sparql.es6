@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/BEH-RAUM-ZEIT/slice> a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,12 +15,16 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEH-RAUM-ZEIT> ;
+        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX> ;
         ?property ?value.
 
       # dimensions
       ?observation
+        <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA7804>;
+        <http://ld.stadt-zuerich.ch/statistics/property/GGH> <http://ld.stadt-zuerich.ch/statistics/code/GGH1500>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/SDA> <http://ld.stadt-zuerich.ch/statistics/code/SDA0001>;
+        <http://ld.stadt-zuerich.ch/statistics/property/SEX> <http://ld.stadt-zuerich.ch/statistics/code/SEX0002>;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters

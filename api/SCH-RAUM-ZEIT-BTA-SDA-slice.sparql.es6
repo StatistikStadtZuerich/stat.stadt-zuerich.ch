@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/WEZ-RAUM-ZEIT/slice> a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-BTA-SDA/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,12 +15,14 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/WEZ-RAUM-ZEIT> ;
+        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/SCH-RAUM-ZEIT-BTA-SDA> ;
         ?property ?value.
 
       # dimensions
       ?observation
+        <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA7804>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/SDA> <http://ld.stadt-zuerich.ch/statistics/code/SDA0001>;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters

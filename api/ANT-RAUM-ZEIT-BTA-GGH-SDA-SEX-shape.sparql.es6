@@ -6,7 +6,7 @@ PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/ZUZ-RAUM-ZEIT> a qb:DataSet ;
+  <http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX> a qb:DataSet ;
     rdfs:label ?datasetLabel ;
     <http://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
     qb:slice ?slice ;
@@ -41,7 +41,7 @@ CONSTRUCT {
     sh:maxInclusive ?max .
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
-    <http://ld.stadt-zuerich.ch/statistics/dataset/ZUZ-RAUM-ZEIT> a qb:DataSet ;
+    <http://ld.stadt-zuerich.ch/statistics/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX> a qb:DataSet ;
       qb:slice ?defaultSlice ;
       qb:slice ?slice ;
       rdfs:label ?datasetLabel .

@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/DOK-RAUM-ZEIT-SEX/slice> a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,19 +15,27 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/DOK-RAUM-ZEIT-SEX> ;
+        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX> ;
         ?property ?value.
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/ALT> ?alt;
+        <http://ld.stadt-zuerich.ch/statistics/property/HER> ?her;
+        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
+      ?alt skos:notation ?altNotation .
+      ?her skos:notation ?herNotation .
+      ?raum skos:notation ?raumNotation .
       ?sex skos:notation ?sexNotation .
 
       # filters
+      ${typeof alt !== 'undefined' ? 'FILTER (?altNotation IN (' + (alt.join ? alt.map(v => v.toCanonical()).join() : alt.toCanonical()) + '))' : ''}
+      ${typeof her !== 'undefined' ? 'FILTER (?herNotation IN (' + (her.join ? her.map(v => v.toCanonical()).join() : her.toCanonical()) + '))' : ''}
+      ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
       ${typeof sex !== 'undefined' ? 'FILTER (?sexNotation IN (' + (sex.join ? sex.map(v => v.toCanonical()).join() : sex.toCanonical()) + '))' : ''}
 
       # time range filter

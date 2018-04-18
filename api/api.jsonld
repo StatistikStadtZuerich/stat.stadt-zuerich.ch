@@ -704,6 +704,70 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX",
+          "@type": "Class",
+          "supportedProperty": [
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#slice",
+                "search": {
+                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#search"
+                },
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#slice-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/variables": {
+                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#search"
+                    },
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX-slice.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "slice.context.jsonld"
+                    },
+                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#slice-input",
+                    "returns": "http://purl.org/linked-data/cube#Slice"
+                  }
+                ]
+              }
+            },
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#dataset",
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#dataset-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX-shape.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "shape.context.jsonld"
+                    },
+                    "expects": null,
+                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SEX-SST",
           "@type": "Class",
           "supportedProperty": [
@@ -1010,70 +1074,6 @@
                       "@type": "http://hydra-box.org/schema/SparqlQuery",
                       "http://hydra-box.org/schema/source": {
                         "@id": "ANT-RAUM-ZEIT-EHD-GGH-shape.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "shape.context.jsonld"
-                    },
-                    "expects": null,
-                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL",
-          "@type": "Class",
-          "supportedProperty": [
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#slice",
-                "search": {
-                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#search"
-                },
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#slice-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/variables": {
-                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#search"
-                    },
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "ANT-RAUM-ZEIT-GGH-HEL-slice.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "slice.context.jsonld"
-                    },
-                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#slice-input",
-                    "returns": "http://purl.org/linked-data/cube#Slice"
-                  }
-                ]
-              }
-            },
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#dataset",
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#dataset-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "ANT-RAUM-ZEIT-GGH-HEL-shape.sparql.es6"
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
@@ -3136,6 +3136,70 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX",
+          "@type": "Class",
+          "supportedProperty": [
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#slice",
+                "search": {
+                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#search"
+                },
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#slice-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/variables": {
+                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#search"
+                    },
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "BEW-RAUM-ZEIT-ALT-HER-SEX-slice.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "slice.context.jsonld"
+                    },
+                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#slice-input",
+                    "returns": "http://purl.org/linked-data/cube#Slice"
+                  }
+                ]
+              }
+            },
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#dataset",
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#dataset-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "BEW-RAUM-ZEIT-ALT-HER-SEX-shape.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "shape.context.jsonld"
+                    },
+                    "expects": null,
+                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-KON-WSI",
           "@type": "Class",
           "supportedProperty": [
@@ -3698,70 +3762,6 @@
                       "@type": "http://hydra-box.org/schema/SparqlQuery",
                       "http://hydra-box.org/schema/source": {
                         "@id": "BEW-RAUM-ZEIT-GEP-shape.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "shape.context.jsonld"
-                    },
-                    "expects": null,
-                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI",
-          "@type": "Class",
-          "supportedProperty": [
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#slice",
-                "search": {
-                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#search"
-                },
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#slice-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/variables": {
-                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#search"
-                    },
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "BEW-RAUM-ZEIT-GMS-WSI-slice.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "slice.context.jsonld"
-                    },
-                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#slice-input",
-                    "returns": "http://purl.org/linked-data/cube#Slice"
-                  }
-                ]
-              }
-            },
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#dataset",
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#dataset-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "BEW-RAUM-ZEIT-GMS-WSI-shape.sparql.es6"
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
@@ -4480,6 +4480,70 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI",
+          "@type": "Class",
+          "supportedProperty": [
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#slice",
+                "search": {
+                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#search"
+                },
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#slice-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/variables": {
+                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#search"
+                    },
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "BEW-RAUM-ZEIT-HTY-WSI-slice.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "slice.context.jsonld"
+                    },
+                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#slice-input",
+                    "returns": "http://purl.org/linked-data/cube#Slice"
+                  }
+                ]
+              }
+            },
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#dataset",
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#dataset-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "BEW-RAUM-ZEIT-HTY-WSI-shape.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "shape.context.jsonld"
+                    },
+                    "expects": null,
+                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-KON",
           "@type": "Class",
           "supportedProperty": [
@@ -4658,70 +4722,6 @@
                       "@type": "http://hydra-box.org/schema/SparqlQuery",
                       "http://hydra-box.org/schema/source": {
                         "@id": "BEW-RAUM-ZEIT-SEX-WSI-shape.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "shape.context.jsonld"
-                    },
-                    "expects": null,
-                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX",
-          "@type": "Class",
-          "supportedProperty": [
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#slice",
-                "search": {
-                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#search"
-                },
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#slice-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/variables": {
-                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#search"
-                    },
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "BEW-RAUM-ZEIT-SEX-slice.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "slice.context.jsonld"
-                    },
-                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#slice-input",
-                    "returns": "http://purl.org/linked-data/cube#Slice"
-                  }
-                ]
-              }
-            },
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#dataset",
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#dataset-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "BEW-RAUM-ZEIT-SEX-shape.sparql.es6"
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
@@ -5554,70 +5554,6 @@
                       "@type": "http://hydra-box.org/schema/SparqlQuery",
                       "http://hydra-box.org/schema/source": {
                         "@id": "DOK-RAUM-ZEIT-BTA-shape.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "shape.context.jsonld"
-                    },
-                    "expects": null,
-                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX",
-          "@type": "Class",
-          "supportedProperty": [
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#slice",
-                "search": {
-                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#search"
-                },
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#slice-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/variables": {
-                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#search"
-                    },
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "DOK-RAUM-ZEIT-SEX-slice.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "slice.context.jsonld"
-                    },
-                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#slice-input",
-                    "returns": "http://purl.org/linked-data/cube#Slice"
-                  }
-                ]
-              }
-            },
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#dataset",
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#dataset-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "DOK-RAUM-ZEIT-SEX-shape.sparql.es6"
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
@@ -9472,6 +9408,70 @@
           ]
         },
         {
+          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA",
+          "@type": "Class",
+          "supportedProperty": [
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#slice",
+                "search": {
+                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#search"
+                },
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#slice-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/variables": {
+                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#search"
+                    },
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "SCH-RAUM-ZEIT-BTA-SDA-slice.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "slice.context.jsonld"
+                    },
+                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#slice-input",
+                    "returns": "http://purl.org/linked-data/cube#Slice"
+                  }
+                ]
+              }
+            },
+            {
+              "property": {
+                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#dataset",
+                "supportedOperation": [
+                  {
+                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#dataset-get",
+                    "@type": [
+                      "Operation",
+                      "http://hydra-box.org/schema/View"
+                    ],
+                    "method": "GET",
+                    "http://hydra-box.org/schema/code": {
+                      "@type": "http://hydra-box.org/schema/SparqlQuery",
+                      "http://hydra-box.org/schema/source": {
+                        "@id": "SCH-RAUM-ZEIT-BTA-SDA-shape.sparql.es6"
+                      }
+                    },
+                    "http://hydra-box.org/schema/returnFrame": {
+                      "@id": "shape.context.jsonld"
+                    },
+                    "expects": null,
+                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
           "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SEM",
           "@type": "Class",
           "supportedProperty": [
@@ -9842,134 +9842,6 @@
                       "@type": "http://hydra-box.org/schema/SparqlQuery",
                       "http://hydra-box.org/schema/source": {
                         "@id": "SCH-RAUM-ZEIT-BTA-shape.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "shape.context.jsonld"
-                    },
-                    "expects": null,
-                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL",
-          "@type": "Class",
-          "supportedProperty": [
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#slice",
-                "search": {
-                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#search"
-                },
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#slice-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/variables": {
-                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#search"
-                    },
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "SCH-RAUM-ZEIT-HEL-slice.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "slice.context.jsonld"
-                    },
-                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#slice-input",
-                    "returns": "http://purl.org/linked-data/cube#Slice"
-                  }
-                ]
-              }
-            },
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#dataset",
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#dataset-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "SCH-RAUM-ZEIT-HEL-shape.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "shape.context.jsonld"
-                    },
-                    "expects": null,
-                    "returns": "http://www.w3.org/ns/shacl#NodeShape"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX",
-          "@type": "Class",
-          "supportedProperty": [
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#slice",
-                "search": {
-                  "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#search"
-                },
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#slice-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/variables": {
-                      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#search"
-                    },
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "SCH-RAUM-ZEIT-SEX-slice.sparql.es6"
-                      }
-                    },
-                    "http://hydra-box.org/schema/returnFrame": {
-                      "@id": "slice.context.jsonld"
-                    },
-                    "expects": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#slice-input",
-                    "returns": "http://purl.org/linked-data/cube#Slice"
-                  }
-                ]
-              }
-            },
-            {
-              "property": {
-                "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#dataset",
-                "supportedOperation": [
-                  {
-                    "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#dataset-get",
-                    "@type": [
-                      "Operation",
-                      "http://hydra-box.org/schema/View"
-                    ],
-                    "method": "GET",
-                    "http://hydra-box.org/schema/code": {
-                      "@type": "http://hydra-box.org/schema/SparqlQuery",
-                      "http://hydra-box.org/schema/source": {
-                        "@id": "SCH-RAUM-ZEIT-SEX-shape.sparql.es6"
                       }
                     },
                     "http://hydra-box.org/schema/returnFrame": {
@@ -13924,6 +13796,49 @@
       }
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#slice-input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#search",
+      "@type": "IriTemplate",
+      "template": "/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX/slice{?from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX",
+      "@type": [
+        "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX",
+        "http://purl.org/linked-data/cube#DataSet"
+      ],
+      "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#slice": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX/slice"
+      },
+      "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX#dataset": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-BTA-GGH-SDA-SEX"
+      }
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-BTA-GGH-SEX-SST#slice-input",
       "@type": "Class",
       "supportedProperty": [
@@ -14211,65 +14126,6 @@
       }
     },
     {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#slice-input",
-      "@type": "Class",
-      "supportedProperty": [
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/GGH"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/RAUM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/ZEIT/FROM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#search",
-      "@type": "IriTemplate",
-      "template": "/dataset/ANT-RAUM-ZEIT-GGH-HEL/slice{?ggh,raum,from,to,other}",
-      "variableRepresentation": "BasicRepresentation",
-      "mapping": [
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "ggh",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/GGH"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "raum",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/RAUM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "from",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/ZEIT/FROM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "to",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-GGH-HEL",
-      "@type": [
-        "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL",
-        "http://purl.org/linked-data/cube#DataSet"
-      ],
-      "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#slice": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-GGH-HEL/slice"
-      },
-      "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-HEL#dataset": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-GGH-HEL"
-      }
-    },
-    {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-PSA#slice-input",
       "@type": "Class",
       "supportedProperty": [
@@ -14368,9 +14224,6 @@
       "@type": "Class",
       "supportedProperty": [
         {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-SEX/property/GGH"
-        },
-        {
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-SEX/property/SEX"
         },
         {
@@ -14384,14 +14237,9 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-SEX#search",
       "@type": "IriTemplate",
-      "template": "/dataset/ANT-RAUM-ZEIT-GGH-SEX/slice{?ggh,sex,from,to,other}",
+      "template": "/dataset/ANT-RAUM-ZEIT-GGH-SEX/slice{?sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "ggh",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/ANT-RAUM-ZEIT-GGH-SEX/property/GGH"
-        },
         {
           "@type": "IriTemplateMapping",
           "variable": "sex",
@@ -16038,6 +15886,81 @@
       }
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#slice-input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/ALT"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/HER"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/SEX"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#search",
+      "@type": "IriTemplate",
+      "template": "/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/slice{?alt,her,raum,sex,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "alt",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/ALT"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "her",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/HER"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "sex",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/SEX"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX",
+      "@type": [
+        "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX",
+        "http://purl.org/linked-data/cube#DataSet"
+      ],
+      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#slice": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX/slice"
+      },
+      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX#dataset": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-ALT-HER-SEX"
+      }
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-ALT-KON-WSI#slice-input",
       "@type": "Class",
       "supportedProperty": [
@@ -16545,57 +16468,6 @@
       }
     },
     {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#slice-input",
-      "@type": "Class",
-      "supportedProperty": [
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI/property/RAUM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI/property/ZEIT/FROM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#search",
-      "@type": "IriTemplate",
-      "template": "/dataset/BEW-RAUM-ZEIT-GMS-WSI/slice{?raum,from,to,other}",
-      "variableRepresentation": "BasicRepresentation",
-      "mapping": [
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "raum",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI/property/RAUM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "from",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI/property/ZEIT/FROM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "to",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-GMS-WSI",
-      "@type": [
-        "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI",
-        "http://purl.org/linked-data/cube#DataSet"
-      ],
-      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#slice": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-GMS-WSI/slice"
-      },
-      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-GMS-WSI#dataset": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-GMS-WSI"
-      }
-    },
-    {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL-HEO-SEX#slice-input",
       "@type": "Class",
       "supportedProperty": [
@@ -16981,9 +16853,6 @@
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL-SEX/property/HEL"
         },
         {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL-SEX/property/RAUM"
-        },
-        {
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL-SEX/property/SEX"
         },
         {
@@ -16997,18 +16866,13 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL-SEX#search",
       "@type": "IriTemplate",
-      "template": "/dataset/BEW-RAUM-ZEIT-HEL-SEX/slice{?hel,raum,sex,from,to,other}",
+      "template": "/dataset/BEW-RAUM-ZEIT-HEL-SEX/slice{?hel,sex,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
           "variable": "hel",
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL-SEX/property/HEL"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "raum",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL-SEX/property/RAUM"
         },
         {
           "@type": "IriTemplateMapping",
@@ -17174,9 +17038,6 @@
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL/property/HEL"
         },
         {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL/property/RAUM"
-        },
-        {
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL/property/ZEIT/FROM"
         },
         {
@@ -17187,18 +17048,13 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL#search",
       "@type": "IriTemplate",
-      "template": "/dataset/BEW-RAUM-ZEIT-HEL/slice{?hel,raum,from,to,other}",
+      "template": "/dataset/BEW-RAUM-ZEIT-HEL/slice{?hel,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
           "variable": "hel",
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL/property/HEL"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "raum",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HEL/property/RAUM"
         },
         {
           "@type": "IriTemplateMapping",
@@ -17282,6 +17138,65 @@
       },
       "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HHG-WSI#dataset": {
         "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-HHG-WSI"
+      }
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#slice-input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/HTY"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/RAUM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#search",
+      "@type": "IriTemplate",
+      "template": "/dataset/BEW-RAUM-ZEIT-HTY-WSI/slice{?hty,raum,from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "hty",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/HTY"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "raum",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/RAUM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-HTY-WSI",
+      "@type": [
+        "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI",
+        "http://purl.org/linked-data/cube#DataSet"
+      ],
+      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#slice": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-HTY-WSI/slice"
+      },
+      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-HTY-WSI#dataset": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-HTY-WSI"
       }
     },
     {
@@ -17467,65 +17382,6 @@
       },
       "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX-WSI#dataset": {
         "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-SEX-WSI"
-      }
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#slice-input",
-      "@type": "Class",
-      "supportedProperty": [
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/RAUM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/SEX"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/ZEIT/FROM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#search",
-      "@type": "IriTemplate",
-      "template": "/dataset/BEW-RAUM-ZEIT-SEX/slice{?raum,sex,from,to,other}",
-      "variableRepresentation": "BasicRepresentation",
-      "mapping": [
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "raum",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/RAUM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "sex",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/SEX"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "from",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/ZEIT/FROM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "to",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-SEX",
-      "@type": [
-        "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX",
-        "http://purl.org/linked-data/cube#DataSet"
-      ],
-      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#slice": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-SEX/slice"
-      },
-      "http://stat.stadt-zuerich.ch/schema/dataset/BEW-RAUM-ZEIT-SEX#dataset": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-SEX"
       }
     },
     {
@@ -18166,6 +18022,9 @@
       "@type": "Class",
       "supportedProperty": [
         {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-BTA-SST/property/BTA"
+        },
+        {
           "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-BTA-SST/property/SST"
         },
         {
@@ -18179,9 +18038,14 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-BTA-SST#search",
       "@type": "IriTemplate",
-      "template": "/dataset/DOK-RAUM-ZEIT-BTA-SST/slice{?sst,from,to,other}",
+      "template": "/dataset/DOK-RAUM-ZEIT-BTA-SST/slice{?bta,sst,from,to,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "bta",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-BTA-SST/property/BTA"
+        },
         {
           "@type": "IriTemplateMapping",
           "variable": "sst",
@@ -18253,57 +18117,6 @@
       },
       "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-BTA#dataset": {
         "@id": "http://stat.stadt-zuerich.ch/dataset/DOK-RAUM-ZEIT-BTA"
-      }
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#slice-input",
-      "@type": "Class",
-      "supportedProperty": [
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX/property/SEX"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX/property/ZEIT/FROM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#search",
-      "@type": "IriTemplate",
-      "template": "/dataset/DOK-RAUM-ZEIT-SEX/slice{?sex,from,to,other}",
-      "variableRepresentation": "BasicRepresentation",
-      "mapping": [
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "sex",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX/property/SEX"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "from",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX/property/ZEIT/FROM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "to",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/dataset/DOK-RAUM-ZEIT-SEX",
-      "@type": [
-        "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX",
-        "http://purl.org/linked-data/cube#DataSet"
-      ],
-      "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#slice": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/DOK-RAUM-ZEIT-SEX/slice"
-      },
-      "http://stat.stadt-zuerich.ch/schema/dataset/DOK-RAUM-ZEIT-SEX#dataset": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/DOK-RAUM-ZEIT-SEX"
       }
     },
     {
@@ -21607,6 +21420,49 @@
       }
     },
     {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#slice-input",
+      "@type": "Class",
+      "supportedProperty": [
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA/property/ZEIT/FROM"
+        },
+        {
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#search",
+      "@type": "IriTemplate",
+      "template": "/dataset/SCH-RAUM-ZEIT-BTA-SDA/slice{?from,to,other}",
+      "variableRepresentation": "BasicRepresentation",
+      "mapping": [
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "from",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA/property/ZEIT/FROM"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "to",
+          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA/property/ZEIT/TO"
+        }
+      ]
+    },
+    {
+      "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-BTA-SDA",
+      "@type": [
+        "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA",
+        "http://purl.org/linked-data/cube#DataSet"
+      ],
+      "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#slice": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-BTA-SDA/slice"
+      },
+      "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SDA#dataset": {
+        "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-BTA-SDA"
+      }
+    },
+    {
       "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA-SEM#slice-input",
       "@type": "Class",
       "supportedProperty": [
@@ -21966,100 +21822,6 @@
       },
       "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-BTA#dataset": {
         "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-BTA"
-      }
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#slice-input",
-      "@type": "Class",
-      "supportedProperty": [
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL/property/ZEIT/FROM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#search",
-      "@type": "IriTemplate",
-      "template": "/dataset/SCH-RAUM-ZEIT-HEL/slice{?from,to,other}",
-      "variableRepresentation": "BasicRepresentation",
-      "mapping": [
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "from",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL/property/ZEIT/FROM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "to",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-HEL",
-      "@type": [
-        "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL",
-        "http://purl.org/linked-data/cube#DataSet"
-      ],
-      "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#slice": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-HEL/slice"
-      },
-      "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-HEL#dataset": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-HEL"
-      }
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#slice-input",
-      "@type": "Class",
-      "supportedProperty": [
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX/property/SEX"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX/property/ZEIT/FROM"
-        },
-        {
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#search",
-      "@type": "IriTemplate",
-      "template": "/dataset/SCH-RAUM-ZEIT-SEX/slice{?sex,from,to,other}",
-      "variableRepresentation": "BasicRepresentation",
-      "mapping": [
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "sex",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX/property/SEX"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "from",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX/property/ZEIT/FROM"
-        },
-        {
-          "@type": "IriTemplateMapping",
-          "variable": "to",
-          "property": "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX/property/ZEIT/TO"
-        }
-      ]
-    },
-    {
-      "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-SEX",
-      "@type": [
-        "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX",
-        "http://purl.org/linked-data/cube#DataSet"
-      ],
-      "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#slice": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-SEX/slice"
-      },
-      "http://stat.stadt-zuerich.ch/schema/dataset/SCH-RAUM-ZEIT-SEX#dataset": {
-        "@id": "http://stat.stadt-zuerich.ch/dataset/SCH-RAUM-ZEIT-SEX"
       }
     },
     {
