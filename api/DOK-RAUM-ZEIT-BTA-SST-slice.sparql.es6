@@ -20,15 +20,17 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA7801>;
+        <http://ld.stadt-zuerich.ch/statistics/property/BTA> ?bta;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
         <http://ld.stadt-zuerich.ch/statistics/property/SST> ?sst;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
+      ?bta skos:notation ?btaNotation .
       ?sst skos:notation ?sstNotation .
 
       # filters
+      ${typeof bta !== 'undefined' ? 'FILTER (?btaNotation IN (' + (bta.join ? bta.map(v => v.toCanonical()).join() : bta.toCanonical()) + '))' : ''}
       ${typeof sst !== 'undefined' ? 'FILTER (?sstNotation IN (' + (sst.join ? sst.map(v => v.toCanonical()).join() : sst.toCanonical()) + '))' : ''}
 
       # time range filter

@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/AEH-RAUM-ZEIT/slice> a qb:Slice ;
+  <http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-HTY-WSI/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,19 +15,23 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/AEH-RAUM-ZEIT> ;
+        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEW-RAUM-ZEIT-HTY-WSI> ;
         ?property ?value.
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/HTY> ?hty;
+        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+        <http://ld.stadt-zuerich.ch/statistics/property/WSI> <http://ld.stadt-zuerich.ch/statistics/code/WSI0003>;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      
+      ?hty skos:notation ?htyNotation .
+      ?raum skos:notation ?raumNotation .
 
       # filters
-      
+      ${typeof hty !== 'undefined' ? 'FILTER (?htyNotation IN (' + (hty.join ? hty.map(v => v.toCanonical()).join() : hty.toCanonical()) + '))' : ''}
+      ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}

@@ -21,18 +21,16 @@ CONSTRUCT {
       # dimensions
       ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
         <http://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
       ?hel skos:notation ?helNotation .
-      ?raum skos:notation ?raumNotation .
       ?sex skos:notation ?sexNotation .
 
       # filters
       ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
-      ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
       ${typeof sex !== 'undefined' ? 'FILTER (?sexNotation IN (' + (sex.join ? sex.map(v => v.toCanonical()).join() : sex.toCanonical()) + '))' : ''}
 
       # time range filter
