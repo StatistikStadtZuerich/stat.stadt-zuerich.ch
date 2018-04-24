@@ -67,7 +67,11 @@ UNION {
     ?dataset owl:sameAs ?datasetApi .
     ?dataset rdfs:label ?datasetLabel .
 
-    ${typeof topic !== 'undefined'? 'FILTER (?dataset IN (' + (topic.join ? topic.map(v => '<' + v.value + '>').join() : '<' + topic.value + '>') + '))' : ''}
+    ${typeof topic !== 'undefined'?
+        'FILTER (?dataset IN (' + (topic.join ?
+            topic.map(v => '<' + v.value + '>').join() 
+            : '<' + topic.value + '>') + '))'
+        : 'FILTER (?dataset IN ())'}
 
 }
 
