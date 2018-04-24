@@ -21,9 +21,10 @@ CONSTRUCT {
 #    ?slice ?sP ?sO .
 #    ?slice a ssz-schema:DefaultSlice .
 
-} WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
+} WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics>
+{
 
-SELECT DISTINCT * WHERE {
+SELECT DISTINCT * WHERE 
 {
 
   BIND(BNODE('shapeResult') AS ?root)
@@ -51,8 +52,23 @@ SELECT DISTINCT * WHERE {
          ) : ''}
       rdfs:label ?label .
 
-    #filter on topic (aka dataset currently)
-    ${typeof topic !== 'undefined'? 'FILTER (?dataset IN (' + (topic.join ? topic.map(v => '<' + v.value + '>').join() : '<' + topic.value + '>') + '))' : ''}
+    # datasets must be reachable from topics following a 'skos:narrower' path
+    ${typeof topic !== 'undefined'?
+        ( topic.join ? 
+            topic.map(t => { return '<' + t.value + '> skos:narrower* ?dataset .'}).join('\n') : 
+            '<'+ topic.value + '> skos:narrower* ?dataset .'
+        ) : ''}
   }
 
-}}}}
+UNION {
+    # matches if filter contains datasets
+    
+    ?dataset a qb:DataSet .
+    ?dataset owl:sameAs ?datasetApi .
+    ?dataset rdfs:label ?datasetLabel .
+
+    ${typeof topic !== 'undefined'? 'FILTER (?dataset IN (' + (topic.join ? topic.map(v => '<' + v.value + '>').join() : '<' + topic.value + '>') + '))' : ''}
+
+}
+
+}}}
