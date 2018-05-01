@@ -72,7 +72,8 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     ?dimension NOT IN (${dimension.join ? dimension.map(d => { return `<${d.value}>`}).join(',\n') : `<${dimension.value}>`})
     `
     : ''}
-    ${typeof query !== 'undefined' ? `&& (${this.tmplRegex("label")} || ${this.tmplRegex("notation")})` : ''}
+    ${(typeof dimension !== 'undefined') && (typeof query !== 'undefined') ? ' && ' : ''}
+    ${typeof query !== 'undefined' ? `(${this.tmplRegex("label")} || ${this.tmplRegex("notation")})` : ''}
     ${(typeof dimension !== 'undefined') || (typeof query !== 'undefined') ? ')' : ''}
     BIND(?dimension AS ?result)
     BIND(stip-schema:DimensionEntity AS ?entityType)
