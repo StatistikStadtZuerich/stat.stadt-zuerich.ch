@@ -8,43 +8,90 @@ PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 
 CONSTRUCT {
-
     ?root a hydra:Collection ;
-      hydra:member ?result .
+          hydra:member ?result .
     ?result a ?entityType ;
-      rdfs:label ?label .
+            rdfs:label ?label .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
+
+# -----------------------------
+# BEGIN reusable templates
+${(() => {this.tmplRegex = (varName) => {
+    return `regex(lcase(?${varName}), "^${query.value.trim().toLowerCase()}")`
+  };
+return ''})()}
+
+${(() => {this.tmplDatasetSubquery = (removeDatasetsInTopic) => {
+    return `{
+      SELECT DISTINCT ?dataSet WHERE {
+        ?dataSet a qb:DataSet .
+
+        # filter on dimension
+        ${typeof dimension !== 'undefined' ?
+            ( dimension.join ? 
+              dimension.map(t => { return `?dataSet qb:structure/qb:component/qb:dimension <${t.value}> .`}).join('\n') : 
+              `?dataSet qb:structure/qb:component/qb:dimension <${dimension.value}> .`
+            ) : '## dimension is UNDEFINED in request'}
+    
+        # datasets must be reachable from topics following a 'skos:narrower' path
+        ${typeof topic !== 'undefined'?
+            ( topic.join ? 
+                topic.map(t => { return `<${t.value}> skos:narrower* ?dataSet .`}).join('\n') : 
+                `<${topic.value}> skos:narrower* ?dataSet .`
+            ) : '## topic is UNDEFINED in request'}
+
+        ${removeDatasetsInTopic && (typeof topic !== 'undefined') ?
+          `# remove datasets that are already part of the search filter topics
+          FILTER (?dataSet NOT IN (${topic.join ? topic.map(t => { return `<${t.value}>`}).join(',\n') : `<${topic.value}>`}))`          
+          : ''}
+      }
+    }`
+  };
+return ''})()}
+
+${(() => {this.funcFooBar = () => {return '#test'}; return ''})()}
+
+# END reusable templates
+# -----------------------------
 
 SELECT DISTINCT ?root ?result ?entityType ?label WHERE 
 {
   BIND(BNODE('neverUseThisUri') AS ?root)
 
   {
-  
-  ?view a qb:DataSet ;
-    qb:structure/qb:component/(qb:dimension|qb:measure) ?dimension .
-  
-  ?dimension a <http://purl.org/linked-data/cube#DimensionProperty> .
-  ?dimension rdfs:label ?label .
-  
-  ${typeof query !== 'undefined' ? 'FILTER regex(lcase(?label), "^' + query.value.trim().toLowerCase() + '")' : ''}
-  BIND(stip-schema:DimensionEntity AS ?entityType)
-  BIND(?dimension as ?result)
+    ###### DIMENSIONEN ######
+    ?dimension a qb:DimensionProperty;
+               rdfs:label ?label ;
+               skos:notation ?notation .
+    ?dataSet qb:structure/qb:component/(qb:dimension|qb:measure) ?dimension .
 
+    FILTER (
+    ${typeof dimension !== 'undefined' ?
+    `# remove dimensions that are already part of the search filter dimensions
+    ?dimension NOT IN (${dimension.join ? dimension.map(d => { return `<${d.value}>`}).join(',\n') : `<${dimension.value}>`})
+    `
+    : ''}
+    ${typeof query !== 'undefined' ? `&& (${this.tmplRegex("label")} || ${this.tmplRegex("notation")})` : ''}
+    )
+    BIND(?dimension AS ?result)
+    BIND(stip-schema:DimensionEntity AS ?entityType)
+
+    ${this.tmplDatasetSubquery()}
   }
   
   UNION
   
-  {
-  
-  ?view a qb:DataSet ;
-    rdfs:label ?label ;
-  
-  ${typeof query !== 'undefined' ? 'FILTER regex(lcase(?label), "^' + query.value.trim().toLowerCase() + '")' : ''}
-  BIND(stip-schema:TopicEntity AS ?entityType)
-  BIND(?view AS ?result)
+  {  
+    ###### DATASETS ######
+    ?dataSet rdfs:label ?label ;
+          skos:notation ?notation.
+    
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("label")} || ${this.tmplRegex("notation")})` : ''}
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND(?dataSet AS ?result)
 
+    ${this.tmplDatasetSubquery(true)}
   }
 
 }

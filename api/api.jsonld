@@ -13215,13 +13215,23 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/schema/Tags#search",
       "@type": "IriTemplate",
-      "template": "/tags/{?query,other}",
+      "template": "/tags/{?query,dimension,topic,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
           "@type": "IriTemplateMapping",
           "variable": "query",
           "property": "http://stat.stadt-zuerich.ch/schema/query"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "dimension",
+          "property": "http://stat.stadt-zuerich.ch/schema/DimensionEntity"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "topic",
+          "property": "http://stat.stadt-zuerich.ch/schema/TopicEntity"
         }
       ]
     },
