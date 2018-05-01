@@ -66,14 +66,14 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
                skos:notation ?notation .
     ?dataSet qb:structure/qb:component/(qb:dimension|qb:measure) ?dimension .
 
-    FILTER (
+    ${(typeof dimension !== 'undefined') || (typeof query !== 'undefined') ? 'FILTER (' : ''}
     ${typeof dimension !== 'undefined' ?
     `# remove dimensions that are already part of the search filter dimensions
     ?dimension NOT IN (${dimension.join ? dimension.map(d => { return `<${d.value}>`}).join(',\n') : `<${dimension.value}>`})
     `
     : ''}
     ${typeof query !== 'undefined' ? `&& (${this.tmplRegex("label")} || ${this.tmplRegex("notation")})` : ''}
-    )
+    ${(typeof dimension !== 'undefined') || (typeof query !== 'undefined') ? ')' : ''}
     BIND(?dimension AS ?result)
     BIND(stip-schema:DimensionEntity AS ?entityType)
 
