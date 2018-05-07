@@ -1,10 +1,10 @@
 {
   "baseConfig": "trifid:config-sparql.json",
   "datasetBaseUrl": "env:DATASETBASEURL",
-  "sparqlEndpointUrl": "http://data.zazuko.com:5820/ssz/query",
+  "sparqlEndpointUrl": "https://lindas-data.ch:8443/lindas/query",
   "sparqlEndpointAuthentication": {
-    "user": "ssz-read",
-    "password": "coo2aiw6itiT"
+    "user": "public",
+    "password": "public"
   },
   "sparqlProxy": {
     "default": {
@@ -18,7 +18,7 @@
       "documentationUrl": "/api",
       "documentation": "cwd:api/api.jsonld",
       "options": {
-        "sparqlEndpointUrl": "http://stat.integ.stadt-zuerich.ch/query",
+        "sparqlEndpointUrl": "http://stat.stadt-zuerich.ch/query",
         "debug": true,
         "contextHeader": "/context/"
       }
