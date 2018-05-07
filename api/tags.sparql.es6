@@ -15,7 +15,7 @@ CONSTRUCT {
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
-# -----------------------------
+# =============================
 # BEGIN reusable templates
 ${(() => {this.tmplRegex = (varName) => {
     return `regex(lcase(${varName}), "^${query.value.trim().toLowerCase()}")`
@@ -60,10 +60,22 @@ ${(() => {this.tmplFilterInDimensions = (varName) => {
 };
 return ''})()}
 
+${(() => {this.tmplExcludeBroaderTopics = (varName) => {
+  return (typeof topic !== 'undefined') ?
+      `MINUS {
+          ${topic.join ?
+            topic.map(t => { return `{${varName} skos:narrower* <${t.value}>}`}).join('\nUNION ') :
+                                    `${varName} skos:narrower* <${topic.value}>`}
+        }
+      `
+      : "## topic is undefined in request"
+};
+return ''})()}
+
 ${(() => {this.funcFooBar = () => {return '#test'}; return ''})()}
 
 # END reusable templates
-# -----------------------------
+# =============================
 
 SELECT DISTINCT ?root ?result ?entityType ?label WHERE 
 {
@@ -84,6 +96,26 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     ${this.tmplDatasetSubquery()}
   }
   
+  UNION
+
+  {
+    ####### REFERENZTABELLEN ######
+    ?reftab a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Topic> ;
+            skos:narrower ?dataSet ;
+            rdfs:label ?label ;
+            skos:notation ?notation .
+    
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?notation")})` : ''}
+
+    # assert reftab is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
+    ${this.tmplExcludeBroaderTopics("?reftab")}
+    
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND (?reftab AS ?result)
+
+    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+  }
+
   UNION
   
   {  
