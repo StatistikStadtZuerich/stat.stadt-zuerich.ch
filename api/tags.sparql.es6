@@ -95,6 +95,84 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
 
     ${this.tmplDatasetSubquery()}
   }
+
+  UNION
+
+  {
+    ###### THEMENBAUM THEMA ######
+    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+           rdfs:label ?label;
+           skos:narrower+ ?dataSet .
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+
+    # assert ?thema is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
+    ${this.tmplExcludeBroaderTopics("?thema")}
+    
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND(?thema AS ?result)
+
+    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+  }
+
+  UNION
+  
+  {
+    ###### THEMENBAUM STUFE-1 ######
+    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+           skos:narrower ?stufe1 .
+    ?stufe1 a skos:Concept;
+            rdfs:label ?label;
+            (skos:narrower/skos:narrower)|(skos:narrower/skos:narrower/skos:narrower)|(skos:narrower/skos:narrower/skos:narrower/skos:narrower) ?dataSet .
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+    
+    # assert ?stufe1 is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
+    ${this.tmplExcludeBroaderTopics("?stufe1")}
+
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND(?stufe1 AS ?result)
+
+    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+  }
+
+  UNION
+  
+  {
+    ###### THEMENBAUM STUFE-2 ######
+    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+           skos:narrower/skos:narrower ?stufe2 .
+    ?stufe2 a skos:Concept;
+            rdfs:label ?label;
+            (skos:narrower/skos:narrower)|(skos:narrower/skos:narrower/skos:narrower) ?dataSet .
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+    
+    # assert ?stufe2 is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
+    ${this.tmplExcludeBroaderTopics("?stufe2")}
+    
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND(?stufe2 AS ?result)
+
+    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+  }
+
+  UNION
+  
+  {
+    ###### THEMENBAUM STUFE-3 ######
+    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+           skos:narrower/skos:narrower/skos:narrower ?stufe3 .
+    ?stufe3 a skos:Concept;
+            rdfs:label ?label;
+            skos:narrower/skos:narrower ?dataSet .
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+
+    # assert ?stufe3 is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
+    ${this.tmplExcludeBroaderTopics("?stufe3")}
+
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND(?stufe3 AS ?result)
+
+    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+  }
   
   UNION
 
@@ -107,11 +185,11 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     
     ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?notation")})` : ''}
 
-    # assert reftab is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
+    # assert ?reftab is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
     ${this.tmplExcludeBroaderTopics("?reftab")}
     
     BIND(stip-schema:TopicEntity AS ?entityType)
-    BIND (?reftab AS ?result)
+    BIND(?reftab AS ?result)
 
     ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
   }
@@ -138,7 +216,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
         ?thema a skos:Concept ;
               rdfs:label ?label.
         ${this.tmplFilterInTopics("?thema")}
-        BIND (?thema AS ?result)
+        BIND(?thema AS ?result)
         BIND(stip-schema:TopicEntity AS ?entityType)
       }
       UNION
@@ -147,7 +225,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
         ?dataSet a qb:DataSet ;
              rdfs:label ?label ;
         ${this.tmplFilterInTopics("?dataSet")}
-        BIND (?dataSet AS ?result)
+        BIND(?dataSet AS ?result)
         BIND(stip-schema:TopicEntity AS ?entityType)
       }
     `
