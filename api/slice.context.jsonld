@@ -95,6 +95,10 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/AUF",
       "@type": "http://www.w3.org/2001/XMLSchema#double"
     },
+    "mAUG": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/measure/AUG",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
     "mAUL": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/AUL",
       "@type": "http://www.w3.org/2001/XMLSchema#double"
@@ -245,6 +249,10 @@
     },
     "mEHS": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/EHS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "mEIN": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/measure/EIN",
       "@type": "http://www.w3.org/2001/XMLSchema#double"
     },
     "mEIS": {
@@ -1071,6 +1079,14 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/WRB",
       "@type": "http://www.w3.org/2001/XMLSchema#double"
     },
+    "mWRM": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/measure/WRM",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "mWRN": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/measure/WRN",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
     "mWRT": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/WRT",
       "@type": "http://www.w3.org/2001/XMLSchema#double"
@@ -1089,6 +1105,10 @@
     },
     "mWUS": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/WUS",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "mXXX": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/measure/XXX",
       "@type": "http://www.w3.org/2001/XMLSchema#double"
     },
     "mZIB": {
@@ -1141,6 +1161,10 @@
     },
     "dABG": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/ABG",
+      "@type": "@id"
+    },
+    "dABT": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/ABT",
       "@type": "@id"
     },
     "dADM": {
@@ -1339,6 +1363,10 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/FLA",
       "@type": "@id"
     },
+    "dFLE": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/FLE",
+      "@type": "@id"
+    },
     "dFRV": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/FRV",
       "@type": "@id"
@@ -1483,6 +1511,14 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/KNV",
       "@type": "@id"
     },
+    "dKOF": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/KOF",
+      "@type": "@id"
+    },
+    "dKOM": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/KOM",
+      "@type": "@id"
+    },
     "dKON": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/KON",
       "@type": "@id"
@@ -1581,6 +1617,10 @@
     },
     "dPFA": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/property/PFA",
+      "@type": "@id"
+    },
+    "dPLA": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/property/PLA",
       "@type": "@id"
     },
     "dPOL": {

@@ -4,10 +4,12 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
+PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
 
 CONSTRUCT {
   <http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-ALT-KON-WSI> a qb:DataSet ;
     rdfs:label ?datasetLabel ;
+    sdmx-attribute:unitMeasure ?unit ;
     <http://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
     qb:slice ?slice ;
     qb:slice ?defaultSlice .
@@ -36,14 +38,18 @@ CONSTRUCT {
   ?b_nil rdf:first ?dimension ;
     rdf:rest rdf:nil .
 
-  # min/max
   ?b_property sh:minInclusive ?min ;
     sh:maxInclusive ?max .
+
+  ?unit rdfs:label ?unitlabel ;
+    skos:notation ?unitnotation .
+
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
     <http://ld.stadt-zuerich.ch/statistics/dataset/BEW-RAUM-ZEIT-ALT-KON-WSI> a qb:DataSet ;
       qb:slice ?defaultSlice ;
       qb:slice ?slice ;
+      sdmx-attribute:unitMeasure ?unit ;
       rdfs:label ?datasetLabel .
 
     ?defaultSlice sh:shapesGraph ?shape ;
@@ -54,6 +60,9 @@ CONSTRUCT {
     ?slice ?sliceP ?sliceO .
 
     ?shape sh:property ?b_property .
+
+    ?unit rdfs:label ?unitlabel ;
+      skos:notation ?unitnotation .
 
     {
       ?b_property sh:in ?propertyValue .
