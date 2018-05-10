@@ -27,6 +27,7 @@
     "DefaultSlice": "http://ld.stadt-zuerich.ch/schema/DefaultSlice",
     "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
     "data": "http://stat.stadt-zuerich.ch/schema/data",
+    "unitMeasure": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
     "slice": {
       "@id": "http://purl.org/linked-data/cube#slice",
       "@container": "@set"
