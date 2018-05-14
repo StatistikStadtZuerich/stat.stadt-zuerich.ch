@@ -1,0 +1,16 @@
+{
+  "baseConfig": "cwd:config.json",
+  "datasetBaseUrl": "http://stat.stadt-zuerich.ch/",
+  "sparqlEndpointUrl": "http://localhost:5820/ssz/query",
+  "sparqlEndpointAuthentication": {
+    "user": "admin",
+    "password": "admin"
+  },
+  "hydraBox": {
+    "api": {
+      "options": {
+        "sparqlEndpointUrl": "http://localhost:8080/query"
+      }
+    }
+  }
+}
