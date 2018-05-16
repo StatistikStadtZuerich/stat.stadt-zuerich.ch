@@ -6,10 +6,11 @@
       "@id": "http://www.w3.org/ns/hydra/core#member",
       "@container": "@set"
     },
-    "Dimension": "http://stat.stadt-zuerich.ch/schema/DimensionEntity",
-    "Topic": "http://stat.stadt-zuerich.ch/schema/TopicEntity",
-    "Location": "http://stat.stadt-zuerich.ch/schema/LocationEntity",
-    "Time": "http://stat.stadt-zuerich.ch/schema/TimeEntity"
+    "Dimension": "http://stat.integ.stadt-zuerich.ch/schema/DimensionEntity",
+    "Topic": "http://stat.integ.stadt-zuerich.ch/schema/TopicEntity",
+    "Location": "http://stat.integ.stadt-zuerich.ch/schema/LocationEntity",
+    "Time": "http://stat.integ.stadt-zuerich.ch/schema/TimeEntity",
+    "score": "http://ld.stadt-zuerich.ch/schema/score"
   },
   "@type": "Collection"
 }
