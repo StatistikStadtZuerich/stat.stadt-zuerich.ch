@@ -11,6 +11,7 @@ CONSTRUCT {
     ?root a hydra:Collection ;
           hydra:member ?result .
     ?result a ?entityType ;
+            ssz-schema:score ?resultScore ;
             rdfs:label ?label .
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
@@ -77,7 +78,7 @@ ${(() => {this.funcFooBar = () => {return '#test'}; return ''})()}
 # END reusable templates
 # =============================
 
-SELECT DISTINCT ?root ?result ?entityType ?label WHERE 
+SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE 
 {
   BIND(BNODE('neverUseThisUri') AS ?root)
 
@@ -90,8 +91,9 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     
     ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?notation")})` : ''}
     
-    BIND(?dimension AS ?result)
     BIND(stip-schema:DimensionEntity AS ?entityType)
+    BIND(?dimension AS ?result)
+    BIND("10.0"^^xsd:float AS ?resultScore)
 
     ${this.tmplDatasetSubquery()}
   }
@@ -110,6 +112,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     
     BIND(stip-schema:TopicEntity AS ?entityType)
     BIND(?thema AS ?result)
+    BIND("1000000.0"^^xsd:float AS ?resultScore)
 
     ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
   }
@@ -130,6 +133,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
 
     BIND(stip-schema:TopicEntity AS ?entityType)
     BIND(?stufe1 AS ?result)
+    BIND("100000.0"^^xsd:float AS ?resultScore)
 
     ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
   }
@@ -150,6 +154,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     
     BIND(stip-schema:TopicEntity AS ?entityType)
     BIND(?stufe2 AS ?result)
+    BIND("10000.0"^^xsd:float AS ?resultScore)
 
     ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
   }
@@ -170,6 +175,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
 
     BIND(stip-schema:TopicEntity AS ?entityType)
     BIND(?stufe3 AS ?result)
+    BIND("1000.0"^^xsd:float AS ?resultScore)
 
     ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
   }
@@ -190,6 +196,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     
     BIND(stip-schema:TopicEntity AS ?entityType)
     BIND(?reftab AS ?result)
+    BIND("100.0"^^xsd:float AS ?resultScore)
 
     ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
   }
@@ -204,6 +211,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
     ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?notation")})` : ''}
     BIND(stip-schema:TopicEntity AS ?entityType)
     BIND(?dataSet AS ?result)
+    BIND("10.0"^^xsd:float AS ?resultScore)
 
     ${this.tmplDatasetSubquery()}
   }
@@ -216,8 +224,9 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
         ?thema a skos:Concept ;
               rdfs:label ?label.
         ${this.tmplFilterInTopics("?thema")}
-        BIND(?thema AS ?result)
         BIND(stip-schema:TopicEntity AS ?entityType)
+        BIND(?thema AS ?result)
+        BIND("0.0"^^xsd:float AS ?resultScore)
       }
       UNION
       {
@@ -225,8 +234,9 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
         ?dataSet a qb:DataSet ;
              rdfs:label ?label ;
         ${this.tmplFilterInTopics("?dataSet")}
-        BIND(?dataSet AS ?result)
         BIND(stip-schema:TopicEntity AS ?entityType)
+        BIND(?dataSet AS ?result)
+        BIND("0.0"^^xsd:float AS ?resultScore)
       }
     `
     : `
@@ -243,8 +253,9 @@ SELECT DISTINCT ?root ?result ?entityType ?label WHERE
         ?dimension a qb:DimensionProperty;
                   rdfs:label ?label ;
         ${this.tmplFilterInDimensions("?dimension")}
-        BIND(?dimension AS ?result)
         BIND(stip-schema:DimensionEntity AS ?entityType)
+        BIND(?dimension AS ?result)
+        BIND("0.0"^^xsd:float AS ?resultScore)
       }
     `
     : `
