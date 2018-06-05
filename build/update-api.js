@@ -8,7 +8,7 @@ const shell = require('shelljs')
 const Promise = require('bluebird')
 
 const config = {
-  endpointUrl: 'http://data.zazuko.com:5820/ssz/query',
+  endpointUrl: 'http://data.zazuko.com:80/ssz/query',
   user: 'ssz-read',
   password: 'coo2aiw6itiT'
 }
