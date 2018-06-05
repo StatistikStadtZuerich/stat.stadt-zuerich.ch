@@ -8,9 +8,9 @@ const shell = require('shelljs')
 const Promise = require('bluebird')
 
 const config = {
-  endpointUrl: 'https://lindas-data.ch:8443/lindas/query',
-  user: 'public',
-  password: 'public'
+  endpointUrl: 'http://data.zazuko.com:80/ssz/query',
+  user: 'ssz-read',
+  password: 'coo2aiw6itiT'
 }
 
 Promise.all([
