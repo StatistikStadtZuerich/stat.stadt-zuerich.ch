@@ -29,7 +29,8 @@ CONSTRUCT {
     rdfs:seeAlso ?dimension .
 
   ?b_property rdfs:label ?dimensionLabel ;
-    skos:notation ?dimensionNotation .
+    skos:notation ?dimensionNotation ;
+    skos:scopeNote ?dimensionScopeNote .
 
   ?propertyValue rdfs:label ?label .
 
@@ -94,6 +95,9 @@ CONSTRUCT {
 
       ?dimension rdfs:label ?dimensionLabel ;
         skos:notation ?dimensionNotation .
+
+      OPTIONAL { ?dimension skos:scopeNote ?dimensionScopeNote }
+
     } UNION {
       ?b_property sh:minInclusive ?min ;
         sh:maxInclusive ?max .
