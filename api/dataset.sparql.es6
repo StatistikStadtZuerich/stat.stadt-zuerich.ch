@@ -23,7 +23,7 @@ CONSTRUCT {
 
 ${(() => {this.tmplDatasetSubquery = () => {
     return `{
-      SELECT DISTINCT ?dataset ?datasetApi ?datasetLabel WHERE {
+      SELECT DISTINCT ?dataset ?datasetApi ?datasetLabel ?shape WHERE {
         ?dataset a qb:DataSet .
         ?dataset owl:sameAs ?datasetApi .
         ?dataset rdfs:label ?datasetLabel .
@@ -51,6 +51,21 @@ ${(() => {this.tmplDatasetSubquery = () => {
 };
 return ''})()}
 
+${(() => {this.tmplWrapInAttributeValueFilter = (accumulator, currentValue) => {
+  return `
+  SELECT DISTINCT ?dataset ?datasetApi ?datasetLabel ?shape WHERE {
+    {
+      ${accumulator}
+    }
+
+    # filter for Merkmalsauspraegung '${currentValue.value.trim()}'
+    ?shape shacl:property/shacl:in ?auspraegung .
+    ?auspraegung rdfs:label ?auspraegungLabel .
+    FILTER (regex(ENCODE_FOR_URI(lcase(?auspraegungLabel)), '^${currentValue.value.trim().toLowerCase()}'))    
+  }`
+};
+return ''})()}
+
 # END reusable templates
 # =============================
 
@@ -61,8 +76,12 @@ SELECT DISTINCT * WHERE
 
   BIND(BNODE('shapeResult') AS ?root)
 
-  {    
-    ${this.tmplDatasetSubquery()}
+  {
+    ${typeof attributeValue !== 'undefined' ?
+    (attributeValue.join ?
+      attributeValue.reduce(this.tmplWrapInAttributeValueFilter, this.tmplDatasetSubquery())
+      : [attributeValue].reduce(this.tmplWrapInAttributeValueFilter, this.tmplDatasetSubquery()))
+    : this.tmplDatasetSubquery()}
   }
 
   UNION {
