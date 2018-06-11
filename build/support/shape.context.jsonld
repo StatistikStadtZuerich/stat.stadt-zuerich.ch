@@ -10,6 +10,7 @@
       "@container": "@set"
     },
     "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "scopeNote": "http://www.w3.org/2004/02/skos/core#scopeNote",
     "maxInclusive": "http://www.w3.org/ns/shacl#maxInclusive",
     "minInclusive": "http://www.w3.org/ns/shacl#minInclusive",
     "notation": "http://www.w3.org/2004/02/skos/core#notation",
