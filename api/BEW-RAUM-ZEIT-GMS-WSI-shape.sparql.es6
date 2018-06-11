@@ -12,6 +12,7 @@ CONSTRUCT {
     sdmx-attribute:unitMeasure ?unit ;
     <http://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
     qb:slice ?slice ;
+    <http://purl.org/dc/terms/license> ?license ;
     qb:slice ?defaultSlice .
 
   ?defaultSlice ?defaultSliceP ?defaultSliceO .
@@ -20,6 +21,9 @@ CONSTRUCT {
 
   ?shape a sh:NodeShape ;
     sh:property ?b_property .
+
+  ?shape ssz-schema:lastUpdate ?lastupdate ;
+    ssz-schema:nextUpdate ?nextupdate .
 
   ?b_property sh:in ?propertyValue ;
     rdfs:seeAlso ?dimension .
@@ -52,6 +56,8 @@ CONSTRUCT {
       sdmx-attribute:unitMeasure ?unit ;
       rdfs:label ?datasetLabel .
 
+    OPTIONAL { <http://ld.stadt-zuerich.ch/statistics/dataset/BEW-RAUM-ZEIT-GMS-WSI> <http://purl.org/dc/terms/license> ?license }
+
     ?defaultSlice sh:shapesGraph ?shape ;
       ?defaultSliceP ?defaultSliceO .
 
@@ -60,6 +66,11 @@ CONSTRUCT {
     ?slice ?sliceP ?sliceO .
 
     ?shape sh:property ?b_property .
+
+    OPTIONAL {
+      ?shape ssz-schema:lastUpdate ?lastupdate ;
+        ssz-schema:nextUpdate ?nextupdate .
+    }
 
     ?unit rdfs:label ?unitlabel ;
       skos:notation ?unitnotation .
