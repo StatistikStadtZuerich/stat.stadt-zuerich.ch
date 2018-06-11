@@ -23030,7 +23030,7 @@
     {
       "@id": "http://stat.stadt-zuerich.ch/schema/Dataset#search",
       "@type": "IriTemplate",
-      "template": "/dataset/{?dimension,topic,location,time,other}",
+      "template": "/dataset/{?dimension,topic,attributeValue,location,time,other}",
       "variableRepresentation": "BasicRepresentation",
       "mapping": [
         {
@@ -23042,6 +23042,11 @@
           "@type": "IriTemplateMapping",
           "variable": "topic",
           "property": "http://stat.stadt-zuerich.ch/schema/TopicEntity"
+        },
+        {
+          "@type": "IriTemplateMapping",
+          "variable": "attributeValue",
+          "property": "http://stat.stadt-zuerich.ch/schema/attributeValue"
         },
         {
           "@type": "IriTemplateMapping",
