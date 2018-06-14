@@ -86,16 +86,16 @@ SELECT DISTINCT * WHERE
 
   UNION {
     # matches if filter contains datasets
+
+    VALUES ?dataset {
+      ${typeof topic !== 'undefined' ?
+        topic.join ? topic.map(v => `<${v.value}>`).join('\n') : `<${topic.value}>`
+        : ''}
+    }
     
     ?dataset a qb:DataSet .
     ?dataset owl:sameAs ?datasetApi .
     ?dataset rdfs:label ?datasetLabel .
-
-    ${typeof topic !== 'undefined'?
-        'FILTER (?dataset IN (' + (topic.join ?
-            topic.map(v => '<' + v.value + '>').join(',') 
-            : '<' + topic.value + '>') + '))'
-        : 'FILTER (?dataset IN ())'}
   }
 
 }}}
