@@ -61,7 +61,7 @@ ${(() => {this.tmplWrapInAttributeValueFilter = (accumulator, currentValue) => {
     # filter for Merkmalsauspraegung '${currentValue.value.trim()}'
     ?shape shacl:property/shacl:in ?auspraegung .
     ?auspraegung rdfs:label ?auspraegungLabel .
-    FILTER (regex(ENCODE_FOR_URI(lcase(?auspraegungLabel)), '^${currentValue.value.trim().toLowerCase()}'))    
+    FILTER (lcase(?auspraegungLabel) = '${currentValue.value.trim().toLowerCase()}')
   }`
 };
 return ''})()}
