@@ -77,7 +77,7 @@
   }, {
     "@id": "http://stat.stadt-zuerich.ch/schema/Tags#search",
     "@type": "IriTemplate",
-    "template": "/tags/{?query,dimension,topic,other}",
+    "template": "/tags/{?query,dimension,topic,attributeValue,other}",
     "variableRepresentation": "BasicRepresentation",
     "mapping": [{
       "@type": "IriTemplateMapping",
@@ -91,6 +91,10 @@
       "@type": "IriTemplateMapping",
       "variable": "topic",
       "property": "http://stat.stadt-zuerich.ch/schema/TopicEntity"
+    },{
+      "@type": "IriTemplateMapping",
+      "variable": "attributeValue",
+      "property": "http://stat.stadt-zuerich.ch/schema/attributeValue"
     }]
   }, {
     "@id": "http://stat.stadt-zuerich.ch/schema/Dataset#search",
