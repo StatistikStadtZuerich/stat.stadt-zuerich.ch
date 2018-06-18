@@ -6,13 +6,15 @@ PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
+PREFIX shacl: <http://www.w3.org/ns/shacl#>
 
 CONSTRUCT {
     ?root a hydra:Collection ;
           hydra:member ?result .
     ?result a ?entityType ;
             ssz-schema:score ?resultScore ;
-            rdfs:label ?label .
+            rdfs:label ?label ;
+            stip-schema:attributeValue ?value.  # only AttributeEntities have a value
 
 } WHERE { GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
 
@@ -25,8 +27,12 @@ return ''})()}
 
 ${(() => {this.tmplDatasetSubquery = (removeDatasetsInTopic) => {
     return `{
-      SELECT DISTINCT ?dataSet WHERE {
+      SELECT DISTINCT ?dataSet ?shape WHERE {
         ?dataSet a qb:DataSet .
+        ?dataSet qb:slice ?defaultSlice .
+      
+        ?defaultSlice a ssz-schema:DefaultSlice .
+        ?defaultSlice shacl:shapesGraph ?shape .
 
         # filter on dimension
         ${typeof dimension !== 'undefined' ?
@@ -73,12 +79,41 @@ ${(() => {this.tmplExcludeBroaderTopics = (varName) => {
 };
 return ''})()}
 
+
+${(() => {this.tmplWrapInAttributeValueFilter = (accumulator, currentValue) => {
+  return `
+  SELECT DISTINCT ?dataSet ?shape WHERE {
+    {
+      ${accumulator}
+    }
+    
+    # filter for Merkmalsauspraegung '${currentValue.value.trim()}'
+    ?shape shacl:property/shacl:in ?auspraegung .
+    ?auspraegung rdfs:label ?auspraegungLabel .
+    FILTER (regex(ENCODE_FOR_URI(lcase(?auspraegungLabel)), '^${currentValue.value.trim().toLowerCase()}'))    
+  }`
+};
+return ''})()}
+
+${(() => {this.tmplWrappedDatasetSubquery = (removeDatasetsInTopic) => {
+  return `
+  {
+    ${typeof attributeValue !== 'undefined' ?
+    (attributeValue.join ?
+      attributeValue.reduce(this.tmplWrapInAttributeValueFilter, this.tmplDatasetSubquery(removeDatasetsInTopic))
+      : [attributeValue].reduce(this.tmplWrapInAttributeValueFilter, this.tmplDatasetSubquery(removeDatasetsInTopic)))
+    : this.tmplDatasetSubquery(removeDatasetsInTopic)}
+  }`
+};
+return ''})()}
+
+
 ${(() => {this.funcFooBar = () => {return '#test'}; return ''})()}
 
 # END reusable templates
 # =============================
 
-SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE 
+SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE 
 {
   BIND(BNODE('neverUseThisUri') AS ?root)
 
@@ -95,7 +130,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE
     BIND(?dimension AS ?result)
     BIND("10.0"^^xsd:float AS ?resultScore)
 
-    ${this.tmplDatasetSubquery()}
+    ${this.tmplWrappedDatasetSubquery()}
   }
 
   UNION
@@ -114,7 +149,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE
     BIND(?thema AS ?result)
     BIND("1000000.0"^^xsd:float AS ?resultScore)
 
-    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+    ${this.tmplWrappedDatasetSubquery("removeDatasetsInTopic")}
   }
 
   UNION
@@ -135,7 +170,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE
     BIND(?stufe1 AS ?result)
     BIND("100000.0"^^xsd:float AS ?resultScore)
 
-    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+    ${this.tmplWrappedDatasetSubquery("removeDatasetsInTopic")}
   }
 
   UNION
@@ -156,7 +191,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE
     BIND(?stufe2 AS ?result)
     BIND("10000.0"^^xsd:float AS ?resultScore)
 
-    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+    ${this.tmplWrappedDatasetSubquery("removeDatasetsInTopic")}
   }
 
   UNION
@@ -177,7 +212,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE
     BIND(?stufe3 AS ?result)
     BIND("1000.0"^^xsd:float AS ?resultScore)
 
-    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+    ${this.tmplWrappedDatasetSubquery("removeDatasetsInTopic")}
   }
   
   UNION
@@ -198,7 +233,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE
     BIND(?reftab AS ?result)
     BIND("100.0"^^xsd:float AS ?resultScore)
 
-    ${this.tmplDatasetSubquery("removeDatasetsInTopic")}
+    ${this.tmplWrappedDatasetSubquery("removeDatasetsInTopic")}
   }
 
   UNION
@@ -213,8 +248,17 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore WHERE
     BIND(?dataSet AS ?result)
     BIND("10.0"^^xsd:float AS ?resultScore)
 
-    ${this.tmplDatasetSubquery()}
+    ${this.tmplWrappedDatasetSubquery()}
   }
+
+#  UNION
+#  {
+#    BIND(stip-schema:AttributeEntity AS ?entityType)
+#    BIND(BNODE() AS ?result)
+#    BIND("foo" AS ?label)
+#    BIND("bar" AS ?value)
+#    BIND("10.0"^^xsd:float AS ?resultScore)
+#  }
 
   ${typeof topic !== 'undefined'?
     `
