@@ -57,16 +57,6 @@ ${(() => {this.tmplDatasetSubquery = (removeDatasetsInTopic) => {
   };
 return ''})()}
 
-${(() => {this.tmplFilterInTopics = (varName) => {
-  return `FILTER (${varName} IN (${topic.join ? topic.map(t => { return `<${t.value}>`}).join(',\n') : `<${topic.value}>`}))`
-};
-return ''})()}
-
-${(() => {this.tmplFilterInDimensions = (varName) => {
-  return `FILTER (${varName} IN (${dimension.join ? dimension.map(d => { return `<${d.value}>`}).join(',\n') : `<${dimension.value}>`}))`
-};
-return ''})()}
-
 ${(() => {this.tmplExcludeBroaderTopics = (varName) => {
   return (typeof topic !== 'undefined') ?
       `MINUS {
@@ -252,6 +242,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
   }
 
   UNION
+
   {
     {
       SELECT DISTINCT ?auspraegungLabel {        
@@ -276,51 +267,56 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     BIND("10.0"^^xsd:float AS ?resultScore)
   }
 
-  ${typeof topic !== 'undefined'?
-    `
-      UNION
-      {
-        ###### THEMA IN TOPICS: topics contained in the Request-Parameters are always included in the result ######
-        ?thema a skos:Concept ;
-              rdfs:label ?label.
-        ${this.tmplFilterInTopics("?thema")}
-        BIND(stip-schema:TopicEntity AS ?entityType)
-        BIND(?thema AS ?result)
-        BIND("0.0"^^xsd:float AS ?resultScore)
-      }
-      UNION
-      {
-        ###### DATASETS IN TOPICS: topics contained in the Request-Parameters are always included in the result ######
-        ?dataSet a qb:DataSet ;
-             rdfs:label ?label ;
-        ${this.tmplFilterInTopics("?dataSet")}
-        BIND(stip-schema:TopicEntity AS ?entityType)
-        BIND(?dataSet AS ?result)
-        BIND("0.0"^^xsd:float AS ?resultScore)
-      }
-    `
-    : `
-      ## THEMA IN TOPICS: topic is undefined in request
-      ## DATASET IN TOPICS: topic is undefined in request
-    `
+  UNION
+
+  {
+    ###### THEMA IN TOPICS: topics contained in the Request-Parameters are always included in the result ######
+    VALUES ?thema {
+      ${typeof topic !== 'undefined' ?
+        topic.join ? topic.map(v => `<${v.value}>`).join('\n') : `<${topic.value}>`
+        : ''}
+    }
+
+    ?thema a skos:Concept ;
+          rdfs:label ?label.
+    
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND(?thema AS ?result)
+    BIND("0.0"^^xsd:float AS ?resultScore)
   }
 
-  ${typeof dimension !== 'undefined' ?
-    `
-      UNION
-      {
-        ###### DIMENSION IN DIMENSIONS: dimensions contained in the Request-Parameters are always included in the result ######
-        ?dimension a qb:DimensionProperty;
-                  rdfs:label ?label ;
-        ${this.tmplFilterInDimensions("?dimension")}
-        BIND(stip-schema:DimensionEntity AS ?entityType)
-        BIND(?dimension AS ?result)
-        BIND("0.0"^^xsd:float AS ?resultScore)
-      }
-    `
-    : `
-      ## DIMENSION IN DIMENSIONS: dimension is undefined in request
-    `
+  UNION
+  
+  {
+    ###### DATASETS IN TOPICS: topics contained in the Request-Parameters are always included in the result ######
+    VALUES ?dataSet {
+      ${typeof topic !== 'undefined' ?
+        topic.join ? topic.map(v => `<${v.value}>`).join('\n') : `<${topic.value}>`
+        : ''}
+    }
+    ?dataSet a qb:DataSet ;
+          rdfs:label ?label ;
+    
+    BIND(stip-schema:TopicEntity AS ?entityType)
+    BIND(?dataSet AS ?result)
+    BIND("0.0"^^xsd:float AS ?resultScore)
+  }
+
+  UNION
+  
+  {
+    ###### DIMENSION IN DIMENSIONS: dimensions contained in the Request-Parameters are always included in the result ######
+    VALUES ?dimension {
+      ${typeof dimension !== 'undefined' ?
+        dimension.join ? dimension.map(d => `<${d.value}>`).join('\n') : `<${dimension.value}>`
+        : ''}
+    }
+    ?dimension a qb:DimensionProperty;
+              rdfs:label ?label ;
+    
+    BIND(stip-schema:DimensionEntity AS ?entityType)
+    BIND(?dimension AS ?result)
+    BIND("0.0"^^xsd:float AS ?resultScore)
   }
 
 }
