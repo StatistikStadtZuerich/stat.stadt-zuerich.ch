@@ -90,7 +90,7 @@ ${(() => {this.tmplWrapInAttributeValueFilter = (accumulator, currentValue) => {
     # filter for Merkmalsauspraegung '${currentValue.value.trim()}'
     ?shape shacl:property/shacl:in ?auspraegung .
     ?auspraegung rdfs:label ?auspraegungLabel .
-    FILTER (regex(ENCODE_FOR_URI(lcase(?auspraegungLabel)), '^${currentValue.value.trim().toLowerCase()}'))    
+    FILTER (lcase(?auspraegungLabel) = '${currentValue.value.trim().toLowerCase()}')
   }`
 };
 return ''})()}
@@ -251,14 +251,30 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ${this.tmplWrappedDatasetSubquery()}
   }
 
-#  UNION
-#  {
-#    BIND(stip-schema:AttributeEntity AS ?entityType)
-#    BIND(BNODE() AS ?result)
-#    BIND("foo" AS ?label)
-#    BIND("bar" AS ?value)
-#    BIND("10.0"^^xsd:float AS ?resultScore)
-#  }
+  UNION
+  {
+    {
+      SELECT DISTINCT ?auspraegungLabel {        
+        ?shape shacl:property/shacl:in ?auspraegung .
+        ?auspraegung rdfs:label ?auspraegungLabel .
+        ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?auspraegungLabel")})` : ''}   
+        
+        {
+          SELECT DISTINCT ?dataSet ?shape WHERE {
+            ${this.tmplWrappedDatasetSubquery()}
+
+            FILTER(?dataSet NOT IN (<http://ld.stadt-zuerich.ch/statistics/dataset/GEB-RAUM-ZEIT-NAF-NAM-SEX>))
+          }
+        }
+      } LIMIT 42
+    }
+    
+    BIND(stip-schema:AttributeEntity AS ?entityType)
+    BIND(BNODE() AS ?result)
+    BIND(?auspraegungLabel AS ?label)
+    BIND(ENCODE_FOR_URI(?auspraegungLabel) AS ?value)
+    BIND("10.0"^^xsd:float AS ?resultScore)
+  }
 
   ${typeof topic !== 'undefined'?
     `
