@@ -241,31 +241,32 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ${this.tmplWrappedDatasetSubquery()}
   }
 
-  UNION
+# *** temporarily deactivated until frontend is ready
+#  UNION
 
-  {
-    {
-      SELECT DISTINCT ?auspraegungLabel {        
-        ?shape shacl:property/shacl:in ?auspraegung .
-        ?auspraegung rdfs:label ?auspraegungLabel .
-        ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?auspraegungLabel")})` : ''}   
+#  {
+#    {
+#      SELECT DISTINCT ?auspraegungLabel {        
+#        ?shape shacl:property/shacl:in ?auspraegung .
+#        ?auspraegung rdfs:label ?auspraegungLabel .
+#        ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?auspraegungLabel")})` : ''}   
         
-        {
-          SELECT DISTINCT ?dataSet ?shape WHERE {
-            ${this.tmplWrappedDatasetSubquery()}
+#        {
+#          SELECT DISTINCT ?dataSet ?shape WHERE {
+#            $###{this.tmplWrappedDatasetSubquery()}
 
-            FILTER(?dataSet NOT IN (<http://ld.stadt-zuerich.ch/statistics/dataset/GEB-RAUM-ZEIT-NAF-NAM-SEX>))
-          }
-        }
-      } LIMIT 42
-    }
+#            FILTER(?dataSet NOT IN (<http://ld.stadt-zuerich.ch/statistics/dataset/GEB-RAUM-ZEIT-NAF-NAM-SEX>))
+#          }
+#        }
+#      } LIMIT 42
+#    }
     
-    BIND(stip-schema:AttributeEntity AS ?entityType)
-    BIND(BNODE() AS ?result)
-    BIND(?auspraegungLabel AS ?label)
-    BIND(ENCODE_FOR_URI(?auspraegungLabel) AS ?value)
-    BIND("10.0"^^xsd:float AS ?resultScore)
-  }
+#    BIND(stip-schema:AttributeEntity AS ?entityType)
+#    BIND(BNODE() AS ?result)
+#    BIND(?auspraegungLabel AS ?label)
+#    BIND(ENCODE_FOR_URI(?auspraegungLabel) AS ?value)
+#    BIND("10.0"^^xsd:float AS ?resultScore)
+#  }
 
   UNION
 
