@@ -20,19 +20,23 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/HAA> <http://ld.stadt-zuerich.ch/statistics/code/HAA0001>;
+        <http://ld.stadt-zuerich.ch/statistics/property/HAA> ?haa;
         <http://ld.stadt-zuerich.ch/statistics/property/HBA> ?hba;
         <http://ld.stadt-zuerich.ch/statistics/property/OBJ> ?obj;
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
+      ?haa skos:notation ?haaNotation .
       ?hba skos:notation ?hbaNotation .
       ?obj skos:notation ?objNotation .
+      ?raum skos:notation ?raumNotation .
 
       # filters
+      ${typeof haa !== 'undefined' ? 'FILTER (?haaNotation IN (' + (haa.join ? haa.map(v => v.toCanonical()).join() : haa.toCanonical()) + '))' : ''}
       ${typeof hba !== 'undefined' ? 'FILTER (?hbaNotation IN (' + (hba.join ? hba.map(v => v.toCanonical()).join() : hba.toCanonical()) + '))' : ''}
       ${typeof obj !== 'undefined' ? 'FILTER (?objNotation IN (' + (obj.join ? obj.map(v => v.toCanonical()).join() : obj.toCanonical()) + '))' : ''}
+      ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}

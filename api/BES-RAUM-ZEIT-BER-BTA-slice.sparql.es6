@@ -21,15 +21,19 @@ CONSTRUCT {
       # dimensions
       ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/BER> ?ber;
-        <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA7300>;
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/BTA> ?bta;
+        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
       ?ber skos:notation ?berNotation .
+      ?bta skos:notation ?btaNotation .
+      ?raum skos:notation ?raumNotation .
 
       # filters
       ${typeof ber !== 'undefined' ? 'FILTER (?berNotation IN (' + (ber.join ? ber.map(v => v.toCanonical()).join() : ber.toCanonical()) + '))' : ''}
+      ${typeof bta !== 'undefined' ? 'FILTER (?btaNotation IN (' + (bta.join ? bta.map(v => v.toCanonical()).join() : bta.toCanonical()) + '))' : ''}
+      ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}

@@ -21,15 +21,15 @@ CONSTRUCT {
       # dimensions
       ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/BEB> <http://ld.stadt-zuerich.ch/statistics/code/BEB1002>;
-        <http://ld.stadt-zuerich.ch/statistics/property/HAA> ?haa;
+        <http://ld.stadt-zuerich.ch/statistics/property/HAA> <http://ld.stadt-zuerich.ch/statistics/code/HAA0001>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?haa skos:notation ?haaNotation .
+      
 
       # filters
-      ${typeof haa !== 'undefined' ? 'FILTER (?haaNotation IN (' + (haa.join ? haa.map(v => v.toCanonical()).join() : haa.toCanonical()) + '))' : ''}
+      
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}
