@@ -21,15 +21,15 @@ CONSTRUCT {
       # dimensions
       ?observation
         <http://ld.stadt-zuerich.ch/statistics/property/ALT> <http://ld.stadt-zuerich.ch/statistics/code/ALT9015>;
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/WSI> <http://ld.stadt-zuerich.ch/statistics/code/WSI0001>;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      
+      ?raum skos:notation ?raumNotation .
 
       # filters
-      
+      ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}

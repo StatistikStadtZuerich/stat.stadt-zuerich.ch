@@ -1135,6 +1135,10 @@
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/XXX",
       "@type": "http://www.w3.org/2001/XMLSchema#double"
     },
+    "mZGZ": {
+      "@id": "http://ld.stadt-zuerich.ch/statistics/measure/ZGZ",
+      "@type": "http://www.w3.org/2001/XMLSchema#double"
+    },
     "mZIB": {
       "@id": "http://ld.stadt-zuerich.ch/statistics/measure/ZIB",
       "@type": "http://www.w3.org/2001/XMLSchema#double"

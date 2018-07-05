@@ -20,16 +20,18 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/PSA> <http://ld.stadt-zuerich.ch/statistics/code/PSA2000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/PSA> ?psa;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
-        <http://ld.stadt-zuerich.ch/statistics/property/STA> <http://ld.stadt-zuerich.ch/statistics/code/STA1200>;
+        <http://ld.stadt-zuerich.ch/statistics/property/STA> ?sta;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      
+      ?psa skos:notation ?psaNotation .
+      ?sta skos:notation ?staNotation .
 
       # filters
-      
+      ${typeof psa !== 'undefined' ? 'FILTER (?psaNotation IN (' + (psa.join ? psa.map(v => v.toCanonical()).join() : psa.toCanonical()) + '))' : ''}
+      ${typeof sta !== 'undefined' ? 'FILTER (?staNotation IN (' + (sta.join ? sta.map(v => v.toCanonical()).join() : sta.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}

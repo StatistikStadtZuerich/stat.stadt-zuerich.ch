@@ -20,15 +20,19 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/GGH> <http://ld.stadt-zuerich.ch/statistics/code/GGH1100>;
-        <http://ld.stadt-zuerich.ch/statistics/property/HEL> <http://ld.stadt-zuerich.ch/statistics/code/HEL2000>;
+        <http://ld.stadt-zuerich.ch/statistics/property/GGH> ?ggh;
+        <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
+      ?ggh skos:notation ?gghNotation .
+      ?hel skos:notation ?helNotation .
       ?raum skos:notation ?raumNotation .
 
       # filters
+      ${typeof ggh !== 'undefined' ? 'FILTER (?gghNotation IN (' + (ggh.join ? ggh.map(v => v.toCanonical()).join() : ggh.toCanonical()) + '))' : ''}
+      ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter

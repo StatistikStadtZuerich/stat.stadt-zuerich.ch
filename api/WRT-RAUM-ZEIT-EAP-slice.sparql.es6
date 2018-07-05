@@ -20,14 +20,16 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/EAP> <http://ld.stadt-zuerich.ch/statistics/code/EAP2102>;
+        <http://ld.stadt-zuerich.ch/statistics/property/EAP> ?eap;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
+      ?eap skos:notation ?eapNotation .
       ?raum skos:notation ?raumNotation .
 
       # filters
+      ${typeof eap !== 'undefined' ? 'FILTER (?eapNotation IN (' + (eap.join ? eap.map(v => v.toCanonical()).join() : eap.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter

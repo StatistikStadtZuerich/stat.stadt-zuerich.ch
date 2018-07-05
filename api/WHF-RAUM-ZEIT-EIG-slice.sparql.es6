@@ -20,16 +20,14 @@ CONSTRUCT {
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/EIG> ?eig;
+        <http://ld.stadt-zuerich.ch/statistics/property/EIG> <http://ld.stadt-zuerich.ch/statistics/code/EIG1204>;
         <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
         <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?eig skos:notation ?eigNotation .
       ?raum skos:notation ?raumNotation .
 
       # filters
-      ${typeof eig !== 'undefined' ? 'FILTER (?eigNotation IN (' + (eig.join ? eig.map(v => v.toCanonical()).join() : eig.toCanonical()) + '))' : ''}
       ${typeof raum !== 'undefined' ? 'FILTER (?raumNotation IN (' + (raum.join ? raum.map(v => v.toCanonical()).join() : raum.toCanonical()) + '))' : ''}
 
       # time range filter
