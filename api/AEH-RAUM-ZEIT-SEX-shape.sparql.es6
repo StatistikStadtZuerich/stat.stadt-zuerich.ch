@@ -5,7 +5,6 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
 PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
 PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
-PREFIX qudt: <http://qudt.org/schema/qudt#>
 
 CONSTRUCT {
   <http://stat.stadt-zuerich.ch/dataset/AEH-RAUM-ZEIT-SEX> a qb:DataSet ;
@@ -60,13 +59,9 @@ CONSTRUCT {
 
     OPTIONAL { <http://ld.stadt-zuerich.ch/statistics/dataset/AEH-RAUM-ZEIT-SEX> <http://purl.org/dc/terms/license> ?license }
 
-    ?slice a qb:Slice .
-    ?defaultSlice a ssz-schema:DefaultSlice .
-
     ?defaultSlice sh:shapesGraph ?shape ;
       ?defaultSliceP ?defaultSliceO .
 
-    ?shape a sh:NodeShape .
     ?shape sh:targetNode ?sliceApi .
 
     ?slice ?sliceP ?sliceO .
@@ -78,7 +73,6 @@ CONSTRUCT {
         ssz-schema:nextUpdate ?nextupdate .
     }
 
-    ?unit a qudt:Unit .
     ?unit rdfs:label ?unitlabel ;
       skos:notation ?unitnotation .
 
