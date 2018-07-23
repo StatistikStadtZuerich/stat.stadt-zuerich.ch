@@ -27,12 +27,6 @@ backend puppetron {
     .port = "3000";
 }
 
-
-# TODO this is surely no longer localhost. Either switch to PROXY protocol or figure out how we can do that
-acl SSLfromlocalhost {
-    "hitch";
-}
-
 sub vcl_recv {
     # Happens before we check if we have this in cache already.
     #
@@ -41,44 +35,31 @@ sub vcl_recv {
 
     set req.http.X-Forwarded-Port = "80";
 
-    # check if the request is comming from localhost, then it is from hitch (SSL terminator)
-    if(client.ip ~ SSLfromlocalhost)
-    {
-        set req.http.x-forwarded-proto = "https";
-        set req.http.X-Forwarded-Port = "443";
-    }
-    elsif (req.http.host ~ "ld.integ.stadt-zuerich.ch|ld-integ.zazuko.com") {
+    if (req.http.host ~ "ld.integ.stadt-zuerich.ch|ld-integ.zazuko.com") {
         if (req.url == "/") {
             return (synth(302, "/sparql/"));
-        } else {
+        }
+        else {
             set req.backend_hint = ld;
         }
-
     }
     elsif (req.http.host ~ "stat.integ.stadt-zuerich.ch|stat-integ.zazuko.com") {
-	if ( req.url == "/api" || req.url ~ "^/js/.*$" || req.url ~ "^/sparql/.*$" || req.url ~ "^/query.*$" || req.url ~ "(\?|\&)format=" || ( req.http.Accept !~ "html" && req.url !~ "^/_next/" && req.url !~ "^/static/" ) ) 
-        {
-                set req.backend_hint = stat;
-	}
-        elseif( req.url ~ "^/screenshot/.*$" || req.url ~ "^/pdf/.*$" )
-        {
-                set req.backend_hint = puppetron;
-	}
-	else
-	{
-        	set req.backend_hint = stip;
-	}
+      if (req.url == "/api" || req.url ~ "^/js/.*$" || req.url ~ "^/sparql/.*$" || req.url ~ "^/query.*$" || req.url ~ "(\?|\&)format=" || (req.http.Accept !~ "html" && req.url !~ "^/_next/" && req.url !~ "^/static/")) {
+        set req.backend_hint = stat;
+      }
+      elseif(req.url ~ "^/screenshot/.*$" || req.url ~ "^/pdf/.*$") {
+        set req.backend_hint = puppetron;
+      }
+      else {
+          set req.backend_hint = stip;
+      }
     }
     else {
-
         set req.backend_hint = ld;
-
     }
-
 }
 
 sub vcl_backend_response {
-
     set beresp.http.Vary = "Accept";
 
     # Happens after we have read the response headers from the backend.
@@ -94,19 +75,16 @@ sub vcl_deliver {
     # You can do accounting or modifying the final object here.
 
     # Fix CORS for host
-    #if ( req.http.host ~ "data.zazuko.com$") {
+    #if (req.http.host ~ "data.zazuko.com$") {
     #    set resp.http.Access-Control-Allow-Origin = "*";
     #}
-
 }
 
 
 sub vcl_synth {
-
     if (resp.status == 301 || resp.status == 302) {
         set resp.http.location = resp.reason;
         set resp.reason = "Moved";
         return (deliver);
     }
-
 }
