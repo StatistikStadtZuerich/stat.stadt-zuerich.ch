@@ -22,6 +22,7 @@ build_prod_varnish:
   stage: build
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - mv -f ./config/prod.vcl ./config/default.vcl
     - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-varnish" -f Dockerfile.varnish .
     - docker push "$CI_REGISTRY_IMAGE/prod-varnish"
     - docker tag "$CI_REGISTRY_IMAGE/prod-varnish" "$CI_REGISTRY_IMAGE/prod-varnish:$CI_COMMIT_REF_NAME"
@@ -44,6 +45,7 @@ build_integ_varnish:
   stage: build
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - mv -f ./config/integ.vcl ./config/default.vcl
     - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-varnish" -f Dockerfile.varnish .
     - docker push "$CI_REGISTRY_IMAGE/integ-varnish"
     - docker tag "$CI_REGISTRY_IMAGE/integ-varnish" "$CI_REGISTRY_IMAGE/integ-varnish:develop"
