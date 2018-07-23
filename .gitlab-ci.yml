@@ -3,27 +3,82 @@ image: docker:latest
 services:
   - docker:dind
 
-before_script:
-  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+stages:
+  - build
+  - deploy
 
-after_script:
-
-prod:
+build_prod_web:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
-    - docker tag "$CI_REGISTRY_IMAGE" "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
-    - wget $DEPLOY_WEBHOOK/ssz-prod
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-web" -f Dockerfile.web .
+    - docker push "$CI_REGISTRY_IMAGE/prod-web"
+    - docker tag "$CI_REGISTRY_IMAGE/prod-web" "$CI_REGISTRY_IMAGE/prod-web:$CI_COMMIT_REF_NAME"
+    - docker push "$CI_REGISTRY_IMAGE/prod-web:$CI_COMMIT_REF_NAME"
   only:
     - tags
 
-integ:
+build_prod_varnish:
   stage: build
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE:develop" .
-    - docker push "$CI_REGISTRY_IMAGE:develop"
-    - wget $DEPLOY_WEBHOOK/ssz-integ
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-varnish" -f Dockerfile.varnish .
+    - docker push "$CI_REGISTRY_IMAGE/prod-varnish"
+    - docker tag "$CI_REGISTRY_IMAGE/prod-varnish" "$CI_REGISTRY_IMAGE/prod-varnish:$CI_COMMIT_REF_NAME"
+    - docker push "$CI_REGISTRY_IMAGE/prod-varnish:$CI_COMMIT_REF_NAME"
+  only:
+    - tags
+
+build_integ_web:
+  stage: build
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-web" -f Dockerfile.web .
+    - docker push "$CI_REGISTRY_IMAGE/integ-web"
+    - docker tag "$CI_REGISTRY_IMAGE/integ-web" "$CI_REGISTRY_IMAGE/integ-web:develop"
+    - docker push "$CI_REGISTRY_IMAGE/integ-web:develop"
   only:
     - develop
+
+build_integ_varnish:
+  stage: build
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-varnish" -f Dockerfile.varnish .
+    - docker push "$CI_REGISTRY_IMAGE/integ-varnish"
+    - docker tag "$CI_REGISTRY_IMAGE/integ-varnish" "$CI_REGISTRY_IMAGE/integ-varnish:develop"
+    - docker push "$CI_REGISTRY_IMAGE/integ-varnish:develop"
+  only:
+    - develop
+
+deploy_integ_web:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack ssz-integ --service web --new-image $CI_REGISTRY_IMAGE/integ-web:develop
+  only:
+    - develop
+
+deploy_integ_varnish:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack ssz-integ --service varnish --new-image $CI_REGISTRY_IMAGE/integ-varnish:develop
+  only:
+    - develop
+
+deploy_prod_web:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack ssz-prod --service web --new-image $CI_REGISTRY_IMAGE/prod-web:$CI_COMMIT_REF_NAME
+  only:
+    - tags
+
+deploy_prod_varnish:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack ssz-prod --service varnish --new-image $CI_REGISTRY_IMAGE/prod-varnish:$CI_COMMIT_REF_NAME
+  only:
+    - tags
