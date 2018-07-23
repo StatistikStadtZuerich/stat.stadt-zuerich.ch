@@ -1,17 +1,9 @@
 {
-  "baseConfig": "trifid:config-sparql.json",
-  "datasetBaseUrl": "env:DATASETBASEURL",
+  "baseConfig": "cwd:config.prod.json",
   "sparqlEndpointUrl": "http://data.zazuko.com/ssz/query",
   "sparqlEndpointAuthentication": {
     "user": "ssz-read",
     "password": "coo2aiw6itiT"
-  },
-  "sparqlProxy": {
-    "default": {
-      "options": {
-        "queryOperation": "postQueryUrlencoded"
-      }
-    }
   },
   "hydraBox": {
     "api": {
@@ -24,16 +16,6 @@
       }
     }
   },
-  "handler": {
-    "root": {
-      "options": {
-        "containerExistsQuery": "ASK { ?s a ?o. FILTER REGEX(STR(?s), \"^${iri}\") }",
-        "resourceGraphQuery": "#pragma describe.strategy cbd\nDESCRIBE <${iri}>",
-        "containerGraphQuery": "CONSTRUCT { ?s a ?o. ?s <http://www.w3.org/2000/01/rdf-schema#label> ?label. } WHERE { ?s a ?o. OPTIONAL {?s <http://www.w3.org/2000/01/rdf-schema#label> ?label.} FILTER REGEX(STR(?s), \"^${iri}\") }"
-
-      }
-    }
-  },
   "patchHeaders": {
     "root": {
       "static": {
@@ -43,33 +25,5 @@
         "Vary": "Accept"
       }
     }
-  },
-  "renderer": {
-    /*"api": {
-      "priority": 50,
-      "path": "/api",
-      "module": "trifid-renderer-simple",
-      "template": "cwd:views/index.html",
-      "templateError": "cwd:views/error.html",
-      "vocab": "cwd:node_modules/trifid-renderer-simple/examples/vocab.json",
-      "alternativeMediaTypes": [
-        "application/ld+json",
-        "application/n-triples",
-        "application/rdf+xml",
-        "text/turtle"
-      ]
-    },
-    "root": {
-      "priority": 100,
-      "module": "cwd:app/Renderer"
-    }*/
-    "root": {
-      "template": "cwd:views/index.html",
-      "templateError": "cwd:views/error.html",
-      "vocab": "cwd:node_modules/trifid-renderer-simple/examples/vocab.json"
-    }
-  },
-  "staticViews": {
-    "/": null
   }
 }
