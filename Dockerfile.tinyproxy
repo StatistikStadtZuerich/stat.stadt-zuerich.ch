@@ -1,0 +1,3 @@
+FROM zazukoians/tinyproxy
+
+COPY config/tinyproxy.conf /etc/tinyproxy.conf
