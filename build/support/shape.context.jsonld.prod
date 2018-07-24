@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "ssz-code": "http://ld.stadt-zuerich.ch/statistics/code/",
+    "ssz-dataset": "http://ld.stadt-zuerich.ch/statistics/dataset/",
+    "ssz-observation": "http://ld.stadt-zuerich.ch/statistics/observation/",
+
+    "first": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+    "in": {
+      "@id": "http://www.w3.org/ns/shacl#in",
+      "@container": "@set"
+    },
+    "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "maxInclusive": "http://www.w3.org/ns/shacl#maxInclusive",
+    "minInclusive": "http://www.w3.org/ns/shacl#minInclusive",
+    "notation": "http://www.w3.org/2004/02/skos/core#notation",
+    "path": "http://www.w3.org/ns/shacl#path",
+    "property": {
+      "@id": "http://www.w3.org/ns/shacl#property",
+      "@container": "@set"
+    },
+    "rest": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+    "seeAlso": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type": "@id"
+    },
+    "DataSet": "http://purl.org/linked-data/cube#DataSet",
+    "Slice": "http://purl.org/linked-data/cube#Slice",
+    "DefaultSlice": "http://ld.stadt-zuerich.ch/schema/DefaultSlice",
+    "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
+    "data": "http://stat.stadt-zuerich.ch/schema/data",
+    "slice": {
+      "@id": "http://purl.org/linked-data/cube#slice",
+      "@container": "@set"
+    },
+    "sliceStructure": "http://purl.org/linked-data/cube#sliceStructure",
+    "shapesGraph": "http://www.w3.org/ns/shacl#shapesGraph"
+  },
+  "@type": "DataSet",
+  "data": {},
+  "slice": {
+    "@type": "Slice",
+    "@requireAll": true,
+    "shapesGraph": {
+      "property": {
+        "@requireAll": false,
+        "in": {
+          "@embed": "@always"
+        },
+        "maxInclusive": {
+          "@embed": "@always"
+        },
+        "minInclusive": {
+          "@embed": "@always"
+        },
+        "notation": {
+          "@embed": "@always"
+        }
+      }
+    }
+  },
+  "label": {}
+}

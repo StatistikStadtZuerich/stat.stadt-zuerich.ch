@@ -15,6 +15,7 @@ build_prod_web:
     - mv api/dataset.context.prod.json api/dataset.context.json
     - mv api/shape.context.prod.jsonld api/shape.context.jsonld
     - mv api/tags.context.prod.json api/tags.context.json
+    - mv build/support/shape.context.jsonld.prod build/support/shape.context.jsonld
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-web" -f Dockerfile.web .
     - docker push "$CI_REGISTRY_IMAGE/prod-web"
