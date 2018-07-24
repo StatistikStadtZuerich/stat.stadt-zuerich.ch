@@ -10,7 +10,7 @@
       "documentationUrl": "/api",
       "documentation": "cwd:api/api.jsonld",
       "options": {
-        "sparqlEndpointUrl": "http://stat.stadt-zuerich.ch/query",
+        "sparqlEndpointUrl": "http://stat.integ.stadt-zuerich.ch/query",
         "debug": true,
         "contextHeader": "/context/"
       }
