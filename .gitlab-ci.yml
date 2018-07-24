@@ -86,6 +86,7 @@ deploy_prod_stat:
   image: cdrx/rancher-gitlab-deploy
   script:
     - upgrade --environment default --stack ssz-prod --service stat --new-image $CI_REGISTRY_IMAGE/prod-stat:$CI_COMMIT_REF_NAME
+    - upgrade --environment default --stack ssz-prod --service varnish --start-before-stopping
   only:
     - tags
 
@@ -110,6 +111,7 @@ deploy_integ_stat:
   image: cdrx/rancher-gitlab-deploy
   script:
     - upgrade --environment default --stack ssz-integ --service stat --new-image $CI_REGISTRY_IMAGE/integ-stat:develop
+    - upgrade --environment default --stack ssz-integ --service varnish --start-before-stopping
   only:
     - master
 
@@ -126,21 +128,5 @@ deploy_integ_tinyproxy:
   image: cdrx/rancher-gitlab-deploy
   script:
     - upgrade --environment default --stack ssz-integ --service tinyproxy --new-image $CI_REGISTRY_IMAGE/integ-tinyproxy:develop
-  only:
-    - master
-
-restart_varnish_prod:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment default --stack ssz-prod --service varnish --start-before-stopping
-  only:
-    - tags
-
-restart_varnish_integ:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment default --stack ssz-integ --service varnish --start-before-stopping
   only:
     - master
