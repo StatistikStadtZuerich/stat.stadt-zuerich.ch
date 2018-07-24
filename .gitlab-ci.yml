@@ -7,7 +7,7 @@ stages:
   - build
   - deploy
 
-build_prod_web:
+build_prod_stat:
   stage: build
   script:
     - mv config.prod.json config.json
@@ -17,10 +17,10 @@ build_prod_web:
     - mv api/tags.context.prod.json api/tags.context.json
     - mv build/support/shape.context.jsonld.prod build/support/shape.context.jsonld
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-web" -f Dockerfile.web .
-    - docker push "$CI_REGISTRY_IMAGE/prod-web"
-    - docker tag "$CI_REGISTRY_IMAGE/prod-web" "$CI_REGISTRY_IMAGE/prod-web:$CI_COMMIT_REF_NAME"
-    - docker push "$CI_REGISTRY_IMAGE/prod-web:$CI_COMMIT_REF_NAME"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-stat" -f Dockerfile.stat .
+    - docker push "$CI_REGISTRY_IMAGE/prod-stat"
+    - docker tag "$CI_REGISTRY_IMAGE/prod-stat" "$CI_REGISTRY_IMAGE/prod-stat:$CI_COMMIT_REF_NAME"
+    - docker push "$CI_REGISTRY_IMAGE/prod-stat:$CI_COMMIT_REF_NAME"
   only:
     - tags
 
@@ -47,14 +47,14 @@ build_prod_tinyproxy:
   only:
     - tags
 
-build_integ_web:
+build_integ_stat:
   stage: build
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-web" -f Dockerfile.web .
-    - docker push "$CI_REGISTRY_IMAGE/integ-web"
-    - docker tag "$CI_REGISTRY_IMAGE/integ-web" "$CI_REGISTRY_IMAGE/integ-web:develop"
-    - docker push "$CI_REGISTRY_IMAGE/integ-web:develop"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-stat" -f Dockerfile.stat .
+    - docker push "$CI_REGISTRY_IMAGE/integ-stat"
+    - docker tag "$CI_REGISTRY_IMAGE/integ-stat" "$CI_REGISTRY_IMAGE/integ-stat:develop"
+    - docker push "$CI_REGISTRY_IMAGE/integ-stat:develop"
   only:
     - master
 
@@ -81,11 +81,11 @@ build_integ_tinyproxy:
   only:
     - master
 
-deploy_prod_web:
+deploy_prod_stat:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment default --stack ssz-prod --service web --new-image $CI_REGISTRY_IMAGE/prod-web:$CI_COMMIT_REF_NAME
+    - upgrade --environment default --stack ssz-prod --service stat --new-image $CI_REGISTRY_IMAGE/prod-stat:$CI_COMMIT_REF_NAME
   only:
     - tags
 
@@ -105,11 +105,11 @@ deploy_prod_tinyproxy:
   only:
     - tags
 
-deploy_integ_web:
+deploy_integ_stat:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment default --stack ssz-integ --service web --new-image $CI_REGISTRY_IMAGE/integ-web:develop
+    - upgrade --environment default --stack ssz-integ --service stat --new-image $CI_REGISTRY_IMAGE/integ-stat:develop
   only:
     - master
 
