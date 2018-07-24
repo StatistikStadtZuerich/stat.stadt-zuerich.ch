@@ -36,6 +36,17 @@ build_prod_varnish:
   only:
     - tags
 
+build_prod_tinyproxy:
+  stage: build
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-tinyproxy" -f Dockerfile.tinyproxy .
+    - docker push "$CI_REGISTRY_IMAGE/prod-tinyproxy"
+    - docker tag "$CI_REGISTRY_IMAGE/prod-tinyproxy" "$CI_REGISTRY_IMAGE/prod-tinyproxy:$CI_COMMIT_REF_NAME"
+    - docker push "$CI_REGISTRY_IMAGE/prod-tinyproxy:$CI_COMMIT_REF_NAME"
+  only:
+    - tags
+
 build_integ_web:
   stage: build
   script:
@@ -45,7 +56,7 @@ build_integ_web:
     - docker tag "$CI_REGISTRY_IMAGE/integ-web" "$CI_REGISTRY_IMAGE/integ-web:develop"
     - docker push "$CI_REGISTRY_IMAGE/integ-web:develop"
   only:
-    - develop
+    - master
 
 build_integ_varnish:
   stage: build
@@ -57,7 +68,7 @@ build_integ_varnish:
     - docker tag "$CI_REGISTRY_IMAGE/integ-varnish" "$CI_REGISTRY_IMAGE/integ-varnish:develop"
     - docker push "$CI_REGISTRY_IMAGE/integ-varnish:develop"
   only:
-    - develop
+    - master
 
 build_integ_tinyproxy:
   stage: build
@@ -68,7 +79,7 @@ build_integ_tinyproxy:
     - docker tag "$CI_REGISTRY_IMAGE/integ-tinyproxy" "$CI_REGISTRY_IMAGE/integ-tinyproxy:develop"
     - docker push "$CI_REGISTRY_IMAGE/integ-tinyproxy:develop"
   only:
-    - develop
+    - master
 
 deploy_prod_web:
   stage: deploy
@@ -86,13 +97,21 @@ deploy_prod_varnish:
   only:
     - tags
 
+deploy_prod_tinyproxy:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment default --stack ssz-prod --service tinyproxy --new-image $CI_REGISTRY_IMAGE/prod-tinyproxy:$CI_COMMIT_REF_NAME
+  only:
+    - tags
+
 deploy_integ_web:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
     - upgrade --environment default --stack ssz-integ --service web --new-image $CI_REGISTRY_IMAGE/integ-web:develop
   only:
-    - develop
+    - master
 
 deploy_integ_varnish:
   stage: deploy
@@ -100,7 +119,7 @@ deploy_integ_varnish:
   script:
     - upgrade --environment default --stack ssz-integ --service varnish --new-image $CI_REGISTRY_IMAGE/integ-varnish:develop
   only:
-    - develop
+    - master
 
 deploy_integ_tinyproxy:
   stage: deploy
@@ -108,4 +127,4 @@ deploy_integ_tinyproxy:
   script:
     - upgrade --environment default --stack ssz-integ --service tinyproxy --new-image $CI_REGISTRY_IMAGE/integ-tinyproxy:develop
   only:
-    - develop
+    - master
