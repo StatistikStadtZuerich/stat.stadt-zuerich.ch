@@ -16,7 +16,7 @@
   "hydraBox": {
     "api": {
       "documentationUrl": "/api",
-      "documentation": "cwd:api/api.jsonld",
+      "documentation": "cwd:api_prod/api.jsonld",
       "options": {
         "sparqlEndpointUrl": "http://stat.stadt-zuerich.ch/query",
         "debug": true,
