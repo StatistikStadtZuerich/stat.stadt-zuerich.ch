@@ -17,7 +17,8 @@
     "start": "trifid --config config.json",
     "start-local": "trifid --config config.local.json",
     "start-localstore": "trifid --config config.localstore.json",
-    "update-api": "node ./build/update-api",
+    "update-api":      "node ./build/update-api api-config.js",
+    "update-api-prod": "node ./build/update-api api-config.prod.js",
     "clean-api": "find -E . -type f -regex '.*/api/[A-Z]+.*' -delete"
   }
 }

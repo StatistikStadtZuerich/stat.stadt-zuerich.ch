@@ -45,15 +45,15 @@ function buildViewShapeQueryTemplate (view, template, filename) {
   return query
 }
 
-function buildViewQueryTemplates (views) {
+function buildViewQueryTemplates (views, config) {
   const templateViewSlice = fs.readFileSync(path.join(__dirname, 'support/hydra-view-slice.sparql.es6')).toString()
   const templateViewShape = fs.readFileSync(path.join(__dirname, 'support/hydra-view-shape.sparql.es6')).toString()
 
   Object.keys(views).sort().forEach((viewIri) => {
     const view = views[viewIri]
 
-    buildViewSliceQueryTemplate(view, templateViewSlice, path.join('api', view.notation + '-slice.sparql.es6'))
-    buildViewShapeQueryTemplate(view, templateViewShape, path.join('api', view.notation + '-shape.sparql.es6'))
+    buildViewSliceQueryTemplate(view, templateViewSlice, path.join(config.outDir, view.notation + '-slice.sparql.es6'))
+    buildViewShapeQueryTemplate(view, templateViewShape, path.join(config.outDir, view.notation + '-shape.sparql.es6'))
   })
 
   return Promise.resolve()

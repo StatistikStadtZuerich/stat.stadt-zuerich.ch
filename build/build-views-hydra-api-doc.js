@@ -142,8 +142,8 @@ function buildViewHydraApiDoc (view, api) {
   attachReference(view, api)
 }
 
-function buildViewsHydraApiDoc (views) {
-  const api = JSON.parse(fs.readFileSync(path.join(__dirname, 'support/hydra-api-stub.json')).toString())
+function buildViewsHydraApiDoc (views, config) {
+  const api = JSON.parse(fs.readFileSync(path.join(__dirname, 'support', config.apiStub)).toString())
 
   return Promise.mapSeries(Object.keys(views).sort(), (viewIri) => {
     return buildViewHydraApiDoc(views[viewIri], api)

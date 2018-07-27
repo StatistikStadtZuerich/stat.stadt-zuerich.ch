@@ -11,8 +11,6 @@ build_prod_stat:
   stage: build
   script:
     - mv config.prod.json config.json
-    - mv api_static/dataset.context.prod.json api_static/dataset.context.json
-    - mv api_static/tags.context.prod.json api_static/tags.context.json
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-stat" -f Dockerfile.stat .
     - docker push "$CI_REGISTRY_IMAGE/prod-stat"

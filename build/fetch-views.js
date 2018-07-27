@@ -19,7 +19,11 @@ function fetchViews (config) {
 
     return res.json()
   }).then((result) => {
-    return result.results.bindings.reduce((views, row) => {
+    const filter = typeof config.viewFilter !== 'undefined' ? config.viewFilter : x => true;
+
+    return result.results.bindings.filter(filter);
+  }).then((bindings) => {
+    return bindings.reduce((views, row) => {
       const viewIri = row.view.value
 
       views[viewIri] = views[viewIri] || {

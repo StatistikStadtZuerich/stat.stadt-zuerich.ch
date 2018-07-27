@@ -26,22 +26,22 @@ function buildPropertiesContext (properties, stubFilename, outputFilename, short
   return Promise.resolve(context)
 }
 
-function buildViewsSliceJsonldContext (properties) {
+function buildViewsSliceJsonldContext (properties, config) {
   return buildPropertiesContext(properties,
     path.join(__dirname, 'support/slice.context.jsonld'),
-    path.join(__dirname, '../api/slice.context.jsonld'))
+    path.join(config.outDir, 'slice.context.jsonld'))
 }
 
-function buildViewsShapeJsonldContext (properties) {
+function buildViewsShapeJsonldContext (properties, config) {
   return buildPropertiesContext(properties,
-    path.join(__dirname, 'support/shape.context.jsonld'),
-    path.join(__dirname, '../api/shape.context.jsonld'), true)
+    path.join(__dirname, 'support', config.shapeContextStub),
+    path.join(config.outDir, 'shape.context.jsonld'), true)
 }
 
-function buildViewsJsonldContext (properties) {
+function buildViewsJsonldContext (properties, config) {
   return Promise.all([
-    buildViewsSliceJsonldContext(properties),
-    buildViewsShapeJsonldContext(properties)
+    buildViewsSliceJsonldContext(properties, config),
+    buildViewsShapeJsonldContext(properties, config)
   ])
 }
 
