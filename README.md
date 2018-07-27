@@ -14,10 +14,10 @@ Generate API for *prod*: `npm run update-api-prod`
 Generated files for *prod* end up in *api_prod* directory.
 
 For doing modifications on the API itself, the following might come in handy:
-`
+```
 $ npm run update-api-apidev
 $ npm run start-apidev
-`
+```
 
 # Continuous Integration and Deployment
 
