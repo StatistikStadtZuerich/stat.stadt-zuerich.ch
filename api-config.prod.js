@@ -11,7 +11,7 @@ module.exports = {
   viewFilter: view => {
     const blacklist = [
       'BES-RAUM-ZEIT-0',
-      // 'GEB-RAUM-ZEIT-NAF-NAM-SEX'
+      'GEB-RAUM-ZEIT-NAF-NAM-SEX'
     ];
 
     const notation = view.notation.value;    
