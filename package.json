@@ -14,11 +14,13 @@
   },
   "license": "UNLICENSED",
   "scripts": {
-    "start": "trifid --config config.json",
-    "start-local": "trifid --config config.local.json",
-    "start-localstore": "trifid --config config.localstore.json",
-    "update-api":      "node ./build/update-api api-config.js",
-    "update-api-prod": "node ./build/update-api api-config.prod.js",
-    "clean-api": "find -E . -type f -regex '.*/api/[A-Z]+.*' -delete"
+    "start":             "trifid --config config.json",
+    "start-local":       "trifid --config config.local.json",
+    "start-localstore":  "trifid --config config.localstore.json",
+    "start-apidev":      "trifid --config config.apidev.json",
+
+    "update-api":        "node ./build/update-api api-config.js",
+    "update-api-prod":   "node ./build/update-api api-config.prod.js",
+    "update-api-apidev": "node ./build/update-api api-config.apidev.js"
   }
 }

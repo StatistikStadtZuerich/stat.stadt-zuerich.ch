@@ -10,10 +10,11 @@ const Promise = require('bluebird')
 
 const config = configFromArguments();
 
+
+shell.mkdir('-p', config.outDir);
+
 Promise.all([
   fetchViews(config).then((views) => {
-    shell.mkdir('-p', config.outDir)
-
     return Promise.all([
       buildViewsQueryTemplates(views, config),
       buildViewsHydraApiDoc(views,config)

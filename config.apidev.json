@@ -1,0 +1,8 @@
+{
+  "baseConfig": "cwd:config.json",
+  "hydraBox": {
+    "api": {
+      "documentation": "cwd:api_apidev/api.jsonld"
+    }
+  }
+}
