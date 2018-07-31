@@ -7,121 +7,41 @@ stages:
   - build
   - deploy
 
-build_prod_stat:
+build_prod:
   stage: build
   script:
     - mv config.prod.json config.json
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-stat" -f Dockerfile.stat .
-    - docker push "$CI_REGISTRY_IMAGE/prod-stat"
-    - docker tag "$CI_REGISTRY_IMAGE/prod-stat" "$CI_REGISTRY_IMAGE/prod-stat:$CI_COMMIT_REF_NAME"
-    - docker push "$CI_REGISTRY_IMAGE/prod-stat:$CI_COMMIT_REF_NAME"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod" -f Dockerfile .
+    - docker push "$CI_REGISTRY_IMAGE/prod"
+    - docker tag "$CI_REGISTRY_IMAGE/prod" "$CI_REGISTRY_IMAGE/prod:$CI_COMMIT_REF_NAME"
+    - docker push "$CI_REGISTRY_IMAGE/prod:$CI_COMMIT_REF_NAME"
   only:
     - tags
 
-build_prod_varnish:
+build_integ:
   stage: build
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - mv -f ./config/prod.vcl ./config/default.vcl
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-varnish" -f Dockerfile.varnish .
-    - docker push "$CI_REGISTRY_IMAGE/prod-varnish"
-    - docker tag "$CI_REGISTRY_IMAGE/prod-varnish" "$CI_REGISTRY_IMAGE/prod-varnish:$CI_COMMIT_REF_NAME"
-    - docker push "$CI_REGISTRY_IMAGE/prod-varnish:$CI_COMMIT_REF_NAME"
-  only:
-    - tags
-
-build_prod_tinyproxy:
-  stage: build
-  script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/prod-tinyproxy" -f Dockerfile.tinyproxy .
-    - docker push "$CI_REGISTRY_IMAGE/prod-tinyproxy"
-    - docker tag "$CI_REGISTRY_IMAGE/prod-tinyproxy" "$CI_REGISTRY_IMAGE/prod-tinyproxy:$CI_COMMIT_REF_NAME"
-    - docker push "$CI_REGISTRY_IMAGE/prod-tinyproxy:$CI_COMMIT_REF_NAME"
-  only:
-    - tags
-
-build_integ_stat:
-  stage: build
-  script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-stat" -f Dockerfile.stat .
-    - docker push "$CI_REGISTRY_IMAGE/integ-stat"
-    - docker tag "$CI_REGISTRY_IMAGE/integ-stat" "$CI_REGISTRY_IMAGE/integ-stat:develop"
-    - docker push "$CI_REGISTRY_IMAGE/integ-stat:develop"
+    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ" -f Dockerfile .
+    - docker push "$CI_REGISTRY_IMAGE/integ"
+    - docker tag "$CI_REGISTRY_IMAGE/integ" "$CI_REGISTRY_IMAGE/integ:develop"
+    - docker push "$CI_REGISTRY_IMAGE/integ:develop"
   only:
     - master
 
-build_integ_varnish:
-  stage: build
-  script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - mv -f ./config/integ.vcl ./config/default.vcl
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-varnish" -f Dockerfile.varnish .
-    - docker push "$CI_REGISTRY_IMAGE/integ-varnish"
-    - docker tag "$CI_REGISTRY_IMAGE/integ-varnish" "$CI_REGISTRY_IMAGE/integ-varnish:develop"
-    - docker push "$CI_REGISTRY_IMAGE/integ-varnish:develop"
-  only:
-    - master
-
-build_integ_tinyproxy:
-  stage: build
-  script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build --pull -t "$CI_REGISTRY_IMAGE/integ-tinyproxy" -f Dockerfile.tinyproxy .
-    - docker push "$CI_REGISTRY_IMAGE/integ-tinyproxy"
-    - docker tag "$CI_REGISTRY_IMAGE/integ-tinyproxy" "$CI_REGISTRY_IMAGE/integ-tinyproxy:develop"
-    - docker push "$CI_REGISTRY_IMAGE/integ-tinyproxy:develop"
-  only:
-    - master
-
-deploy_prod_stat:
+deploy_prod:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment default --stack ssz-prod --service stat --new-image $CI_REGISTRY_IMAGE/prod-stat:$CI_COMMIT_REF_NAME
-    - upgrade --environment default --stack ssz-prod --service varnish --start-before-stopping
+    - upgrade --environment default --stack ssz-prod --service stat --new-image $CI_REGISTRY_IMAGE/prod:$CI_COMMIT_REF_NAME
   only:
     - tags
 
-deploy_prod_varnish:
+deploy_integ:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment default --stack ssz-prod --service varnish --new-image $CI_REGISTRY_IMAGE/prod-varnish:$CI_COMMIT_REF_NAME
-  only:
-    - tags
-
-deploy_prod_tinyproxy:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment default --stack ssz-prod --service tinyproxy --new-image $CI_REGISTRY_IMAGE/prod-tinyproxy:$CI_COMMIT_REF_NAME
-  only:
-    - tags
-
-deploy_integ_stat:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment default --stack ssz-integ --service stat --new-image $CI_REGISTRY_IMAGE/integ-stat:develop
-    - upgrade --environment default --stack ssz-integ --service varnish --start-before-stopping
-  only:
-    - master
-
-deploy_integ_varnish:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment default --stack ssz-integ --service varnish --new-image $CI_REGISTRY_IMAGE/integ-varnish:develop
-  only:
-    - master
-
-deploy_integ_tinyproxy:
-  stage: deploy
-  image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment default --stack ssz-integ --service tinyproxy --new-image $CI_REGISTRY_IMAGE/integ-tinyproxy:develop
+    - upgrade --environment default --stack ssz-integ --service stat --new-image $CI_REGISTRY_IMAGE/integ:develop
   only:
     - master
