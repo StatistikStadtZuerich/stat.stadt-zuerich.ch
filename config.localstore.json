@@ -1,6 +1,6 @@
 {
   "baseConfig": "cwd:config.json",
-  "datasetBaseUrl": "http://stat.stadt-zuerich.ch/",
+  "datasetBaseUrl": "https://stat.stadt-zuerich.ch/",
   "sparqlEndpointUrl": "http://localhost:5820/ssz/query",
   "sparqlEndpointAuthentication": {
     "user": "admin",

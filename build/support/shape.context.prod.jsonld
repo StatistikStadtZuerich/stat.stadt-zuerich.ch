@@ -1,8 +1,8 @@
 {
   "@context": {
-    "ssz-code": "http://ld.stadt-zuerich.ch/statistics/code/",
-    "ssz-dataset": "http://ld.stadt-zuerich.ch/statistics/dataset/",
-    "ssz-observation": "http://ld.stadt-zuerich.ch/statistics/observation/",
+    "ssz-code": "https://ld.stadt-zuerich.ch/statistics/code/",
+    "ssz-dataset": "https://ld.stadt-zuerich.ch/statistics/dataset/",
+    "ssz-observation": "https://ld.stadt-zuerich.ch/statistics/observation/",
 
     "first": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
     "in": {
@@ -25,9 +25,9 @@
     },
     "DataSet": "http://purl.org/linked-data/cube#DataSet",
     "Slice": "http://purl.org/linked-data/cube#Slice",
-    "DefaultSlice": "http://ld.stadt-zuerich.ch/schema/DefaultSlice",
+    "DefaultSlice": "https://ld.stadt-zuerich.ch/schema/DefaultSlice",
     "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
-    "data": "http://stat.stadt-zuerich.ch/schema/data",
+    "data": "https://stat.stadt-zuerich.ch/schema/data",
     "slice": {
       "@id": "http://purl.org/linked-data/cube#slice",
       "@container": "@set"

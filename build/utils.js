@@ -3,7 +3,7 @@ function isNotZeit (iri) {
 }
 
 function isZeit (iri) {
-  return iri === 'http://ld.stadt-zuerich.ch/statistics/property/ZEIT'
+  return iri === 'https://ld.stadt-zuerich.ch/statistics/property/ZEIT'
 }
 
 function variableName (iri) {

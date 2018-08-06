@@ -1,8 +1,8 @@
 {
   "@context": {
-    "ssz-code": "http://ld.stadt-zuerich.ch/statistics/code/",
-    "ssz-dataset": "http://ld.stadt-zuerich.ch/statistics/dataset/",
-    "ssz-observation": "http://ld.stadt-zuerich.ch/statistics/observation/",
+    "ssz-code": "https://ld.stadt-zuerich.ch/statistics/code/",
+    "ssz-dataset": "https://ld.stadt-zuerich.ch/statistics/dataset/",
+    "ssz-observation": "https://ld.stadt-zuerich.ch/statistics/observation/",
 
     "dataSet": {
       "@id": "http://purl.org/linked-data/cube#dataSet",

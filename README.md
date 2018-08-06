@@ -23,8 +23,8 @@ $ npm run start-apidev
 
 Commits pushed to `master` are automatically deployed to:
 
-- [stat.integ.stadt-zuerich.ch](http://stat.integ.stadt-zuerich.ch/)
+- [stat.integ.stadt-zuerich.ch](https://stat.integ.stadt-zuerich.ch/)
 
 Tags pushed are automatically deployed to:
 
-- [stat.stadt-zuerich.ch](http://stat.stadt-zuerich.ch)
+- [stat.stadt-zuerich.ch](https://stat.stadt-zuerich.ch)

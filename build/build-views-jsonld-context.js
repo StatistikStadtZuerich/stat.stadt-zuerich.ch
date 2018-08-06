@@ -6,7 +6,7 @@ function buildPropertiesContext (properties, stubFilename, outputFilename, short
   const context = JSON.parse(fs.readFileSync(stubFilename).toString())
 
   properties.forEach((property) => {
-    const key = (property.iri.startsWith('http://ld.stadt-zuerich.ch/statistics/measure/') ? 'm' : 'd') + property.notation
+    const key = (property.iri.startsWith('https://ld.stadt-zuerich.ch/statistics/measure/') ? 'm' : 'd') + property.notation
 
     if (short) {
       context['@context'][key] = property.iri

@@ -4,8 +4,8 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX ex: <http://example.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
-PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
-PREFIX ssz-dimension: <http://ld.stadt-zuerich.ch/statistics/property/>
+PREFIX ssz-schema: <https://ld.stadt-zuerich.ch/schema/>
+PREFIX ssz-dimension: <https://ld.stadt-zuerich.ch/statistics/property/>
 
 SELECT ?property ?notation ?datatype WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {

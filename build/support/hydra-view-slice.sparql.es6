@@ -1,12 +1,12 @@
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX ldprop: <http://ld.stadt-zuerich.ch/statistics/property/>
+PREFIX ldprop: <https://ld.stadt-zuerich.ch/statistics/property/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/%%NOTATION%%/slice> a qb:Slice ;
+  <https://stat.stadt-zuerich.ch/dataset/%%NOTATION%%/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .

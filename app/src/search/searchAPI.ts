@@ -33,7 +33,7 @@ export const fetchTags = (query: string): Promise<ITag[]> => {
   }
 
   return fetch(
-    `http://stat.stadt-zuerich.ch/api/tags/?query=${encodeURIComponent(
+    `https://stat.stadt-zuerich.ch/api/tags/?query=${encodeURIComponent(
       query
     )}&format=json`
   )
@@ -44,7 +44,7 @@ export const fetchTags = (query: string): Promise<ITag[]> => {
 };
 
 export const fetchAllTags = (): Promise<ITag[]> => {
-  return fetch(`http://stat.stadt-zuerich.ch/api/tags/?format=json`)
+  return fetch(`https://stat.stadt-zuerich.ch/api/tags/?format=json`)
     .then(r => r.json())
     .then((result: APIResult<ITag>) => {
       return toArray(result.member);
@@ -52,7 +52,7 @@ export const fetchAllTags = (): Promise<ITag[]> => {
 };
 
 export const fetchAllViews = (): Promise<IView[]> => {
-  return fetch(`http://stat.stadt-zuerich.ch/api/views/?format=json`)
+  return fetch(`https://stat.stadt-zuerich.ch/api/views/?format=json`)
     .then(r => r.json())
     .then((result: APIResult<IView>) => {
       return toArray(result.member);
@@ -68,7 +68,7 @@ interface IViewsParams {
 
 export const fetchViews = (params: IViewsParams): Promise<IView[]> => {
   return fetch(
-    `http://stat.stadt-zuerich.ch/api/views/?${qs.stringify({
+    `https://stat.stadt-zuerich.ch/api/views/?${qs.stringify({
       ...params,
       format: "json"
     })}`

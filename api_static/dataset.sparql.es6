@@ -6,8 +6,8 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
-PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
-PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
+PREFIX ssz-schema: <https://ld.stadt-zuerich.ch/schema/>
+PREFIX stip-schema: <https://stat.stadt-zuerich.ch/schema/>
 PREFIX shacl: <http://www.w3.org/ns/shacl#>
 
 CONSTRUCT {

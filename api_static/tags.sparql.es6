@@ -4,8 +4,8 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX hydra: <http://www.w3.org/ns/hydra/core#>
 PREFIX schema: <http://schema.org/>
-PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
-PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
+PREFIX ssz-schema: <https://ld.stadt-zuerich.ch/schema/>
+PREFIX stip-schema: <https://stat.stadt-zuerich.ch/schema/>
 PREFIX shacl: <http://www.w3.org/ns/shacl#>
 
 CONSTRUCT {
@@ -127,7 +127,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
 
   {
     ###### THEMENBAUM THEMA ######
-    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+    ?thema a skos:Concept, <https://ld.stadt-zuerich.ch/schema/Category> ;
            rdfs:label ?label;
            skos:narrower+ ?dataSet .
     ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
@@ -146,7 +146,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
   
   {
     ###### THEMENBAUM STUFE-1 ######
-    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+    ?thema a skos:Concept, <https://ld.stadt-zuerich.ch/schema/Category> ;
            skos:narrower ?stufe1 .
     ?stufe1 a skos:Concept;
             rdfs:label ?label;
@@ -167,7 +167,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
   
   {
     ###### THEMENBAUM STUFE-2 ######
-    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+    ?thema a skos:Concept, <https://ld.stadt-zuerich.ch/schema/Category> ;
            skos:narrower/skos:narrower ?stufe2 .
     ?stufe2 a skos:Concept;
             rdfs:label ?label;
@@ -188,7 +188,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
   
   {
     ###### THEMENBAUM STUFE-3 ######
-    ?thema a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Category> ;
+    ?thema a skos:Concept, <https://ld.stadt-zuerich.ch/schema/Category> ;
            skos:narrower/skos:narrower/skos:narrower ?stufe3 .
     ?stufe3 a skos:Concept;
             rdfs:label ?label;
@@ -209,7 +209,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
 
   {
     ####### REFERENZTABELLEN ######
-    ?reftab a skos:Concept, <http://ld.stadt-zuerich.ch/schema/Topic> ;
+    ?reftab a skos:Concept, <https://ld.stadt-zuerich.ch/schema/Topic> ;
             skos:narrower ?dataSet ;
             rdfs:label ?label ;
             skos:notation ?notation .
@@ -255,7 +255,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
 #          SELECT DISTINCT ?dataSet ?shape WHERE {
 #            $###{this.tmplWrappedDatasetSubquery()}
 
-#            FILTER(?dataSet NOT IN (<http://ld.stadt-zuerich.ch/statistics/dataset/GEB-RAUM-ZEIT-NAF-NAM-SEX>))
+#            FILTER(?dataSet NOT IN (<https://ld.stadt-zuerich.ch/statistics/dataset/GEB-RAUM-ZEIT-NAF-NAM-SEX>))
 #          }
 #        }
 #      } LIMIT 42

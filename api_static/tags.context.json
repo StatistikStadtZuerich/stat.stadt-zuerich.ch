@@ -6,13 +6,13 @@
       "@id": "http://www.w3.org/ns/hydra/core#member",
       "@container": "@set"
     },
-    "Dimension": "http://stat.integ.stadt-zuerich.ch/schema/DimensionEntity",
-    "Topic": "http://stat.integ.stadt-zuerich.ch/schema/TopicEntity",
-    "Attribute": "http://stat.integ.stadt-zuerich.ch/schema/AttributeEntity",
-    "Location": "http://stat.integ.stadt-zuerich.ch/schema/LocationEntity",
-    "Time": "http://stat.integ.stadt-zuerich.ch/schema/TimeEntity",
-    "score": "http://ld.stadt-zuerich.ch/schema/score",
-    "attributeValue": "http://stat.integ.stadt-zuerich.ch/schema/attributeValue"
+    "Dimension": "https://stat.integ.stadt-zuerich.ch/schema/DimensionEntity",
+    "Topic": "https://stat.integ.stadt-zuerich.ch/schema/TopicEntity",
+    "Attribute": "https://stat.integ.stadt-zuerich.ch/schema/AttributeEntity",
+    "Location": "https://stat.integ.stadt-zuerich.ch/schema/LocationEntity",
+    "Time": "https://stat.integ.stadt-zuerich.ch/schema/TimeEntity",
+    "score": "https://ld.stadt-zuerich.ch/schema/score",
+    "attributeValue": "https://stat.integ.stadt-zuerich.ch/schema/attributeValue"
   },
   "@type": "Collection"
 }
