@@ -1,12 +1,12 @@
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX ldprop: <http://ld.stadt-zuerich.ch/statistics/property/>
+PREFIX ldprop: <https://ld.stadt-zuerich.ch/statistics/property/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-ASM-BTA-GGH-ZWE/slice> a qb:Slice ;
+  <https://stat.stadt-zuerich.ch/dataset/ANT-RAUM-ZEIT-ASM-BTA-GGH-ZWE/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,17 +15,17 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/ANT-RAUM-ZEIT-ASM-BTA-GGH-ZWE> ;
+        qb:dataSet <https://ld.stadt-zuerich.ch/statistics/dataset/ANT-RAUM-ZEIT-ASM-BTA-GGH-ZWE> ;
         ?property ?value.
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/ASM> ?asm;
-        <http://ld.stadt-zuerich.ch/statistics/property/BTA> <http://ld.stadt-zuerich.ch/statistics/code/BTA91I3>;
-        <http://ld.stadt-zuerich.ch/statistics/property/GGH> <http://ld.stadt-zuerich.ch/statistics/code/GGH6001>;
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> <http://ld.stadt-zuerich.ch/statistics/code/R30000>;
-        <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
-        <http://ld.stadt-zuerich.ch/statistics/property/ZWE> <http://ld.stadt-zuerich.ch/statistics/code/ZWE2023> .
+        <https://ld.stadt-zuerich.ch/statistics/property/ASM> ?asm;
+        <https://ld.stadt-zuerich.ch/statistics/property/BTA> <https://ld.stadt-zuerich.ch/statistics/code/BTA91I3>;
+        <https://ld.stadt-zuerich.ch/statistics/property/GGH> <https://ld.stadt-zuerich.ch/statistics/code/GGH6001>;
+        <https://ld.stadt-zuerich.ch/statistics/property/RAUM> <https://ld.stadt-zuerich.ch/statistics/code/R30000>;
+        <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
+        <https://ld.stadt-zuerich.ch/statistics/property/ZWE> <https://ld.stadt-zuerich.ch/statistics/code/ZWE2023> .
 
       # notations for filters
       ?asm skos:notation ?asmNotation .

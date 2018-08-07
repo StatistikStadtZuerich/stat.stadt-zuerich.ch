@@ -2,16 +2,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
-PREFIX stip-schema: <http://stat.stadt-zuerich.ch/schema/>
-PREFIX ssz-schema: <http://ld.stadt-zuerich.ch/schema/>
+PREFIX stip-schema: <https://stat.stadt-zuerich.ch/schema/>
+PREFIX ssz-schema: <https://ld.stadt-zuerich.ch/schema/>
 PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
 PREFIX qudt: <http://qudt.org/schema/qudt#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/WHF-RAUM-ZEIT-EIG-ZIM> a qb:DataSet ;
+  <https://stat.stadt-zuerich.ch/dataset/WHF-RAUM-ZEIT-EIG-ZIM> a qb:DataSet ;
     rdfs:label ?datasetLabel ;
     sdmx-attribute:unitMeasure ?unit ;
-    <http://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
+    <https://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
     qb:slice ?slice ;
     <http://purl.org/dc/terms/license> ?license ;
     qb:slice ?defaultSlice .
@@ -52,13 +52,13 @@ CONSTRUCT {
 
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
-    <http://ld.stadt-zuerich.ch/statistics/dataset/WHF-RAUM-ZEIT-EIG-ZIM> a qb:DataSet ;
+    <https://ld.stadt-zuerich.ch/statistics/dataset/WHF-RAUM-ZEIT-EIG-ZIM> a qb:DataSet ;
       qb:slice ?defaultSlice ;
       qb:slice ?slice ;
       sdmx-attribute:unitMeasure ?unit ;
       rdfs:label ?datasetLabel .
 
-    OPTIONAL { <http://ld.stadt-zuerich.ch/statistics/dataset/WHF-RAUM-ZEIT-EIG-ZIM> <http://purl.org/dc/terms/license> ?license }
+    OPTIONAL { <https://ld.stadt-zuerich.ch/statistics/dataset/WHF-RAUM-ZEIT-EIG-ZIM> <http://purl.org/dc/terms/license> ?license }
 
     ?slice a qb:Slice .
     ?defaultSlice a ssz-schema:DefaultSlice .

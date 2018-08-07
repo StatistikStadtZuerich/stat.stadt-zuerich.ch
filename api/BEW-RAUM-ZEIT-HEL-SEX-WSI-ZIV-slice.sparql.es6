@@ -1,12 +1,12 @@
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX ldprop: <http://ld.stadt-zuerich.ch/statistics/property/>
+PREFIX ldprop: <https://ld.stadt-zuerich.ch/statistics/property/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-HEL-SEX-WSI-ZIV/slice> a qb:Slice ;
+  <https://stat.stadt-zuerich.ch/dataset/BEW-RAUM-ZEIT-HEL-SEX-WSI-ZIV/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,17 +15,17 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/BEW-RAUM-ZEIT-HEL-SEX-WSI-ZIV> ;
+        qb:dataSet <https://ld.stadt-zuerich.ch/statistics/dataset/BEW-RAUM-ZEIT-HEL-SEX-WSI-ZIV> ;
         ?property ?value.
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
-        <http://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
-        <http://ld.stadt-zuerich.ch/statistics/property/WSI> <http://ld.stadt-zuerich.ch/statistics/code/WSI0001>;
-        <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
-        <http://ld.stadt-zuerich.ch/statistics/property/ZIV> ?ziv .
+        <https://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
+        <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+        <https://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
+        <https://ld.stadt-zuerich.ch/statistics/property/WSI> <https://ld.stadt-zuerich.ch/statistics/code/WSI0001>;
+        <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
+        <https://ld.stadt-zuerich.ch/statistics/property/ZIV> ?ziv .
 
       # notations for filters
       ?hel skos:notation ?helNotation .

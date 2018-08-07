@@ -1,12 +1,12 @@
 PREFIX qb: <http://purl.org/linked-data/cube#>
-PREFIX ldprop: <http://ld.stadt-zuerich.ch/statistics/property/>
+PREFIX ldprop: <https://ld.stadt-zuerich.ch/statistics/property/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <http://stat.stadt-zuerich.ch/dataset/QMP-RAUM-ZEIT-BEB-HAA-HBA-OBJ-ZON/slice> a qb:Slice ;
+  <https://stat.stadt-zuerich.ch/dataset/QMP-RAUM-ZEIT-BEB-HAA-HBA-OBJ-ZON/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,18 +15,18 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <http://ld.stadt-zuerich.ch/statistics/dataset/QMP-RAUM-ZEIT-BEB-HAA-HBA-OBJ-ZON> ;
+        qb:dataSet <https://ld.stadt-zuerich.ch/statistics/dataset/QMP-RAUM-ZEIT-BEB-HAA-HBA-OBJ-ZON> ;
         ?property ?value.
 
       # dimensions
       ?observation
-        <http://ld.stadt-zuerich.ch/statistics/property/BEB> <http://ld.stadt-zuerich.ch/statistics/code/BEB1001>;
-        <http://ld.stadt-zuerich.ch/statistics/property/HAA> <http://ld.stadt-zuerich.ch/statistics/code/HAA0001>;
-        <http://ld.stadt-zuerich.ch/statistics/property/HBA> <http://ld.stadt-zuerich.ch/statistics/code/HBA1000>;
-        <http://ld.stadt-zuerich.ch/statistics/property/OBJ> <http://ld.stadt-zuerich.ch/statistics/code/OBJ1100>;
-        <http://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
-        <http://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
-        <http://ld.stadt-zuerich.ch/statistics/property/ZON> ?zon .
+        <https://ld.stadt-zuerich.ch/statistics/property/BEB> <https://ld.stadt-zuerich.ch/statistics/code/BEB1001>;
+        <https://ld.stadt-zuerich.ch/statistics/property/HAA> <https://ld.stadt-zuerich.ch/statistics/code/HAA0001>;
+        <https://ld.stadt-zuerich.ch/statistics/property/HBA> <https://ld.stadt-zuerich.ch/statistics/code/HBA1000>;
+        <https://ld.stadt-zuerich.ch/statistics/property/OBJ> <https://ld.stadt-zuerich.ch/statistics/code/OBJ1100>;
+        <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?raum;
+        <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit;
+        <https://ld.stadt-zuerich.ch/statistics/property/ZON> ?zon .
 
       # notations for filters
       ?raum skos:notation ?raumNotation .
