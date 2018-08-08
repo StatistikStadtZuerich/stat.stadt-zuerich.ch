@@ -8,7 +8,7 @@ PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
 PREFIX qudt: <http://qudt.org/schema/qudt#>
 
 CONSTRUCT {
-  <https://stat.stadt-zuerich.ch/dataset/ZUS-RAUM-ZEIT-BTA-SEX> a qb:DataSet ;
+  <https://stat.stadt-zuerich.ch/dataset/AST-RAUM-ZEIT-BEW-BTA> a qb:DataSet ;
     rdfs:label ?datasetLabel ;
     sdmx-attribute:unitMeasure ?unit ;
     <https://stat.stadt-zuerich.ch/schema/data> ?sliceApi ;
@@ -52,13 +52,13 @@ CONSTRUCT {
 
 } WHERE {
   GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
-    <https://ld.stadt-zuerich.ch/statistics/dataset/ZUS-RAUM-ZEIT-BTA-SEX> a qb:DataSet ;
+    <https://ld.stadt-zuerich.ch/statistics/dataset/AST-RAUM-ZEIT-BEW-BTA> a qb:DataSet ;
       qb:slice ?defaultSlice ;
       qb:slice ?slice ;
       sdmx-attribute:unitMeasure ?unit ;
       rdfs:label ?datasetLabel .
 
-    OPTIONAL { <https://ld.stadt-zuerich.ch/statistics/dataset/ZUS-RAUM-ZEIT-BTA-SEX> <http://purl.org/dc/terms/license> ?license }
+    OPTIONAL { <https://ld.stadt-zuerich.ch/statistics/dataset/AST-RAUM-ZEIT-BEW-BTA> <http://purl.org/dc/terms/license> ?license }
 
     ?slice a qb:Slice .
     ?defaultSlice a ssz-schema:DefaultSlice .

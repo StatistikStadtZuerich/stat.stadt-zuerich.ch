@@ -6,7 +6,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX cube: <http://purl.org/linked-data/cube#>
 
 CONSTRUCT {
-  <https://stat.stadt-zuerich.ch/dataset/ZUS-RAUM-ZEIT-BTA-SEX/slice> a qb:Slice ;
+  <https://stat.stadt-zuerich.ch/dataset/ZUS-RAUM-ZEIT-BTA-HEL/slice> a qb:Slice ;
     qb:observation ?observation .
   ?observation a qb:Observation ;
     ?property ?value .
@@ -15,21 +15,21 @@ CONSTRUCT {
     GRAPH <https://linked.opendata.swiss/graph/zh/statistics> {
       # observations
       ?observation a qb:Observation ;
-        qb:dataSet <https://ld.stadt-zuerich.ch/statistics/dataset/ZUS-RAUM-ZEIT-BTA-SEX> ;
+        qb:dataSet <https://ld.stadt-zuerich.ch/statistics/dataset/ZUS-RAUM-ZEIT-BTA-HEL> ;
         ?property ?value.
 
       # dimensions
       ?observation
         <https://ld.stadt-zuerich.ch/statistics/property/BTA> <https://ld.stadt-zuerich.ch/statistics/code/BTA7100>;
+        <https://ld.stadt-zuerich.ch/statistics/property/HEL> ?hel;
         <https://ld.stadt-zuerich.ch/statistics/property/RAUM> <https://ld.stadt-zuerich.ch/statistics/code/R30000>;
-        <https://ld.stadt-zuerich.ch/statistics/property/SEX> ?sex;
         <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?zeit .
 
       # notations for filters
-      ?sex skos:notation ?sexNotation .
+      ?hel skos:notation ?helNotation .
 
       # filters
-      ${typeof sex !== 'undefined' ? 'FILTER (?sexNotation IN (' + (sex.join ? sex.map(v => v.toCanonical()).join() : sex.toCanonical()) + '))' : ''}
+      ${typeof hel !== 'undefined' ? 'FILTER (?helNotation IN (' + (hel.join ? hel.map(v => v.toCanonical()).join() : hel.toCanonical()) + '))' : ''}
 
       # time range filter
       ${typeof from !== 'undefined' ? 'FILTER (?zeit >= xsd:date("' + (from.value.length === 4 ? from.value + '-01-01' : from.value) + '"))':''}
