@@ -2,8 +2,8 @@
   "baseConfig": "cwd:config.prod.json",
   "sparqlEndpointUrl": "http://data.zazuko.com/ssz/query",
   "sparqlEndpointAuthentication": {
-    "user": "public",
-    "password": "public"
+    "user": "ssz-read",
+    "password": "env:SPARQL_ENDPOINT_PASSWORD"
   },
   "hydraBox": {
     "api": {
