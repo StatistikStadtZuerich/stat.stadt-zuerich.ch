@@ -112,9 +112,14 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ?dimension a qb:DimensionProperty;
                rdfs:label ?label ;
                skos:notation ?notation .
+    
     ?dataSet qb:structure/qb:component/(qb:dimension|qb:measure) ?dimension .
     
-    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?notation")})` : ''}
+    OPTIONAL {
+      ?dimension skos:altLabel ?altLabel .
+    }
+
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?altLabel")} || ${this.tmplRegex("?notation")})` : ''}
     
     BIND(stip-schema:DimensionEntity AS ?entityType)
     BIND(?dimension AS ?result)
@@ -130,7 +135,12 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ?thema a skos:Concept, <https://ld.stadt-zuerich.ch/schema/Category> ;
            rdfs:label ?label;
            skos:narrower+ ?dataSet .
-    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+
+    OPTIONAL {
+      ?thema skos:altLabel ?altLabel .
+    }
+
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?altLabel")})` : ''}
 
     # assert ?thema is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
     ${this.tmplExcludeBroaderTopics("?thema")}
@@ -151,7 +161,12 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ?stufe1 a skos:Concept;
             rdfs:label ?label;
             (skos:narrower/skos:narrower)|(skos:narrower/skos:narrower/skos:narrower)|(skos:narrower/skos:narrower/skos:narrower/skos:narrower) ?dataSet .
-    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+
+    OPTIONAL {
+      ?stufe1 skos:altLabel ?altLabel .
+    }
+
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?altLabel")})` : ''}
     
     # assert ?stufe1 is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
     ${this.tmplExcludeBroaderTopics("?stufe1")}
@@ -172,7 +187,12 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ?stufe2 a skos:Concept;
             rdfs:label ?label;
             (skos:narrower/skos:narrower)|(skos:narrower/skos:narrower/skos:narrower) ?dataSet .
-    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+
+    OPTIONAL {
+      ?stufe2 skos:altLabel ?altLabel .
+    }
+
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?altLabel")})` : ''}
     
     # assert ?stufe2 is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
     ${this.tmplExcludeBroaderTopics("?stufe2")}
@@ -193,7 +213,12 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ?stufe3 a skos:Concept;
             rdfs:label ?label;
             skos:narrower/skos:narrower ?dataSet .
-    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")})` : ''}
+
+    OPTIONAL {
+      ?stufe3 skos:altLabel ?altLabel .
+    }
+
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?altLabel")})` : ''}
 
     # assert ?stufe3 is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
     ${this.tmplExcludeBroaderTopics("?stufe3")}
@@ -213,8 +238,12 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
             skos:narrower ?dataSet ;
             rdfs:label ?label ;
             skos:notation ?notation .
+
+    OPTIONAL {
+      ?reftab skos:altLabel ?altLabel .
+    }
     
-    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?notation")})` : ''}
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?altLabel")} || ${this.tmplRegex("?notation")})` : ''}
 
     # assert ?reftab is refinement: we exclude the solution if a node further down in the topic-tree is part of the search filter
     ${this.tmplExcludeBroaderTopics("?reftab")}
@@ -232,8 +261,12 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
     ###### DATASETS ######
     ?dataSet rdfs:label ?label ;
           skos:notation ?notation.
+
+    OPTIONAL {
+      ?dataSet skos:altLabel ?altLabel .
+    }
     
-    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?notation")})` : ''}
+    ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?label")} || ${this.tmplRegex("?altLabel")} || ${this.tmplRegex("?notation")})` : ''}
     BIND(stip-schema:TopicEntity AS ?entityType)
     BIND(?dataSet AS ?result)
     BIND("10.0"^^xsd:float AS ?resultScore)
@@ -249,6 +282,7 @@ SELECT DISTINCT ?root ?result ?entityType ?label ?resultScore ?value WHERE
 #      SELECT DISTINCT ?auspraegungLabel {        
 #        ?shape shacl:property/shacl:in ?auspraegung .
 #        ?auspraegung rdfs:label ?auspraegungLabel .
+#        # TODO: maybe include skos:altLabel too ..
 #        ${typeof query !== 'undefined' ? `FILTER (${this.tmplRegex("?auspraegungLabel")})` : ''}   
         
 #        {
