@@ -10,6 +10,7 @@
       "@container": "@set"
     },
     "label": "http://www.w3.org/2000/01/rdf-schema#label",
+    "scopeNote": "http://www.w3.org/2004/02/skos/core#scopeNote",
     "maxInclusive": "http://www.w3.org/ns/shacl#maxInclusive",
     "minInclusive": "http://www.w3.org/ns/shacl#minInclusive",
     "notation": "http://www.w3.org/2004/02/skos/core#notation",
@@ -28,6 +29,10 @@
     "DefaultSlice": "https://ld.stadt-zuerich.ch/schema/DefaultSlice",
     "NodeShape": "http://www.w3.org/ns/shacl#NodeShape",
     "data": "https://stat.stadt-zuerich.ch/schema/data",
+    "unitMeasure": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+    "lastUpdate": "https://ld.stadt-zuerich.ch/schema/lastUpdate",
+    "nextUpdate": "https://ld.stadt-zuerich.ch/schema/nextUpdate",
+    "license": "http://purl.org/dc/terms/license",
     "slice": {
       "@id": "http://purl.org/linked-data/cube#slice",
       "@container": "@set"
