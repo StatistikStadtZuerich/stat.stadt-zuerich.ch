@@ -41,21 +41,12 @@ Tags pushed are automatically deployed to _production_ :
 Part of the Hydra API is generated based on the data in the triplestore. As data may vary between environments, also
 the generated API may vary and therefore API generation is triggered manually an selective for an environment. 
 
-API files for the *integration* environment are in the *api* directory. To re-generate the API for *integration*, run 
-
-    rm -rf api/*
-    npm run update-api
-
-API files for the *production* environment are in the *api_prod* directory. To re-generate the API for *production", run
-
-    rm -rf api_prod/*
-    npm run update-api-prod
-
-For doing modifications on the API itself, the *apidev* local environment might come in handy:
-
-    rm -rf api_apidev/*
-    npm run update-api-apidev
-    npm run start-apidev
+What                     | integration | apidev | production
+------------------------ | ----------- | -------------- | ------------
+Directory with API files | *./api*     | *./api_apidev* | *./api_prod*
+Purge API files          | `rm -rf api/*` | `rm -rf api_apidev/*` | `rm -rf api_prod/*`
+Re-generate API files    | `npm run update-api` | `npm run update-api-apidev` | `npm run update-api-prod`
+Start server with API    | `npm start` | `npm run start-apidev` | `cp config.prod.json config.json; npm start`
 
 
 ## License (3-Clause BSD)
