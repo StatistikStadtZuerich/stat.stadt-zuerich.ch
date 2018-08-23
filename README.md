@@ -1,35 +1,64 @@
 # Trifid stat.stadt-zuerich.ch
 
-[![pipeline status](https://gitlab.zazuko.com/docker/stat.stadt-zuerich.ch/badges/master/pipeline.svg)](https://gitlab.zazuko.com/docker/stat.stadt-zuerich.ch/commits/master)
+This server provides API access to the linked open statistical data published by the [Statistics Office of the City of Zurich](https://www.stadt-zuerich.ch/statistik).
 
-# API Update
+Features:
+* Provides a [Hydra](http://www.hydra-cg.com/) based API
+
+## Installation
+
+This server is based on [Trifid](https://github.com/zazuko/trifid), a [Node.js](http://nodejs.org/) based Linked Data Server.
+To install and run it you need Node.js on your system.
+
+Clone the Github repository and run 
+
+    npm install
+
+to install all module dependencies.
+
+Depending on the environment, specifiying the password for the SPARQL Endpoint as environment variable might be necessary:
+
+    export SPARQL_ENDPOINT_PASSWORD=foopass!_987
+
+To start the server with the default configuration (_config.json_), execute the following command:
+
+    npm start
+
+
+## Continuous Integration and Deployment
+
+Commits pushed to `master` are automatically deployed to _integration_ :
+
+- [stat.integ.stadt-zuerich.ch](https://stat.integ.stadt-zuerich.ch/)
+
+Tags pushed are automatically deployed to _production_ :
+
+- [stat.stadt-zuerich.ch](https://stat.stadt-zuerich.ch)
+
+
+## API Update
 
 Part of the Hydra API is generated based on the data in the triplestore. As data may vary between environments, also
 the generated API may vary and therefore API generation is triggered manually an selective for an environment. 
 
-Generate API for *integ*: `npm run update-api`
-Generated files for *integ* end up in *api* directory.
+API files for the *integration* environment are in the *api* directory. To re-generate the API for *integration*, run 
 
-Generate API for *prod*: `npm run update-api-prod`
-Generated files for *prod* end up in *api_prod* directory.
+    rm -rf api/*
+    npm run update-api
 
-For doing modifications on the API itself, the following might come in handy:
-```
-$ npm run update-api-apidev
-$ npm run start-apidev
-```
+API files for the *production* environment are in the *api_prod* directory. To re-generate the API for *production", run
 
-# Continuous Integration and Deployment
+    rm -rf api_prod/*
+    npm run update-api-prod
 
-Commits pushed to `master` are automatically deployed to:
+For doing modifications on the API itself, the *apidev* local environment might come in handy:
 
-- [stat.integ.stadt-zuerich.ch](https://stat.integ.stadt-zuerich.ch/)
+    rm -rf api_apidev/*
+    npm run update-api-apidev
+    npm run start-apidev
 
-Tags pushed are automatically deployed to:
 
-- [stat.stadt-zuerich.ch](https://stat.stadt-zuerich.ch)
-
-# License (3-Clause BSD)
+## License (3-Clause BSD)
 
 Copyright 2018 Statistik Stadt Zürich
 
