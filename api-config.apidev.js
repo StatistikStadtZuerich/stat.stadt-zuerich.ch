@@ -7,7 +7,9 @@ module.exports = {
   shapeContextStub: 'shape.context.jsonld',
 
   outDir: 'api_apidev',
+  
 
+  // *** WHITELISTING ***
   viewFilter: view => {
     const notation = view.notation.value;
     
@@ -17,4 +19,23 @@ module.exports = {
 
     return whitelist.includes(notation);
   }
+
+
+  // *** BLACKLISTING ***
+  // viewFilter: view => {
+  //   const blacklist = [
+  //     'BES-RAUM-ZEIT-0'
+  //   ];
+
+  //   const notation = view.notation.value;    
+  //   for (i = 0; i < blacklist.length; i++) {
+  //     if (notation.startsWith(blacklist[i])) {
+  //       console.log(`blacklisted & skipped: ${notation}`);
+  //       return false;
+  //     }
+  //   }
+
+  //   return true;
+  // }
+
 }
