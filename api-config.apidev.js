@@ -14,7 +14,11 @@ module.exports = {
     const notation = view.notation.value;
     
     const whitelist = [
-      'BEW-RAUM-ZEIT-HEL'
+      // OK 
+      'BEW-RAUM-ZEIT-HEL',
+      
+      // FAILING
+      // 'BES-RAUM-ZEIT-0-0HE-BE'
     ];
 
     return whitelist.includes(notation);
