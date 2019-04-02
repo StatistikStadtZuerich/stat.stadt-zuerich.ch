@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "hydra-box": "^0.2.2",
+    "rdf-ext": "^1.2.2",
     "trifid": "^2.1.0"
   },
   "devDependencies": {
@@ -14,13 +16,12 @@
   },
   "license": "UNLICENSED",
   "scripts": {
-    "start":             "trifid --config config.json",
-    "start-local":       "trifid --config config.local.json",
-    "start-localstore":  "trifid --config config.localstore.json",
-    "start-apidev":      "trifid --config config.apidev.json",
-
-    "update-api":        "node ./build/update-api api-config.js",
-    "update-api-prod":   "node ./build/update-api api-config.prod.js",
+    "start": "trifid --config config.json",
+    "start-local": "trifid --config config.local.json",
+    "start-localstore": "trifid --config config.localstore.json",
+    "start-apidev": "trifid --config config.apidev.json",
+    "update-api": "node ./build/update-api api-config.js",
+    "update-api-prod": "node ./build/update-api api-config.prod.js",
     "update-api-apidev": "node ./build/update-api api-config.apidev.js"
   }
 }
